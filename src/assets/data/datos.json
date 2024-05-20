@@ -1,0 +1,73 @@
+{
+    "categories": [
+      {
+        "id": "1",
+        "name": "Categoría 1",
+        "subcategories": [
+          {
+            "id": "1.1",
+            "name": "Subcategoría 1.1",
+            "items": [
+              {
+                "id": "1.1.1",
+                "name": "Item 1.1.1"
+              },
+              {
+                "id": "1.1.2",
+                "name": "Item 1.1.2"
+              }
+            ]
+          },
+          {
+            "id": "1.2",
+            "name": "Subcategoría 1.2",
+            "items": [
+              {
+                "id": "1.2.1",
+                "name": "Item 1.2.1"
+              },
+              {
+                "id": "1.2.2",
+                "name": "Item 1.2.2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "name": "Categoría 2",
+        "subcategories": [
+          {
+            "id": "2.1",
+            "name": "Subcategoría 2.1",
+            "items": [
+              {
+                "id": "2.1.1",
+                "name": "Item 2.1.1"
+              },
+              {
+                "id": "2.1.2",
+                "name": "Item 2.1.2"
+              }
+            ]
+          },
+          {
+            "id": "2.2",
+            "name": "Subcategoría 2.2",
+            "items": [
+              {
+                "id": "2.2.1",
+                "name": "Item 2.2.1"
+              },
+              {
+                "id": "2.2.2",
+                "name": "Item 2.2.2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

@@ -1,0 +1,77 @@
+{
+    "categories": [
+      {
+        "id": "1",
+        "name": "Categoría 1",
+        "color": "orange",
+        "valor": "222",
+        "porcentaje": 30,
+        "icono": "p1",
+        "ganadas": 1
+      },
+      {
+        "id": "2",
+        "name": "Categoría 2",
+        "color": "blue",
+        "valor": "120",
+        "porcentaje": 20,
+        "icono": "p2",
+        "ganadas": 3
+      },
+      {
+        "id": "3",
+        "name": "Categoría 3",
+        "color": "purple",
+        "valor": "350",
+        "porcentaje": 30,
+        "icono": "p3",
+        "ganadas": 0
+      },
+      {
+        "id": "4",
+        "name": "Categoría 4",
+        "color": "yellow",
+        "valor": "50",
+        "porcentaje": 8,
+        "icono": "p4",
+        "ganadas": 1
+      },
+      {
+        "id": "5",
+        "name": "Categoría 5",
+        "color": "green",
+        "valor": "450",
+        "porcentaje": 50,
+        "icono": "p5",
+        "ganadas": 0
+      },
+      {
+        "id": "6",
+        "name": "Categoría 6",
+        "color": "red",
+        "valor": "350",
+        "porcentaje": 30,
+        "icono": "p6",
+        "ganadas": 0
+      },
+      {
+        "id": "7",
+        "name": "Categoría 7",
+        "color": "navy",
+        "valor": "650",
+        "porcentaje": 70,
+        "icono": "p7",
+        "ganadas": 1
+      },
+      {
+        "id": "8",
+        "name": "Categoría 8",
+        "color": "cian",
+        "valor": "250",
+        "porcentaje": 20,
+        "icono": "p8",
+        "ganadas": 0
+      }
+    ]
+  }
+  
