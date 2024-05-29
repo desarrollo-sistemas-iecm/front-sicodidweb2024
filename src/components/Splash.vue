@@ -21,7 +21,7 @@
             <div class="centrarDiv container">
                 <div style='display: flex; flex-wrap: wrap; justify-content: start;' :style="{width:'100%', padding:'10px'}">
                     <p><img src="@/assets/iecm_gimp_medium.png" alt=""></p>
-                    <p><img width="290" src="@/assets/logo.png" alt=""></p> 
+                    <p><img width="290" src="@/assets/sicodid.jpg" alt=""></p> 
                 </div>
                 <div :style="{width:'100%', fontSize:'2.6em', fontWeight:'boldest'}">
                     Elecciones Estatales de <br>

@@ -93,7 +93,7 @@ export const getUrlPrep=()=>{
   // const newURL = window.location.protocol.toString() + "//" + window.location.host.toString() + "/prep2024/";
  
  
-  //const newURL = window.location.protocol.toString() + "//" + window.location.host.toString() + "/";
+  // const newURL = window.location.protocol.toString() + "//" + window.location.host.toString() + "/";
   
    const newURL = "http://localhost/2024/sicodid/publicador/api/";
   
