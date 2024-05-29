@@ -15,11 +15,7 @@
     <DivColor v-if="eleccion.eleccion==4" :fontsize="'22px'" :color="'#582D73'" text="Estadística Alcaldía"/>
     <a-card :headStyle="{backgroundColor: 'rgba(255, 255, 255, 0.4)', border: 0 }"
     size="small" style="width: 100%; background-color: white;">
-        <div :style="{marginTop:'20px', padding:'5px'}" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
-
-            <!--
-                GRAFICAS DE BARRAS y DATOS URBANA/NO URBANA
-            -->     
+        <!-- <div :style="{marginTop:'20px', padding:'5px'}" style="display: flex; flex-wrap: wrap; justify-content: space-around;"> 
             
                 <div>
                     <ChartMiniCategoria :key="eleccion.type+2"
@@ -38,7 +34,6 @@
 
                     <a-row>
                         <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                            <!-- TODO: aqui -->
                             <div :style="{'background-image': 'url(/prep2024/estadisticas/urbano_nourbano.png)', 'background-repeat': 'no-repeat round','width': '100%', 'height': '100px','background-size': '100%'}">
                                 <a-row>
                                     <a-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12" style="color: black; padding-top: 12%; text-align: center;">
@@ -50,14 +45,13 @@
                                         <p style="margin-top: -23%;">No urbanas</p>
                                     </a-col>
                                 </a-row>
-                                <!-- <img style="width:280px; justify-content: start; margin-top: 30px;"  src="/estadisticas/urbano_nourbano.png" alt="Urbanas/nourbanas"> -->
                             </div>
                         </a-col>
                     </a-row>
 
                 </div>
   
-        </div>
+        </div> -->
 
 
         <div :style="{marginTop:'20px', padding:'5px'}" style="display: flex; flex-wrap: wrap; justify-content: space-around;">

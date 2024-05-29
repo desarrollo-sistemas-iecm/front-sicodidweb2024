@@ -7,20 +7,9 @@
     <a-card :headStyle="{backgroundColor: 'rgba(255, 255, 255, 0.4)', border: 0, fontSize:'20px' }"
     size="small" style="width: 100%; ">
         
-        <div :style="{marginTop:'20px', padding:'5px'}" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
-
-            <!--
-                GRAFICAS DE BARRAS y DATOS URBANA/NO URBANA
-           
-           {{ eleccion.avance_dmr }}  
-            --> 
-            
-
+    <!-- TODO: Aqui se comento esto -->
+        <!-- <div :style="{marginTop:'20px', padding:'5px'}" style="display: flex; flex-wrap: wrap; justify-content: space-around;">           
                 <div>
-                    <!--
-                          {{ actas_capturadas-1 }} - {{actas_capturadas_de }} -- 
-                    <br> actas_cap_porcen  {{ actas_cap_porcen }}
-                    -->
                   
 
                     <br>
@@ -39,38 +28,8 @@
                     <label>
                         <b>Actas Computadas por ubicación de casilla:</b><br>
                     </label>
-                    <!--
-                    <a-row>
-                        <a-col>
-                            <img style="width:80px; justify-content: start"  src="/estadisticas/ciudad.png" alt="Urbanas">
-                        </a-col>
-                        <a-col span="8">
-                        </a-col>
-                        <a-col>
-                            <img style="width:80px; justify-content: end"  src="/estadisticas/nourbanos.png" alt="No Urbanas">
-                        </a-col>
-                    </a-row>
-                    <a-row>
-                        <a-col :style="{padding:'10px', borderRadius: '6px', width: '50%', backgroundColor: '#E2488E', textAlign: 'start'}">
-                            <div>
-                                <label style="font-size: 18px; font-weight: bold;">22222</label><br>
-                                DDDD   
-                            </div>
-                            
-                        </a-col>
-
-                        <a-col :style="{padding:'10px',borderRadius: '6px',width: '50%', backgroundColor: '#79144c', textAlign: 'end'}">
-                            <div style="color:white">
-                                <label style="font-size: 18px; font-weight: bold;">22222</label><br>
-                                ZZZZ   
-                            </div>
-                            
-                        </a-col>
-                    </a-row>
-                    -->
                     <a-row>
                         <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                            <!-- TODO: aqui -->
 
                             <div :style="{'background-image': 'url(/prep2024/estadisticas/urbano_nourbano.png)', 'background-repeat': 'no-repeat round','width': '100%', 'height': '100px','background-size': '100%'}">
                                 <a-row>
@@ -83,14 +42,13 @@
                                         <p style="margin-top: -23%;">No urbanas</p>
                                     </a-col>
                                 </a-row>
-                                <!-- <img style="width:280px; justify-content: start; margin-top: 30px;"  src="/estadisticas/urbano_nourbano.png" alt="Urbanas/nourbanas"> -->
                             </div>
                         </a-col>
                     </a-row>
 
                 </div>
   
-        </div>
+        </div> -->
 
 
         <div :style="{marginTop:'20px', padding:'5px'}" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
