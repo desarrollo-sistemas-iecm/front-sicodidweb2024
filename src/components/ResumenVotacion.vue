@@ -8,7 +8,7 @@
 
 <!--
     <a-descriptions style="margin-top: 20px;">
-      <a-descriptions-item>No se considera la cantidad de votos asentada en las Actas de Casilla Especial de Representación Proporcional.</a-descriptions-item>
+      <a-descriptions-item>No se considera la cantidad de votos asentada en las Actas PREP de Casilla Especial de Representación Proporcional.</a-descriptions-item>
   </a-descriptions>
 -->
   <div v-if="router.currentRoute.value.name != 'votoextranjero' " :style="{'padding-top': '30px', 'font-size': '12px', 'font-weight': bolder, 'color': eleccion.tema ? 'black' : 'white'}">
@@ -120,6 +120,7 @@
     <v-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" style="text-align: center; align-items: center; align-content: center; width: 100%; margin: 0%; padding: 0%;">
       <img src="@/../public/icons/icon_equal_24.png" alt="" style="padding-right: 75px;">
       <label style="color: #582D73; font-size: 70px;"><b>{{props.datosResumen? cifrasMiles(props.datosResumen.total):'0' }}</b></label>
+      <p style="font-size: 12px; color:#582D73">{{props.datosResumen? props.datosResumen.total_por:'0%' }}</p>
     </v-col>
   </a-row>
 

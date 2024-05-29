@@ -57,7 +57,7 @@
                   </div>
                   <div style="justify-content: end;">
                     <label>Total de lista nominal</label>
-                    <h2>{{item.lista_nominal}}</h2>
+                    <h2>{{cifrasMiles(item.lista_nominal)}}</h2>
                   </div>
               </div>
               
@@ -82,6 +82,8 @@
           import { SmileOutlined, DownOutlined } from '@ant-design/icons-vue';
           import { useEleccionStore} from "../stores/eleccion_actual"
           import ResumenVotacion from "../components/ResumenVotacion.vue";
+          import { cifrasMiles } from "../helpers";
+
   
           const prop = defineProps({
             titulo: {

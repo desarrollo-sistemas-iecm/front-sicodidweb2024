@@ -51,6 +51,8 @@ Arreglo <br><br>
            
                     <a-row justify="space-around">
                         <a-col :span="12">
+      <!-- TODO: aqui -->
+
                             <img :src="'/prep2024/partidos/'+item.valores.imagen">
                         </a-col>
                         <!--

@@ -7,13 +7,30 @@
     <a-card :headStyle="{backgroundColor: 'rgba(255, 255, 255, 0.4)', border: 0, fontSize:'20px' }"
     size="small" style="width: 100%; ">
         
-        <!-- <div :style="{marginTop:'20px', padding:'5px'}" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+        <div :style="{marginTop:'20px', padding:'5px'}" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+
+            <!--
+                GRAFICAS DE BARRAS y DATOS URBANA/NO URBANA
+           
+           {{ eleccion.avance_dmr }}  
+            --> 
+            
 
                 <div>
+                    <!--
+                          {{ actas_capturadas-1 }} - {{actas_capturadas_de }} -- 
+                    <br> actas_cap_porcen  {{ actas_cap_porcen }}
+                    -->
+                  
+
+                    <br>
                     <ChartMini 
                         :actas_capturadas="actas_capturadas" 
                         :actas_capturadas_de="actas_capturadas_de"  
-                        :actas_contabilizadas="actas_contabilizadas">
+                        :actas_contabilizadas="actas_contabilizadas"
+                        :actas_cap_porcen = "actas_cap_porcen"
+
+                        >
                     </ChartMini><br>
                 </div>
            
@@ -22,8 +39,39 @@
                     <label>
                         <b>Actas Computadas por ubicación de casilla:</b><br>
                     </label>
+                    <!--
+                    <a-row>
+                        <a-col>
+                            <img style="width:80px; justify-content: start"  src="/estadisticas/ciudad.png" alt="Urbanas">
+                        </a-col>
+                        <a-col span="8">
+                        </a-col>
+                        <a-col>
+                            <img style="width:80px; justify-content: end"  src="/estadisticas/nourbanos.png" alt="No Urbanas">
+                        </a-col>
+                    </a-row>
+                    <a-row>
+                        <a-col :style="{padding:'10px', borderRadius: '6px', width: '50%', backgroundColor: '#E2488E', textAlign: 'start'}">
+                            <div>
+                                <label style="font-size: 18px; font-weight: bold;">22222</label><br>
+                                DDDD   
+                            </div>
+                            
+                        </a-col>
+
+                        <a-col :style="{padding:'10px',borderRadius: '6px',width: '50%', backgroundColor: '#79144c', textAlign: 'end'}">
+                            <div style="color:white">
+                                <label style="font-size: 18px; font-weight: bold;">22222</label><br>
+                                ZZZZ   
+                            </div>
+                            
+                        </a-col>
+                    </a-row>
+                    -->
                     <a-row>
                         <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+                            <!-- TODO: aqui -->
+
                             <div :style="{'background-image': 'url(/prep2024/estadisticas/urbano_nourbano.png)', 'background-repeat': 'no-repeat round','width': '100%', 'height': '100px','background-size': '100%'}">
                                 <a-row>
                                     <a-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12" style="color: black; padding-top: 12%; text-align: center;">
@@ -35,13 +83,14 @@
                                         <p style="margin-top: -23%;">No urbanas</p>
                                     </a-col>
                                 </a-row>
+                                <!-- <img style="width:280px; justify-content: start; margin-top: 30px;"  src="/estadisticas/urbano_nourbano.png" alt="Urbanas/nourbanas"> -->
                             </div>
                         </a-col>
                     </a-row>
 
                 </div>
   
-        </div> -->
+        </div>
 
 
         <div :style="{marginTop:'20px', padding:'5px'}" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
@@ -52,7 +101,7 @@
                 <label style="font-size: 18px; text-decoration: underline;">
                     <b>Lista Nominal</b><br>
                 </label>
-
+                
                 <Gauge :ln="ln_esperada?ln_esperada:0" :ln_captura="ln>0?ln:0" style="height:300px; margin: 0 auto;"></Gauge>
                <!--
                     <label>En el gráfico no se considera la cantidad de votos asentada en las Actas PREP de Casilla Especial de Representación Proporcional.</label>
@@ -109,7 +158,7 @@
                             </a-col>
                             <a-col :span="8" style="text-align: end; font-weight: bold; font-size: 20px;">
                                {{ cifrasMiles(suma_esp_s_esp) }}
-                             
+                            
                             </a-col>
                         </a-row>
                     </p>
@@ -149,6 +198,10 @@
     const actas_capturadas = ref(10);
     const actas_capturadas_de= ref(0); 
     const actas_contabilizadas=ref(0);
+
+
+    //-----------------------------------
+    const actas_cap_porcen = ref(0);
 /*
     actas_capturadas.value ="eleccion.avance_jg.actas_capturadas" 
     actas_capturadas_de.value ="eleccion.capturadas_jg.actas_capturadas_de"  
@@ -177,10 +230,12 @@
             actas_capturadas.value = eleccion.avance_jg.actas_capturadas;
             actas_capturadas_de.value = eleccion.capturadas_jg.actas_capturadas_de; 
             actas_contabilizadas.value = eleccion.computadas_jg.actas_computadas?eleccion.computadas_jg.actas_computadas:0;
+            actas_cap_porcen.value = eleccion.avance_alc.actas_cap_porcen?eleccion.avance_jg.actas_cap_porcen:0;
+       
 
             if (eleccion.avance_jg) {
                 ln.value=eleccion.computadas_jg.ln;
-                ln_esperada.value = eleccion.esperadas_jg.ln_esperadas;
+                ln_esperada.value = eleccion.avance_jg.ln;
                 sin_especiales.value = eleccion.resumen_jg[0].votos_sin_especiales;
                 especiales.value = eleccion.resumen_jg[0].votos_especiales;
                 suma_esp_s_esp.value= eleccion.resumen_jg[0].suma_esp_s_esp;
@@ -197,11 +252,12 @@
             actas_capturadas.value = eleccion.avance_dmr.actas_capturadas;
             actas_capturadas_de.value = eleccion.capturadas_dmr.actas_capturadas_de; 
             actas_contabilizadas.value = eleccion.computadas_dmr.actas_computadas? eleccion.computadas_dmr.actas_computadas:0;
-
+            actas_cap_porcen.value = eleccion.avance_dmr.actas_cap_porcen?eleccion.avance_dmr.actas_cap_porcen:0;
+       
             if (eleccion.avance_dmr) {
                 //ln.value=eleccion.avance_dmr.ln;
                 ln.value=eleccion.computadas_dmr.ln;
-                ln_esperada.value = eleccion.esperadas_dmr.ln_esperadas;
+                ln_esperada.value = eleccion.avance_dmr.ln;
                 sin_especiales.value = eleccion.resumen_dmr[0].votos_sin_especiales!=undefined?eleccion.resumen_dmr[0].votos_sin_especiales:0;
                 especiales.value = eleccion.resumen_dmr[0].votos_especiales;
                 suma_esp_s_esp.value= eleccion.resumen_dmr[0].suma_esp_s_esp;
@@ -218,11 +274,12 @@
             actas_capturadas.value = eleccion.avance_rp.actas_capturadas;
             actas_capturadas_de.value = eleccion.capturadas_rp.actas_capturadas_de; 
             actas_contabilizadas.value = eleccion.computadas_rp.actas_computadas?eleccion.computadas_rp.actas_computadas:0;
-            
+            actas_cap_porcen.value = eleccion.avance_rp.actas_cap_porcen?eleccion.avance_rp.actas_cap_porcen:0;
+       
             if (eleccion.avance_rp) {
                 //ln.value=eleccion.avance_rp.ln;
                 ln.value=eleccion.computadas_rp.ln;
-                ln_esperada.value = eleccion.esperadas_rp.ln_esperadas;
+                ln_esperada.value = eleccion.avance_rp.ln;
                 sin_especiales.value = eleccion.resumen_rp[0].votos_sin_especiales;
                 sin_especiales.value = eleccion.resumen_rp[0].votos_especiales;
                 suma_esp_s_esp.value= eleccion.resumen_rp[0].suma_esp_s_esp;
@@ -240,10 +297,12 @@
             //!!! OJO RESTAMOS 1 por la VT EXTRANJERO
             actas_capturadas_de.value = eleccion.capturadas_alc.actas_capturadas_de-1; 
             actas_contabilizadas.value = eleccion.computadas_alc.actas_computadas?eleccion.computadas_alc.actas_computadas:0;
+            actas_cap_porcen.value = eleccion.avance_alc.actas_cap_porcen?eleccion.avance_alc.actas_cap_porcen:0;
+       
             if (eleccion.avance_alc) {
                 //ln.value=eleccion.avance_alc.ln;
                 ln.value=eleccion.computadas_alc.ln;
-                ln_esperada.value = eleccion.esperadas_alc.ln_esperadas;
+                ln_esperada.value = eleccion.avance_alc.ln;
                 sin_especiales.value = eleccion.resumen_alc[0].votos_sin_especiales;
                 especiales.value = eleccion.resumen_alc[0].votos_especiales;
                 suma_esp_s_esp.value= eleccion.resumen_alc[0].suma_esp_s_esp;

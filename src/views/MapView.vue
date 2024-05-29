@@ -47,7 +47,7 @@ ELECCION!!!!
       <div :style="{'text-align': justify, 'margin-bottom': '25px', 'color': eleccion.tema ? 'black' : 'white'}">
         El total de votos calculado y porcentaje que se muestran, se refieren a los votos asentados en las Actas hasta el momento.
         Por presentación, los decimales de los porcentajes muestran sólo cuatro dígitos. No obstante, al considerar todos los decimales, suman 100%.
-        En la tabla se muestra el número de Alcaldías que cada Partido Político, Coalición o Candidatura Independiente ha obtenido hasta el momento.
+        En la tabla se muestra el número de {{ eleccion.eleccion==4? 'Alcaldías': 'Distritos'}} que cada Partido Político, Coalición, Candidatura Común o Candidatura sin Partido ha obtenido hasta el momento.
       </div>
    </a-col>
     <a-col :style="{width:'10%'}" v-show="false">
@@ -72,12 +72,13 @@ ELECCION!!!!
     Datos en modo MAPA con Higthcharts
   **********************************
   -->
+  
   <div v-if="value2=='Mapa'" >
         <a-row :gutter="{ xs: 8, sm: 16, md: 24, lg: 32 }">
             <a-col class="gutter-row" :span="8">
                 <!-- Gráfica vertical -->
                 <label :style="{'font-size': '20px', 'font-weight': bolder, 'margin-bottom': '25px', color : eleccion.tema ? '#000000': '#ffffff'}">
-                  {{ paramID==4? 'Alcaldías obtenidas': 'Distritos obtenidos'}} 
+                  {{ eleccion.eleccion==4? 'Alcaldías obtenidas': 'Distritos obtenidos'}} 
                 </label> 
 
                 <ActasContabilizadas :tipo="eleccion.eleccion" :categories = "categories"></ActasContabilizadas>
@@ -86,9 +87,9 @@ ELECCION!!!!
               <label :style="{'font-size': '16px', 'font-weight': bolder, 'margin-bottom': '25px', color : eleccion.tema ? '#000000': '#ffffff'}">Mapa de {{titulo}}</label> 
               
               <div :style="{'margin-top': '10px', color : eleccion.tema ? '#000000': '#ffffff'}">
-               El mapa resalta {{ paramID==4? 'en las Alcaldías': 'en los Distritos'}} el Partido Político, Coalición o Candidatura <br>
-              Independiente que lleva ventaja hasta el momento. <br>
-              Para conocer el detalle de la {{ paramID==4? 'Alcaldía': 'Distrito'}}, pasa el cursor o da clic sobre éste. 
+                El mapa resalta {{ eleccion.eleccion==4? 'en las Alcaldías': 'en los Distritos'}} el Partido Político, Coalición, Candidatura Común o <br>
+                Candidatura sin Partido que lleva ventaja hasta el momento. <br>
+                Para conocer el detalle {{ eleccion.eleccion==4? 'de la Alcaldía': 'del Distrito'}}, pasa el cursor o da clic sobre éste. 
               </div>
               
 

@@ -24,6 +24,8 @@ export const formatNumberWithPrefix = number => {
 };
 
 // Sin uso --------------
+// TODO: aqui
+
 export const getImagePath = (imageName) => {
    // return `../personas/${imageName}.png`;
     return `/prep2024/personas/${imageName}.png`;
@@ -34,10 +36,29 @@ export const getImagePathPartido = (imageName) => {
   return `/prep2024/partidos/${imageName}.jpg`;
 };
 
+export const getImagePathPartidoDtto = (imageName) => {
+  //return `../partidos/${imageName}.jpg`;
+  return `/prep2024/partidos_dtto/${imageName}.jpg`;
+};
+
 export const getImagePathPartidoCoalicion = (imageName) => {
   //return `../partidos/degradados_distribucion/${imageName}.png`;
   return `/prep2024/partidos/degradados_distribucion/${imageName}.png`;
 };
+
+export const getImagePathJG = (imageName) => {
+  //return `../partidos/${imageName}.jpg`;
+  return `/prep2024/personas_jg/${imageName}.png`;
+};
+
+export const nombresJG = (idCandidataCandidato) =>{
+  const nombres = [ { id: 6, nombre : 'SALOMON CHERTORIVSKI WOLDENBERG' }, { id: 10, nombre: 'SANTIAGO TABOADA CORTINA' }, { id:14, nombre: 'CLARA MARINA BRUGADA MOLINA' } ];
+
+  const objetoNombre = nombres.find(objeto => objeto.id === idCandidataCandidato);
+  
+  // Si el objeto es encontrado, regresamos el nombre, de lo contrario regresamos undefined o un mensaje de error
+  return objetoNombre ? objetoNombre.nombre : `Sin Nombre para ${idCandidataCandidato}`;
+}
 // ----------------------
 
 // Función para conseguir nombre de Delegación
@@ -68,20 +89,18 @@ export const getUrlPrep=()=>{
   const search = window.location.search;
 
 
-  // PARA Desarrollo
-// const newURL = window.location.protocol.toString() + "//" + window.location.host.toString() + "/v2-sicodid-web2024/services/";
-// Para Aplicaciones
-const newURL = window.location.protocol.toString() + "//" + window.location.host.toString() + "/v2-sicodid-web2024/services/";
+  // PARA DIR 2024
+  // const newURL = window.location.protocol.toString() + "//" + window.location.host.toString() + "/prep2024/";
  
  
-// const newURL = window.location.protocol.toString() + "//" + window.location.host.toString() + "/";
+  //const newURL = window.location.protocol.toString() + "//" + window.location.host.toString() + "/";
+  
+   const newURL = "http://localhost/2024/sicodid/publicador/api/";
+  
 
-// alert(newURL);
-  
-//  const newURL = "http://localhost/2024/sicodid/publicador/api/";
-//  const newURL = "http://145.0.40.76/prep2024/";
 // const newURL = "http://145.0.40.76/2024/v2-sicodid2024/services/";
-  
+
+
   return newURL;
 }
 
@@ -254,11 +273,11 @@ export const leeEleccion = async (ultima)=> {
         '#a53421',    //votos_part_7
         '#e6057e' ,   //votos_part_8
         '#722f8b',    //votos_part_9
-        'silver',    //votos_part_10
+        '#4479e1',    //votos_part_10
         'silver',    //votos_part_11
         'silver',     //votos_part_12
         'silver',     //votos_part_13
-        'silver',     //votos_part_14
+        '#800040',     //votos_part_14
         'gray',       //votos_part_15
         'gray',       //votos_part_16
         'gray',       //votos_part_17

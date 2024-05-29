@@ -49,6 +49,8 @@
           <template v-if="column.key >= 1">
             <span>
   
+      <!-- TODO: aqui -->
+
               <img :src="'/prep2024/partidos/'+value_fields[column.key-1].id_participante+'.jpg'">
   
             </span>

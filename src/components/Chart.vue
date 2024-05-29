@@ -19,7 +19,7 @@
                     </a-col>
                     <a-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
                         <template v-for="ext in dataJSONExtranjero" :key="ext.id">
-                            <b v-if="ext.id == data.id"> {{ data.valor - ext.valor }}</b>
+                            <b v-if="ext.id == data.id"> {{ cifrasMiles(data.valor - ext.valor) }}</b>
                         </template>
                     </a-col>
                     <a-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
@@ -27,14 +27,14 @@
                     </a-col>
                     <a-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
                         <template v-for="ext in dataJSONExtranjero" :key="ext.id">
-                            <b v-if="ext.id == data.id"> {{ ext.valor }}</b>
+                            <b v-if="ext.id == data.id"> {{ cifrasMiles(ext.valor) }}</b>
                         </template>
                     </a-col>
                 </a-row>
             </template>
             <a-card-meta :title="data.descripcion"  style="text-align: center; align-content: center; align-items: center; justify-content: center;">
                 <template #avatar v-if="data.id != 'no_reg' && data.id != 'nulos'">
-                    <a-avatar :size="58" shape="square" :src="getImagePath('partidos' , data.partido)" />
+                    <img shape="square" :src="getImagePathPartido(data.id)" />
                 </template>
             </a-card-meta>
             <!-- <img style="margin-left:10%; width: 20%" :src="getImagePath('partidos', data.imagen)" v-if="data.id != 'no_reg' && data.id != 'nulos'"> -->
@@ -60,14 +60,10 @@
 
 import { ref, onBeforeMount } from "vue";
 import {useEleccionStore} from "../stores/eleccion_actual"
-import { isMobile, cifrasMiles } from "../helpers";
+import { isMobile, cifrasMiles, getImagePathPartido, getImagePath } from "../helpers";
 
 const eleccion = useEleccionStore();
 
-
-const getImagePath = (tipo, imageName) => {
-    return (eleccion.urlPrep + tipo + "/"+ imageName);
-};
 const dataJSON = ref([]);
 
 //22/Marzo/2024
@@ -101,7 +97,7 @@ onBeforeMount(async () => {
               const urlServer = eleccion.urlPrep;
               
               const  url = urlServer + "funciones_grafica.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
-//alert(url)
+        ///alert(url)
               const response = await fetch(url);
               //http://localhost/prep2024/
               const jsonData = await response.json();
@@ -139,6 +135,8 @@ onBeforeMount(async () => {
             colores[7] = "#7b2629";
             colores[10] = "#e6057e";
             colores[11] = "#000000";
+            colores["no_reg"] = "silver";    
+            colores["nulos"] = "gray";   
             
             dataTmp.value = dataJSON.value; //eleccion.votos_del_jg_total.data;
             noRegTmp.value = eleccion.votos_del_jg_total.votos_cand_no_reg;
@@ -310,11 +308,11 @@ const chartOptions = ref({
                 }
                 else{
                     if(eleccion.eleccion!=4){
-                        return '<b>'+ nombres[value]+'</b><br><br><img style="display: block; border: 1px solid #000; margin-left: auto; margin-right: auto;" src="' + getImagePath("partidos" ,prefijo + value) + '.jpg" /><br><br><br>'+cifrasMiles(totalVotosPar[value])+'<br>'+totalPorcentajes[value]+'<br><br>'+(parseInt(totalVotosPar[value]-parseInt(totalVotosExtranjero.value[value])))+'<br>'+totalVotosExtranjero.value[value]+'<br><br>';             
+                        return '<b>'+ nombres[value]+'</b><br><br><img style="display: block; border: 1px solid #000; margin-left: auto; margin-right: auto;" src="' + getImagePathPartido(prefijo + value) + '" /><br><br><br>'+cifrasMiles(totalVotosPar[value])+'<br>'+totalPorcentajes[value]+'<br><br>'+cifrasMiles(parseInt(totalVotosPar[value]-parseInt(totalVotosExtranjero.value[value])))+'<br>'+cifrasMiles(totalVotosExtranjero.value[value])+'<br><br>';             
                     }
                     else
                     {
-                        return '<b>'+ nombres[value]+'</b><br><br><img style="display: block; border: 1px solid #000; margin-left: auto; margin-right: auto;" src="' + getImagePath("partidos" ,prefijo + value) + '.jpg" /><br><br><br>'+cifrasMiles(totalVotosPar[value])+'<br>'+totalPorcentajes[value]+'<br><br>';             
+                        return '<b>'+ nombres[value]+'</b><br><br><img style="display: block; border: 1px solid #000; margin-left: auto; margin-right: auto;" src="' + getImagePathPartido(prefijo + value) + '" /><br><br><br>'+cifrasMiles(totalVotosPar[value])+'<br>'+totalPorcentajes[value]+'<br><br>';             
                     }
                 }
                  //return '<span><img style="display: block; margin-left: auto; margin-right: auto;" src="' + getImagePath("personas" , data[output-1].name) + '.png" /><br><b>Nombre(s)</b><br><b>Apellidos(s)</b><img style="display: block; border: 1px solid #000; margin-left: auto; margin-right: auto;" src="' + getImagePath("partidos" ,prefijo + data[output-1].name) + '.jpg" /><br><br><br>'+totalVotosPar[output-1]+'<br>'+totalPorcentajes[output-1]+'<br><br>10000<br>900<br>200<br>100<br><br><br><br></span>';
@@ -380,7 +378,7 @@ const chartOptions = ref({
     tooltip: {
         headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
         //pointFormat: '<span style="color:{point.color}">{point.nombre}</span>: <b>{point.y:.0f}</b> votos<br/>',
-        pointFormat: '<span style="color:{point.color}">{point.nombre}</span>: <b>{point.y:.0f}</b> votos<br/>',
+        pointFormat: '<span style="color:{point.color}">{point.nombre}</span>: <b>{point.y}</b> votos<br/>',
         enabled: true
     },
 

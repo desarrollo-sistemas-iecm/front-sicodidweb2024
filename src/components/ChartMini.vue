@@ -15,14 +15,15 @@ const chartOptions = ref(null);
 const props = defineProps({
     actas_capturadas: Number, 
     actas_capturadas_de: Number,
-    actas_contabilizadas: Number
+    actas_contabilizadas: Number,
+    actas_cap_porcen: Number,
 });
 
 onBeforeMount(async () => {
       try {
         var data = [{y: props.actas_capturadas_de, color:"#C791A8"} , 
                     {y: props.actas_capturadas, color:"#B283B9  "},
-                    {y: props.actas_contabilizadas, color:"#582D73"}
+                    {y: props.actas_contabilizadas, color:"#582D73"},
         ];
             chartOptions.value = {
                 chart: {
@@ -74,9 +75,9 @@ onBeforeMount(async () => {
                                 var tmpVal =0;
                                 if(props.actas_capturadas_de){
                                     value2 = this.axis.series[0].yData[this.pos]; 
-                                    tmpVal = (value2*100)/props.actas_capturadas_de;
+                                    tmpVal = props.actas_cap_porcen;
                                 }
-                                return '<span><br>'+cifrasMiles(value2)+'<br>'+tmpVal.toFixed(4)+'%<br><br>'+this.value+'</span>';
+                                return '<span><br>'+cifrasMiles(value2)+'<br>'+tmpVal+'%<br><br>'+this.value+'</span>';
                                                     
                             },
                             align: 'center',

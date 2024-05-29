@@ -30,7 +30,8 @@
       <div :style="{'text-align': 'justify', 'margin-bottom': '15px', color: eleccion.tema ? 'black' : 'white'}">
         El total de votos calculado y porcentaje que se muestran, se refieren a los votos asentados en las Actas hasta el momento.
         Por presentación, los decimales de los porcentajes muestran sólo cuatro dígitos. No obstante, al considerar todos los decimales, suman 100%.
-        En la gráfica se muestra el número de votos que cada Partido Político o Candidatura Independiente ha obtenido hasta el momento.
+        En la gráfica se muestra el número de votos que cada Partido Político, Coalición, Candidatura Común o Candidatura sin Partido ha obtenido hasta el momento.
+      <!-- TODO: aqui la de arriba -->
       </div>
    </a-col>
    <!--
@@ -222,7 +223,7 @@
         const item_3 = eleccion.cmb3;
         const type = eleccion.eleccion;
         const  url = urlServer + "actas_resumen_data.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
-//alert(url);
+        //alert(url);
         const responseURL = await fetch(url);
         //http://localhost/prep2024/
         jsonData = await responseURL.json();

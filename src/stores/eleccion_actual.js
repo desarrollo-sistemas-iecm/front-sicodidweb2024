@@ -1,5 +1,7 @@
 import { ref, reactive , onMounted} from 'vue'
 import { defineStore } from 'pinia'
+import { theme } from 'ant-design-vue';
+
 
 // para conseguir url
 import { getUrlPrep, getUrlAPIPrep_node, getDelegacion } from "../helpers";
@@ -11,6 +13,9 @@ import { getUrlPrep, getUrlAPIPrep_node, getDelegacion } from "../helpers";
 export const useEleccionStore = defineStore('eleccion', () => {
   const eleccion = ref(0)
   const tema = ref(true);
+
+  const themes = ref({});
+
   // Combos
   const cmb1 = ref("");
   const cmb2 = ref("");
@@ -117,7 +122,7 @@ export const useEleccionStore = defineStore('eleccion', () => {
   // Nuevo, host de imagenes
   const hostactas = ref("");
   const hostactasext = ref("");
-  const horaabre = ref("2024-05-19T08:30:00");
+  const horaabre = ref("0");
 
   //15/Abril/2024
   const urbanas_nourbanas = ref(null)

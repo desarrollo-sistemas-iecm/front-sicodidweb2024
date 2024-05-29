@@ -42,7 +42,6 @@
     <label :style="{color: eleccion.tema ? '#333333' : 'white', 'font-size': '12px', 'font-weight': 'normal'}">
       En la tabla se muestran los votos que cada Partido Político, Coalición o Candidatura Independiente ha obtenido hasta el momento.
     </label>
-
     <a-table class="ant-table-striped" :scroll="{x:800}" 
         :columns="columns" :data-source="data" @resizeColumn="handleResizeColumn"
         :row-class-name="(_record, index) => (index % 2 === 1 ? 'table-striped' : null)" bordered
@@ -54,12 +53,13 @@
   <img :src="'/prep2024/partidos/'+value_fields[column.key-1].id_participante+'.jpg'">
    {{ column.key+'.jpg' }}
 -->
+      <!-- TODO: aqui -->
+
             <img :src="'/prep2024/partidos_dtto/'+column.key+'.jpg'">
 
           </span>
         </template>
       </template>
-  
       <template #bodyCell="{ column, record, index}">
        
         <template v-if="column.key === 'id_distrito'">
@@ -131,6 +131,8 @@
         import { useEleccionStore} from "../stores/eleccion_actual"
         import ResumenVotacion from "../components/ResumenVotacion.vue";
         import DivColor from './DivColor.vue';
+        import { cifrasMiles } from "../helpers";
+
         
         import { message } from 'ant-design-vue';
 
@@ -227,7 +229,7 @@
 
             const  url = urlServer + "actas_grid_data_todo.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
             //const  url ="http://localhost/prep2024/actas_grid_data_todo.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
-  //alert(url)
+ // alert(url)
             ///console.log(url)
             //const response = await fetch('../../src/assets/data/actas_contabilizadas.json'); // Cambia la ruta al archivo JSON o API
             //const response = await fetch('https://aplicaciones.iecm.mx/prep2024/actas_grid_data.php');
@@ -235,12 +237,25 @@
             //http://localhost/prep2024/
             const jsonData = await response.json();
             data.value = jsonData.data;
+            
             columns.value = jsonData.columns;
             value_fields.value = jsonData.value_fields;
             participacion.value = jsonData.participacion;
             
             datos.value = jsonData.resumen;
-
+            //Para poder agregar valores por cifras en miles en la tabla
+            for(let i= 1; i< 15; i++){
+              if(data.value[0]["votos_part_"+i] != undefined){
+                data.value[0]["votos_part_"+i] = cifrasMiles(data.value[0]["votos_part_"+i]);
+              }
+              // console.log(data.value[0]["votos_part_"+i], 'esto es un part', i);
+            }
+            if(data.value[0]["votos_cand_no_reg"] != undefined){
+              data.value[0]["votos_cand_no_reg"] = cifrasMiles(data.value[0]["votos_cand_no_reg"]);
+            }
+            if(data.value[0]["votos_nulos"] != undefined){
+              data.value[0]["votos_nulos"] = cifrasMiles(data.value[0]["votos_nulos"]);
+            }
             //eleccion.loadData = false;
             //console.log("LEI CAT: ", datos);
 

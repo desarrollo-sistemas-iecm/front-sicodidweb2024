@@ -12,29 +12,33 @@
                     </label>
                     <div :style="{background: eleccion.tema ? '#e8e8e8' : '#2c2c2c', 'margin-top': '10px'}">
                         <center>
-                            <div style="width: 650px; padding-top: 20px; margin-top: 10px;">
+                            <div style="padding-top: 20px; margin-top: 10px;">
                                 <a-row :gutter="{ xs: 8, sm: 16, md: 24, lg: 32 }">
-                                    <a-col :span="11">
+                                    <a-col :xs="24" :sm="24" :md="11" :lg="11" :xl="11" >
                                         <div  style="text-align: right; justify-content: right; width: 100%;">
 
                                             <a-raw>
                                                 <a-col>
-                                                   
+                                                    <!--
+                                                      !!!!!!!
+                                                   {{eleccion.especiales}}  
+                                                    -->
+                                                    
                                                     <div style="text-align: center; ">                                                        
                                                         
                                                             <a-row :gutter="{ xs: 8, sm: 16, md: 24, lg: 32 }" justify="space-between" align="bottom">
                                                                 <a-col :span="14">
                                                                     <div style="text-align: left; border-style: dashed;">
                                                                         <a-space>
-                                                                            <label style="color:#582D73; font-weight: bold; font-size: 12px;">Total de Votos</label><div class="circle_tiny">A</div>
+                                                                            <label style="color:#582D73; font-weight: bold; font-size: 12px;">Total de Votos</label><div  class="circle_tiny">A</div>
                                                                         </a-space>
                                                                         <br>
-                                                                        <label style="font-size: 10px; font-weight: bold;">
+                                                                        <label v-if="eleccion.especiales==0" style="font-size: 10px; font-weight: bold;">
                                                                             Sin considerar la votación en Casillas Especiales MR
                                                                         </label>
                                                                     
                                                                         <label style="font-size: 25px; font-weight: bolder;">
-                                                                            {{ eleccion.sin_especiales }} 
+                                                                       <!--{{ eleccion.sin_especiales }} -->   {{ eleccion.suma_esp_sinesp }}
                                                                         </label>
                                                                     </div>
                                                                 </a-col>
@@ -79,7 +83,7 @@
                                             </a-raw>
                                         </div>
                                     </a-col>
-                                    <a-col :span="2" >
+                                    <a-col :xs="2" :sm="2" :md="2" :lg="2" :xl="2"  >
                                         <div  style="display: flex;
                                             justify-content: center;
                                             align-items: center;
@@ -87,19 +91,25 @@
                                             <label>=</label>
                                         </div>
                                     </a-col>
-                                    <a-col :span="11">
+                                    <a-col :xs="22" :sm="22" :md="11" :lg="11" :xl="11" >
                                         <label style="text-decoration: underline; font-size: 18px; font-weight: bolder; color: #582D73;">
                                             Participación ciudadana <br>
                                         </label>
-                                        <div  style="text-align: left;  width: 100%;">
+                              
+                                      
+                                      <div  style="text-align: left;  width: 100%;">
                                             <p style="display: flex;
                                                 justify-content: center;
                                                 align-items: center;
                                                 height: 200px;
                                                 font-size: 30px; font-weight: bolder;
                                                 color: #582D73;">
-
-                                                {{ eleccion.participacion }} %
+                                       <!--
+                                        {{ eleccion.suma_esp_sinesp}}  {{ eleccion.lista_nominal_contabilizadas }}
+                                       -->        
+                                       {{ eleccion.suma_esp_sinesp && eleccion.lista_nominal_contabilizadas ? ((eleccion.suma_esp_sinesp.replace(/,/g, "") * 100) / eleccion.lista_nominal_contabilizadas).toFixed(4) : '0' }} %
+                                      
+                                               <!--{{ eleccion.participacion }}--> 
                                             </p>
                                         </div>
                                     </a-col>

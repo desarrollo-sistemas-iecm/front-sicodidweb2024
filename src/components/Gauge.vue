@@ -1,6 +1,12 @@
 
 
 <template>
+  <!-- 
+
+      ln : {{ ln }} 
+  ln_captura :  {{ ln_captura }}
+  porcentajeLN : {{ porcentajeLN }}
+  -->
 
   <highcharts :key="lnGrafPor" :options="chartOptions"></highcharts>
   
@@ -34,7 +40,7 @@ onBeforeMount(async () => {
 })
 
 const porcentajeLN = computed(() => {
-    return (ln.value*100)/ln_captura.value;
+    return (ln_captura.value*100)/ln.value;
 });
 
 const chartOptions = ref({

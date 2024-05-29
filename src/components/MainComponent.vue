@@ -1,46 +1,47 @@
 <template :style=" {backgroundColor: eleccion.tema? '#F9F9F9' : 'black'}">
   <!-- ACTAS: {{ eleccion.hostactas }} -->
-    <!--Botones flotantes se muestran en Desktop / Mobil-->
-   
-    <a-float-button-group trigger="hover" type="primary"  :style="{ colorPrimary:'red', right: '48px' }">
+  <!--Botones flotantes se muestran en Desktop / Mobil-->
+
+  <a-float-button-group trigger="hover" type="primary" :style="{ colorPrimary: 'red', right: '48px' }">
+    <template #icon>
+      <ShareAltOutlined />
+    </template>
+    <a-float-button tooltip="WhatsApp" :style="{
+    right: '48px',
+    backgroundColor: '#25D366',  // Color verde de WhatsApp
+    color: '#FFFFFF' // Color del icono blanco
+  }" @click="shareOnWhatsApp">
       <template #icon>
-        <ShareAltOutlined />
+        <WhatsAppOutlined />
       </template>
-      <a-float-button tooltip="Youtube"
-              :style="{
-                right: '48px',
-              }"  @click="handleClick" 
-      >
-        <template #icon>
-          <YoutubeOutlined />
-        </template>
-      </a-float-button>
-  
-      <a-float-button tooltip="Twitter"
-              :style="{
-                right: '48px',
-              }"  @click="handleClick" 
-      >
-        <template #icon>
-          <TwitterOutlined />
-        </template>
-      </a-float-button>
-      
-      <a-float-button  tooltip="Facebook"
-        :style="{
-          right: '48px',
-        }"  @click="handleClick">
-        <template #icon>
-          <FacebookOutlined/>
-        </template>
-      </a-float-button>
-    </a-float-button-group>
-    
-    <!-- Boton de regreso va en Desktop / Mobil-->
-    <a-back-top :style="{
+    </a-float-button>
+
+    <a-float-button tooltip="X (antes Twitter)" :style="{
+    right: '48px',
+    backgroundColor: '#1DA1F2',  // Color azul de X (Twitter)
+    color: '#FFFFFF' // Color del icono blanco
+  }" @click="shareOnTwitter">
+      <template #icon>
+        <CloseOutlined />
+      </template>
+    </a-float-button>
+
+    <a-float-button tooltip="Facebook" :style="{
+    right: '48px',
+    backgroundColor: '#1877F2',  // Color azul de Facebook
+    color: '#FFFFFF' // Color del icono blanco
+  }" @click="shareOnFacebook">
+      <template #icon>
+        <FacebookOutlined />
+      </template>
+    </a-float-button>
+  </a-float-button-group>
+
+  <!-- Boton de regreso va en Desktop / Mobil-->
+  <a-back-top :style="{
           right: '48px'}" />
-  
-    <!-- 
+
+  <!-- 
   
       ******************************************************************
   
@@ -49,17 +50,14 @@
       ******************************************************************
     
     -->
-    <a-watermark 
-      :content="['- SICODID 2024 -', '[[*** DATOS DE PRUEBA SIN VALOR ***]]', 'Última act. 17/05/2024 16:00 hrs']"
-      :font="{color: eleccion.tema ? 'rgba(105,105,105,.2)':'rgba(255,255,255,.10)'}"
-      >
-  
-      <a-spin tip="Cargando datos ..." size="large" color="#632A5B"
-          :spinning="eleccion.loadData">
-  
-        <a-config-provider :theme="themes">
-          <context-holder />
-          <!-- <a-layout>
+  <a-watermark :content="['- SICODID 2024 -', '[[*** DATOS DE PRUEBA SIN VALOR ***]]', 'ÚLTIMA ACT. ' + eleccion.corte.corte_fecha + ' ' + eleccion.corte.corte_hora + ' hrs']"
+    :font="{color: eleccion.tema ? 'rgba(105,105,105,.2)':'rgba(255,255,255,.10)'}">
+
+    <a-spin tip="Cargando datos ..." size="large" color="#632A5B" :spinning="eleccion.loadData">
+
+      <a-config-provider :theme="eleccion.themes">
+        <context-holder />
+        <!-- <a-layout>
             <a-layout-sider
               breakpoint="lg"
               collapsed-width="0"
@@ -67,33 +65,35 @@
               @breakpoint="onBreakpoint"
             ></a-layout-sider>
           </a-layout> -->
-          
-          <a-layout>
-  
-            <!-- Menú horizontal  backgroundColor: eleccion.tema? 'white': '#1d1d1d',-->
-            <!-- <a-layout-header  style=" background-color: #582d73;  position: fixed; z-index: 1; width:100%; padding: 0 0; height: 35px"> -->
-            <a-layout-header  style=" background-color: #582d73; width:100%; padding: 0 0; height: 35px" :style="{ 'position': !isMobile() ? '' : 'fixed', 'z-index': !isMobile() ? '' : '1', 'background-color': eleccion.tema ? '#582d73' : '#1d1d1d',}">
-              <!-- Notones superiores van en Desktop / Mobil-->
-              <a-tag v-if="!isMobile()" :style="{'background-color': eleccion.tema ? '#582d73' : '#1d1d1d', width:'100%', 'text-align': 'end', 'padding': '0 0', 'margin' : '0%'}">
-                  <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-                        <div style="display: flex; flex-wrap: wrap; justify-content: left;">
-                            <img src="@/assets/iecm_white.png" style="height: 35px;">
-                            <!--
+
+        <a-layout>
+
+          <!-- Menú horizontal  backgroundColor: eleccion.tema? 'white': '#1d1d1d',-->
+          <!-- <a-layout-header  style=" background-color: #582d73;  position: fixed; z-index: 1; width:100%; padding: 0 0; height: 35px"> -->
+          <a-layout-header style=" background-color: #582d73; width:100%; padding: 0 0; height: 35px"
+            :style="{ 'position': !isMobile() ? '' : 'fixed', 'z-index': !isMobile() ? '' : '1', 'background-color': eleccion.tema ? '#582d73' : '#1d1d1d',}">
+            <!-- Notones superiores van en Desktop / Mobil-->
+            <a-tag v-if="!isMobile()"
+              :style="{'background-color': eleccion.tema ? '#582d73' : '#1d1d1d', width:'100%', 'text-align': 'end', 'padding': '0 0', 'margin' : '0%'}">
+              <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+                <div style="display: flex; flex-wrap: wrap; justify-content: left;">
+                  <img src="@/assets/iecm_white.png" style="height: 35px;">
+                  <!--
                               <a-button style="color: white" type="link" :size="large" @click="openNotification('top', 'Página IEDF')">
                             
                             -->
-                            <a-button style="color: white" type="link" :size="large" @click="openLink()">
-                                <template #icon>
-                                      <GlobalOutlined :style="{fontSize: '16px',}"/>
-                                </template>
-                                
-                                  Portal del IECM
-                                  
-                              </a-button>
-                        </div>
-  
-                        <div style="display: flex; flex-wrap: wrap; justify-content: right;">
-      <!--
+                  <a-button style="color: white" type="link" :size="large" @click="openLink()">
+                    <template #icon>
+                      <GlobalOutlined :style="{fontSize: '16px',}" />
+                    </template>
+
+                    Portal del IECM
+
+                  </a-button>
+                </div>
+
+                <div style="display: flex; flex-wrap: wrap; justify-content: right;">
+                  <!--
         <a-button style="color: white" type="link" :size="large" @click="$router.push({ name: 'bd' });">
                               
       -->
@@ -113,47 +113,47 @@
                               </a-button>
                               <a-button v-if="false" style="color: white" type="link" :size="large" @click="$router.push({ name: 'help' });">
                                 <template #icon>
-                                      <ExclamationCircleOutlined/>
-                                </template>
-                                  Centro de ayuda
-                              </a-button>
-                              <div style="display: flex; justify-content: center; align-items: center; margin-right: 10px; color: white">
-                                A
-                              </div>
-                              <a-slider v-model:value="slider" @change="cambiarSlider" :style="{width:'90px'}" :color="eleccion.tema ? '': 'white'" :min="10" :max="18" :step="2" style="margin-right:'25px';"></a-slider>
-                              <div style=" display: flex; justify-content: center; align-items: center; margin-left: 15px; color: white">
-                                A
-                              </div>
-                              <a-switch
-                                :checked="eleccion.tema"
-                                checked-children="Claro"
-                                un-checked-children="Oscuro"
-                                @change="eleccion.temaActual();cambiarSlider(slider.value);"
-                                style='margin-top: 4px; margin-right: 5px; margin-left: 15px;'
-                              />
-  
-                        </div>
+                      <ExclamationCircleOutlined />
+                    </template>
+                    Centro de ayuda
+                  </a-button>
+                  <div
+                    style="display: flex; justify-content: center; align-items: center; margin-right: 10px; color: white">
+                    A
                   </div>
-                  
-  <!-- Header principal va en Desktop / Mobil-->  
-              
-              </a-tag> 
-                <BannerEleccion ></BannerEleccion>
-                <HeaderMenuEleccion/>
-                
-              </a-layout-header>
-              <a-layout-content :style="{padding: '0 0', 'margin-top':  !isMobile()? '177px' : '65px'}">
-                <!-- Menú Slider-->
-                <BodyMenuEleccion ></BodyMenuEleccion> 
-            </a-layout-content>
-          </a-layout>
-  
-        </a-config-provider>
-  
-      </a-spin>
-  
-      </a-watermark>
-      <!--
+                  <a-slider v-model:value="slider" @change="cambiarSlider" :style="{width:'90px'}"
+                    :color="eleccion.tema ? '': 'white'" :min="10" :max="18" :step="2"
+                    style="margin-right:'25px';"></a-slider>
+                  <div
+                    style=" display: flex; justify-content: center; align-items: center; margin-left: 15px; color: white">
+                    A
+                  </div>
+                  <a-switch :checked="eleccion.tema" checked-children="Claro" un-checked-children="Oscuro"
+                    @change="eleccion.temaActual();cambiarSlider(slider.value);"
+                    style='margin-top: 4px; margin-right: 5px; margin-left: 15px;' />
+
+                </div>
+              </div>
+
+              <!-- Header principal va en Desktop / Mobil-->
+
+            </a-tag>
+            <BannerEleccion></BannerEleccion>
+            <HeaderMenuEleccion />
+
+          </a-layout-header>
+          <a-layout-content :style="{padding: '0 0', 'margin-top':  !isMobile()? '177px' : '65px'}">
+            <!-- Menú Slider-->
+            <BodyMenuEleccion></BodyMenuEleccion>
+          </a-layout-content>
+        </a-layout>
+
+      </a-config-provider>
+
+    </a-spin>
+
+  </a-watermark>
+  <!--
           HAY ERROR??? 
       {{ muestraError }}
       <div v-if="!isMobile()">
@@ -171,17 +171,17 @@
       {{ eleccion.urlPrep }}
       <PdfView></PdfView>
       -->
-      
-  
-    
-  </template>
+
+
+
+</template>
   <script setup>
   
       import {RouterView, RouterLink, useRouter} from 'vue-router'
       import { h, ref, onBeforeMount, onMounted, nextTick, computed} from 'vue';
       import { BorderOutlined, DatabaseOutlined, SmileOutlined, GlobalOutlined, QuestionCircleOutlined,ExclamationCircleOutlined } from '@ant-design/icons-vue';  
       // Para botones
-      import { ShareAltOutlined, FacebookOutlined, TwitterOutlined, YoutubeOutlined   } from '@ant-design/icons-vue';  
+      import { ShareAltOutlined, FacebookOutlined, TwitterOutlined, CloseOutlined, YoutubeOutlined, WhatsAppOutlined   } from '@ant-design/icons-vue';  
      
       import HeaderMenuEleccion from './HeaderMenuEleccion.vue';
       import BodyMenuEleccion from './BodyMenuEleccion.vue';
@@ -197,8 +197,9 @@
       const router = useRouter();
   
       let slider = ref(12);
+
       
-      let themes = ref({
+      eleccion.themes = {
                       token: {
                           fontFamily: 'Roboto', //'Calibri'
                           //fontSize: '1.0em',
@@ -206,7 +207,7 @@
                           colorPrimary: '#c791a8',
                           colorPrimaryHover: '#aa6482',                           
                       },
-                      algorithm: (eleccion.tema == 1) ? theme.lightAlgorithm: theme.darkAlgorithm,
+                      algorithm: (eleccion.tema == true) ? theme.lightAlgorithm: theme.darkAlgorithm,
                       components: {
                         Radio: {
                           colorPrimary: '#aa6482',
@@ -282,7 +283,7 @@
                           fontSize: '14px'
                         }
                       },
-              });
+              };
       // Para mensajes
       import { message } from 'ant-design-vue';
       const [messageApi, contextHolder] = message.useMessage();
@@ -331,7 +332,7 @@
       function cambiarSlider(valor) {
         console.log(valor);
         valor = valor * 1.2;
-        themes.value={
+        eleccion.themes={
                 token: {
                     fontFamily: 'Roboto', //'Calibri'
                     //fontSize: '1.0em',
@@ -339,7 +340,7 @@
                     colorPrimary: '#c791a8',
                     colorPrimaryHover: '#aa6482',                           
                 },
-                algorithm: (eleccion.tema == 1) ? theme.lightAlgorithm: theme.darkAlgorithm,
+                algorithm: (eleccion.tema == true) ? theme.lightAlgorithm: theme.darkAlgorithm,
                 components: {
                   Radio: {
                     colorPrimary: '#aa6482',
@@ -418,11 +419,11 @@
                   }
                 },
         };
-        console.log(themes);
+        // console.log(themes);
       }
   
   
-      const handleClick = () =>  messageApi.success('Aquí hay que llamar algo');
+      // const handleClick = () =>  messageApi.success('Aquí hay que llamar algo');
   
       //const zeroPad = (num, places) => String(num).padStart(places, '0');
       
@@ -436,6 +437,23 @@
           }
       }; 
       */
+
+        const shareOnWhatsApp = () => {
+          const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(getFullUrl())}`;
+          window.open(url, '_blank');
+        }
+        const shareOnFacebook = () => {
+          const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(getFullUrl())}`;
+          window.open(url, '_blank');
+        }
+        const shareOnTwitter = () => {
+          const url = `https://twitter.com/intent/tweet?url=${encodeURIComponent(getFullUrl())}`;
+          window.open(url, '_blank');
+        }
+
+        const getFullUrl = () => {
+          return window.location.href;
+        }
   
   
   

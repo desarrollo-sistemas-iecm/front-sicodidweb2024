@@ -126,7 +126,7 @@
             <!-- <a-card :style="{'background-color': eleccion.tema ? white: '#1d1d1d', padding: '1px', 'margin-bottom': '10px',
              'border-radius': '5px', border: '1px solid rgb(49, 16, 42)'}"> -->
                   <AvancesEntidad :key="eleccion.eleccion"> </AvancesEntidad>
-                  <v-card v-if="isMobile()" :style="{backgroundColor: eleccion.tema ? '#582d73': '#1d1d1d', color: 'white', 'border-radius': '7px'}">
+                  <v-card v-if="isMobile() && router.currentRoute.value.name != 'bd' && router.currentRoute.value.name != 'help' && router.currentRoute.value.name != 'preguntas'" :style="{backgroundColor: eleccion.tema ? '#582d73': '#1d1d1d', color: 'white', 'border-radius': '7px'}">
                     <div v-if="eleccion.es_voto_extra==false">
                       <p style="margin-top:5%; margin-left: 5%;  margin-right: 10%;"><b>Consulta de votación</b></p>
                       <p style="margin-left: 5%;">Selecciona el reporte que deseas consultar:</p>
@@ -187,6 +187,9 @@
                   </a-card>
             <!-- </a-layout-content> -->
             
+            <div :style="{padding:'15px', 'text-align': 'center', color: eleccion.tema ? 'black':'white'}">
+              Los resultados presentados tienen un carácter informativo y no son definitivos, por tanto, no tienen efectos jurídicos.
+            </div>
       </a-layout>
 
           
@@ -194,8 +197,7 @@
   
   <a-layout-footer :style="{backgroundColor: eleccion.tema ? '#582d73' : '#1d1d1d', height:'15px', color:'white'}"
     style="text-align:end;height:'15px';">
-    Este sitio se visualiza mejor en las versiones más recientes de los navegadores web  |  Instituto Electoral Ciudad de México  |  UTSI v.4.0.0  | 
-Aviso de privacidad
+    Este sitio se visualiza mejor en las versiones más recientes de los navegadores web  |  Instituto Electoral Ciudad de México  |  UTSI v.4.0.0
   </a-layout-footer>
 
 </template>
@@ -205,7 +207,10 @@ Aviso de privacidad
   import { ref } from 'vue';
   import { isMobile } from "../helpers";
   import {useEleccionStore} from "../stores/eleccion_actual"
+  import { useRouter } from 'vue-router'
+  const router = useRouter();
   const eleccion = useEleccionStore();
+
 
   // Para SideMenu
   import CombosEleccion from "./CombosEleccion.vue"

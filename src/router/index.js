@@ -4,6 +4,8 @@ import NotFoundView from '../views/NotFoundView.vue'
  
 const router = createRouter({
   //history: createWebHistory(import.meta.env.BASE_URL),
+  // TODO: aqui
+
   history: createWebHistory('/v2-sicodid-web2024'),
   //history: createWebHistory('/'),
   routes: [

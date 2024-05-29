@@ -53,6 +53,8 @@
         <template v-if="column.key >= 1">
           <span>
 
+      <!-- TODO: aqui -->
+
             <img :src="'/prep2024/partidos/'+value_fields[column.key-1].id_participante+'.jpg'">
 <!--
   
@@ -143,6 +145,7 @@
      
     <div v-if="eleccion.cmb2!='' && eleccion.cmb2!=''">
         <div  v-for="(item,index) in participacion" :key="index">
+          
           <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
                 <div style="justify-content: start;">
                   <label>{{ item.num_casilla}} {{item.caracter_cas}}</label>
@@ -154,11 +157,9 @@
                 </div>
             </div>
             
-
-            
             <a-progress :stroke-color="{
-                '0%': '#B283B9',
-                '100%': '#B283B9',
+                '0%': item.participacion>100? 'red':'#B283B9',
+                '100%': item.participacion>100?'red' : '#B283B9',
             }" :strokeWidth="30" :percent="item.participacion" size="xl" :show-info="false" />
 
         </div>
@@ -209,7 +210,7 @@
             
            // const  url ="https://aplicaciones.iecm.mx/prep2024/actas_grid_data.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
             const  url = urlServer + "actas_grid_data.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
-    // alert(url)
+    //alert(url)
             ///console.log(url)
             //const response = await fetch('../../src/assets/data/actas_contabilizadas.json'); // Cambia la ruta al archivo JSON o API
             //const response = await fetch('https://aplicaciones.iecm.mx/prep2024/actas_grid_data.php');

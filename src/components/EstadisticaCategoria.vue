@@ -15,7 +15,11 @@
     <DivColor v-if="eleccion.eleccion==4" :fontsize="'22px'" :color="'#582D73'" text="Estadística Alcaldía"/>
     <a-card :headStyle="{backgroundColor: 'rgba(255, 255, 255, 0.4)', border: 0 }"
     size="small" style="width: 100%; background-color: white;">
-        <!-- <div :style="{marginTop:'20px', padding:'5px'}" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+        <div :style="{marginTop:'20px', padding:'5px'}" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+
+            <!--
+                GRAFICAS DE BARRAS y DATOS URBANA/NO URBANA
+            -->     
             
                 <div>
                     <ChartMiniCategoria :key="eleccion.type+2"
@@ -34,6 +38,7 @@
 
                     <a-row>
                         <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+                            <!-- TODO: aqui -->
                             <div :style="{'background-image': 'url(/prep2024/estadisticas/urbano_nourbano.png)', 'background-repeat': 'no-repeat round','width': '100%', 'height': '100px','background-size': '100%'}">
                                 <a-row>
                                     <a-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12" style="color: black; padding-top: 12%; text-align: center;">
@@ -45,13 +50,14 @@
                                         <p style="margin-top: -23%;">No urbanas</p>
                                     </a-col>
                                 </a-row>
+                                <!-- <img style="width:280px; justify-content: start; margin-top: 30px;"  src="/estadisticas/urbano_nourbano.png" alt="Urbanas/nourbanas"> -->
                             </div>
                         </a-col>
                     </a-row>
 
                 </div>
   
-        </div> -->
+        </div>
 
 
         <div :style="{marginTop:'20px', padding:'5px'}" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
@@ -63,7 +69,7 @@
                     <b>Lista Nominal</b><br>
                 </label>
 
-                <Gauge :key="eleccion.type+3" :ln='eleccion.lista_nominal' :ln_captura="eleccion.lista_nominal_contabilizadas"  style="height:300px; margin: 0 auto;"></Gauge>
+                <Gauge :key="eleccion.type+3" :ln='eleccion.resumen' :ln_captura="eleccion.lista_nominal_contabilizadas"  style="height:300px; margin: 0 auto;"></Gauge>
                 <label>En el gráfico no se considera la cantidad de votos asentada en las Actas de Casilla Especial de Representación Proporcional.</label>
                 <!-- <label>En el gráfico no se considera la cantidad de votos asentada en las Actas PREP de Casilla Especial de Representación Proporcional.</label> -->
             </div>
@@ -168,7 +174,7 @@
         const urlServer = eleccion.urlPrep;
         const  urlCate = urlServer + "funciones_estadistica.php?type="+type+"&item="+item;
                 
-//alert(urlCate)
+        // alert(urlCate)
         const responseCate = await fetch(urlCate);
         //http://localhost/prep2024/
         dataCate.value = await responseCate.json();
@@ -177,7 +183,7 @@
         //if (eleccion.estadisticaCategoria.avance) {
             eleccion.avance = eleccion.estadisticaCategoria.avance[0]? eleccion.estadisticaCategoria.avance[0].actas_capturadas:0;
             eleccion.capturadas = eleccion.estadisticaCategoria.avance[0]? eleccion.estadisticaCategoria.avance[0].actas_capturadas_de : 0;
-            eleccion.resumen = 777;
+            eleccion.resumen = eleccion.estadisticaCategoria.resumen[0]? eleccion.estadisticaCategoria.resumen[0].ln : 0;
             eleccion.contabilizadas = eleccion.estadisticaCategoria.avance[0]? eleccion.estadisticaCategoria.avance[0].contabilizadas : 0;
             eleccion.lista_nominal = eleccion.estadisticaCategoria.avance[0]? eleccion.estadisticaCategoria.avance[0].ln : 0;
             

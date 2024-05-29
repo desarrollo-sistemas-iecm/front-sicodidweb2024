@@ -96,8 +96,7 @@ Arreglo <br><br>
                     de Impresión:
               
                     <p class="pTitle" style="padding-right: 6px;">
-                            {{ arreglo[26]? Date (arreglo[26].valor) :'S/D' }}
-
+                            {{arreglo[26] ? new Date (parseInt(arreglo[26].valor)*1) :'S/D' }}
                     </p>
                 </a-col>
                 <a-col :span="4" class="colCenter">

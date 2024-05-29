@@ -15,10 +15,13 @@
         <DivColor :fontsize="'18px'" :color="'#582D73'" text="Distribución de votos por Candidaturas"/>
   </h2>
   <h4>
-    La tabla muestra el desglose de votos que cada Candidatura presente en la Alcaldía , indicando los votos recibidos de manera individual y, en su caso, los votos recibidos vía Coalición.
+    La tabla muestra el desglose de votos que cada Partido Político, Coalición, Candidatura Común o Candidatura sin Partido presente en {{ eleccion.eleccion == 2 ? 'el Distrito': 'la Alcaldía'}} , indicando los votos recibidos de manera individual y, en su caso, los votos recibidos vía Coalición.
     <br><br>
     <u>
-      Conoce cómo se suman los votos para Candidaturas de Coalición de acuerdo con la legislación vigente.
+      <!-- TODO: aqui -->
+      <a style="color: black;" href="/prep2024/files/Info-Paraentendersumavotos.pdf" download="info-para-entender-suma-votos.pdf">
+        Conoce cómo se suman los votos para Candidaturas de Coalición de acuerdo con la legislación vigente.
+      </a>
     </u>
     <br><br>
   </h4>
@@ -37,7 +40,7 @@
         </a-col>
 
         <a-col style="width: 60%;" align="right">
-          <img :src="getImagePathPartido(category.icono)" style='padding: 20px;' alt="">
+          <img :src="getImagePathPartidoDtto(category.icono)" style='padding: 20px;' alt="">
           <b style='padding: 20px;'>[ {{formatNumber(category.valor)}} ]</b>
         </a-col>
         <a-col style="width: 20%; margin-top: 5px;" align="middle">
@@ -52,11 +55,12 @@
           <a-divider type="horizontal"/>
         </a-col>
         <a-col style="width: 20%; " align="middle">
-          <p>Nombre de persona candidata {{ cat.id_participante }}</p>
-          <p><img :src="getImagePath(cat.id_participante)" alt=""></p>
+          <!-- {{  cat  }} -->
+          <p>{{ cat.nombre_completo }}</p>
+          <p><a-image style="width: 65px; border-radius: 30px; box-shadow: 8px 8px 24px 8px rgba(208, 216, 243, 0.6);" :src="getImagePath(cat.id_participante)" alt=""/></p>
         </a-col>
         <a-col style="width: 60%;" align="right">
-          <!-- <img :src="getImagePathPartido(cat.id_participante)" style='padding: 20px;' alt=""> -->
+          <!-- <img :src="getImagePathPartidoDtto(cat.id_participante)" style='padding: 20px;' alt=""> -->
           <template v-if="cat.integrantes != ''">
             <template v-for="integrante in integrantesSplit" :key="integrante.participante">
               <template v-if="integrante.id_integrante === cat.id_participante" >
@@ -64,44 +68,44 @@
                   <template v-if="eleccion.eleccion == 2 && eleccion.cmb1 == 7 || eleccion.eleccion == 2 && eleccion.cmb1 == 14 || eleccion.eleccion == 2 && eleccion.cmb1 == 29 || eleccion.eleccion == 2 && eleccion.cmb1 == 31">
                     <template v-if="integra <= 13 ">
                       <img src="@/../public/icons/icons_add_24.png" alt="" style="padding-right: 15px; padding-left: 15px" v-if="index != 0">
-                      <img v-if="integra <= 9" :src="getImagePathPartido(integra)" style='padding: 20px;' alt="">
-                      <img v-else :src="getImagePathPartido(integra)" style='padding: 20px; width: 11%;' alt="">
+                      <img v-if="integra <= 9" :src="getImagePathPartidoDtto(integra)" style='padding: 20px;' alt="">
+                      <img v-else :src="getImagePathPartidoDtto(integra)" style='padding: 20px;' alt="">
                       <strong> {{ cifrasMiles(data[0]['votos_part_'+integra]) }}</strong>
                     </template>
                     <template v-else-if="integra >= 15 ">
                       <img src="@/../public/icons/icons_add_24.png" alt="" style="padding-right: 15px; padding-left: 15px" v-if="index != 0">
-                      <img v-if="integra <= 9" :src="getImagePathPartido(integra)" style='padding: 20px;' alt="">
-                      <img v-else :src="getImagePathPartido(integra)" style='padding: 20px; width: 11%;' alt="">
+                      <img v-if="integra <= 9" :src="getImagePathPartidoDtto(integra)" style='padding: 20px;' alt="">
+                      <img v-else :src="getImagePathPartidoDtto(integra)" style='padding: 20px;' alt="">
                       <strong> {{ cifrasMiles(data[0]['votos_part_'+integra]) }}</strong>
                     </template>
                   </template>
                   <template v-else-if="eleccion.eleccion == 2 && eleccion.cmb1 != 7 || eleccion.eleccion == 2 && eleccion.cmb1 != 14 || eleccion.eleccion == 2 && eleccion.cmb1 != 29 || eleccion.eleccion == 2 && eleccion.cmb1 != 31">
                     <template v-if="integra <= 14 && integra !=4 && integra != 5 && integra != 7">
-                      <img src="@/../public/icons/icons_add_24.png" alt="" style="padding-right: 15px; padding-left: 15px" v-if="index != 0">
-                      <img v-if="integra <= 9" :src="getImagePathPartido(integra)" style='padding: 20px;' alt="">
-                      <img v-else :src="getImagePathPartido(integra)" style='padding: 20px; width: 11%;' alt="">
+                      <img src="@/../public/icons/icons_add_24.png" alt="" style="padding-right: 15px; padding-left: 15px" v-if="index != 0 && integra != 14">
+                      <img v-if="integra <= 9" :src="getImagePathPartidoDtto(integra)" style='padding: 20px;' alt="">
+                      <img v-else :src="getImagePathPartidoDtto(integra)" style='padding: 20px;' alt="">
                       <strong> {{ cifrasMiles(data[0]['votos_part_'+integra]) }}</strong>
                     </template>
                   </template>
                   <template v-else-if="eleccion.eleccion == 4 && eleccion.cmb1 == 11">
                     <template v-if="integra <= 13">
                       <img src="@/../public/icons/icons_add_24.png" alt="" style="padding-right: 15px; padding-left: 15px" v-if="index != 0">
-                      <img v-if="integra <= 9" :src="getImagePathPartido(integra)" style='padding: 20px;' alt="">
-                      <img v-else :src="getImagePathPartido(integra)" style='padding: 20px; width: 11%;' alt="">
+                      <img v-if="integra <= 9" :src="getImagePathPartidoDtto(integra)" style='padding: 20px;' alt="">
+                      <img v-else :src="getImagePathPartidoDtto(integra)" style='padding: 20px;' alt="">
                       <strong> {{ cifrasMiles(data[0]['votos_part_'+integra]) }}</strong>
                     </template>
                     <template v-else-if="integra >= 15 ">
-                      <img src="@/../public/icons/icons_add_24.png" alt="" style="padding-right: 15px; padding-left: 15px" v-if="index != 0">
-                      <img v-if="integra <= 9" :src="getImagePathPartido(integra)" style='padding: 20px;' alt="">
-                      <img v-else :src="getImagePathPartido(integra)" style='padding: 20px; width: 11%;' alt="">
+                      <img src="@/../public/icons/icons_add_24.png" alt="" style="padding-right: 15px; padding-left: 15px" v-if="index != 0"> 
+                      <img v-if="integra <= 9" :src="getImagePathPartidoDtto(integra)" style='padding: 20px;' alt="">
+                      <img v-else :src="getImagePathPartidoDtto(integra)" style='padding: 20px;' alt="">
                       <strong> {{ cifrasMiles(data[0]['votos_part_'+integra]) }}</strong>
                     </template>
                   </template>
                   <template v-else-if="eleccion.eleccion == 4  && eleccion.cmb1 != 6 || eleccion.eleccion == 4 && eleccion.cmb1 != 11">
                     <template v-if="integra <= 14 && integra != 4 && integra != 5 && integra!=7">
-                      <img src="@/../public/icons/icons_add_24.png" alt="" style="padding-right: 15px; padding-left: 15px" v-if="index != 0">
-                      <img v-if="integra <= 9" :src="getImagePathPartido(integra)" style='padding: 20px;' alt="">
-                      <img v-else :src="getImagePathPartido(integra)" style='padding: 20px; width: 11%;' alt="">
+                      <img src="@/../public/icons/icons_add_24.png" alt="" style="padding-right: 15px; padding-left: 15px" v-if="index != 0 && integra != 14">
+                      <img v-if="integra <= 9" :src="getImagePathPartidoDtto(integra)" style='padding: 20px;' alt="">
+                      <img v-else :src="getImagePathPartidoDtto(integra)" style='padding: 20px;' alt="">
                       <strong> {{ cifrasMiles(data[0]['votos_part_'+integra]) }}</strong>
                     </template>
                   </template>
@@ -109,13 +113,13 @@
               </template>
               
               <!-- <template v-else>
-                <img :src="getImagePathPartido(cat.id_participante)" style='padding: 20px;' alt="">
+                <img :src="getImagePathPartidoDtto(cat.id_participante)" style='padding: 20px;' alt="">
               </template> -->
             </template>
           </template>
           <template v-else> 
-            <img v-if="cat.id_participante >= 10" :src="getImagePathPartido(cat.id_participante)" style='padding: 20px; width: 15%;' alt="" >
-            <img v-else :src="getImagePathPartido(cat.id_participante)" style='padding: 20px;' alt="">
+            <img v-if="cat.id_participante >= 10" :src="getImagePathPartidoDtto(cat.id_participante)" style='padding: 20px; width: 15%;' alt="" >
+            <img v-else :src="getImagePathPartidoDtto(cat.id_participante)" style='padding: 20px;' alt="">
             <strong> {{ cifrasMiles(data[0][cat.campo_votos]) }}</strong>
           </template>
           <!-- <b style='padding: 20px;'>[  ]</b> -->
@@ -136,7 +140,7 @@
 <script setup>
 import {useEleccionStore} from "../stores/eleccion_actual";
 import { ref, onMounted } from 'vue';
-import { getImagePath,  getImagePathPartido, formatNumber, cifrasMiles} from "../helpers";
+import { getImagePath,  getImagePathPartidoDtto, formatNumber, cifrasMiles} from "../helpers";
 const eleccion = useEleccionStore();
 
 let catalogo = ref({});
@@ -156,7 +160,10 @@ onMounted(async () => {
     .then(datos => {
         console.log(datos);
         let array;
-        catalogo.value = datos.catalogo;
+        // if (eleccion.cmb1 != 12 || eleccion.cmb1 != 13 || eleccion.cmb1 != 17 || eleccion.cmb1 != 20 || eleccion.cmb1 != 25 || eleccion.cmb1 != 26 || eleccion.cmb1 != 30)
+        datos.catalogo_con_candidatos_sirec.sort((a, b) => a.prelacion - b.prelacion);
+        catalogo.value = datos.catalogo_con_candidatos_sirec;
+        console.table(catalogo.value);
         data.value = datos.data;
         integrantes.value = datos.split_integrantes;
         catalogo.value.forEach(element => {
@@ -215,7 +222,7 @@ const prop = defineProps({
 const getImagePath = (imageName) => {
     return `/personas/${imageName}.png`;
   };
-const getImagePathPartido = (imageName) => {
+const getImagePathPartidoDtto = (imageName) => {
   return `/partidos/${imageName}.jpg`;
 };
 */

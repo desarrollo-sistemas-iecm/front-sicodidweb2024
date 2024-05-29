@@ -7,7 +7,7 @@
 -->
 <template>
    
-    <a-row :gutter="{ xs: 8, sm: 16, md: 24, lg: 32 }"  justify="center">
+    <a-row :gutter="{ xs: 8, sm: 16, md: 24, lg: 32 }"  justify="center" v-if="router.currentRoute.value.name != 'bd' && router.currentRoute.value.name != 'help' && router.currentRoute.value.name != 'preguntas'">
         <a-col :xs="24" :sm="24" :md="17" :lg="17" :xl="17">
             <a-card :style="{'background-color': eleccion.tema ? 'white': '#1d1d1d', padding: '1px', 'margin-bottom': '10px',
                'border-radius': '7px', border: '0px solid rgb(49, 16, 42)', color: eleccion.tema ? 'black': 'white'}">
@@ -43,7 +43,7 @@
                         <a-card size="small" :bordered="true" :style="{height:'100%', width: '100%', 'background-color': eleccion.tema? '#F9F9F9': ''}" >
                             <div align="left">
 
-                                <b>Actas computadas</b> 
+                                <b>Actas capturadas</b> 
                             </div>
                             <div v-if="eleccion.eleccion==1" align="right">
                                 <p>{{eleccion.avance_jg.actas_capturadas!=null?cifrasMiles(eleccion.avance_jg.actas_capturadas):'0' }} de <b>{{eleccion.avance_jg.actas_capturadas_de!=null?cifrasMiles(eleccion.avance_jg.actas_capturadas_de):'0'}}</b></p>
@@ -86,7 +86,7 @@
                          
                             </div>
                             <p  style="text-align: center; font-size: 16px; font-weight: bold;">
-                                {{lnGrafPor}} %
+                              {{lnGrafPor}} %
                             </p>
                             <!-- </template>
                             <p v-if="eleccion.eleccion==1" style="text-align: center; font-size: 16px; font-weight: bold;">
@@ -122,19 +122,19 @@
                 <a-row v-else>
                     <a-col class="gutter-row" justify="center" :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
                         <div v-if="eleccion.eleccion==1" align="right" :style="{height:'100%', width: '100%'}">
-                            <strong><p>Actas computadas</p></strong>
+                            <strong><p>Actas capturadas</p></strong>
                             <p>{{eleccion.avance_jg.actas_capturadas!=null?cifrasMiles(eleccion.avance_jg.actas_capturadas):'0' }} de <b>{{eleccion.avance_jg.actas_capturadas_de!=null?cifrasMiles(eleccion.avance_jg.actas_capturadas_de):'0'}}</b></p>
                         </div>
                         <div v-if="eleccion.eleccion==2" align="right" :style="{height:'100%', width: '100%'}">
-                            <strong><p>Actas computadas</p></strong>
+                            <strong><p>Actas capturadas</p></strong>
                             <p>{{eleccion.avance_dmr.actas_capturadas!=null?cifrasMiles(eleccion.avance_dmr.actas_capturadas):0}} de <b>{{eleccion.avance_dmr.actas_capturadas_de!=null? cifrasMiles(eleccion.avance_dmr.actas_capturadas_de): '0'}}</b></p>
                         </div>
                         <div v-if="eleccion.eleccion==3" align="right" :style="{height:'100%', width: '100%'}">
-                            <strong><p>Actas computadas</p></strong>
+                            <strong><p>Actas capturadas</p></strong>
                             <p>{{eleccion.avance_rp.actas_capturadas!=null?cifrasMiles(eleccion.avance_rp.actas_capturadas):'0'}} de <b>{{eleccion.avance_rp.actas_capturadas_de!=null?cifrasMiles(eleccion.avance_rp.actas_capturadas_de):'0'}}</b></p>
                         </div>
                         <div v-if="eleccion.eleccion==4" align="right" :style="{height:'100%', width: '100%'}">
-                            <strong><p>Actas computadas</p></strong>
+                            <strong><p>Actas capturadas</p></strong>
                             <p>{{eleccion.avance_alc.actas_capturadas!=null?cifrasMiles(eleccion.avance_alc.actas_capturadas):'0'}} de <b>{{eleccion.avance_alc.actas_capturadas_de!=null?cifrasMiles(eleccion.avance_alc.actas_capturadas_de):'0'}}</b></p>
                         </div>
                     </a-col>
@@ -166,7 +166,7 @@
                     </a-col> 
                     <a-col class="gutter-row" justify="right" :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
                         <strong><p>Participación ciudadana</p></strong>
-                        <p v-if="eleccion.eleccion==1" style="text-align: center; font-size: 16px; font-weight: bold;">
+                        <!-- <p v-if="eleccion.eleccion==1" style="text-align: center; font-size: 16px; font-weight: bold;">
                             {{eleccion.avance_jg.participacion_porcen!=null?eleccion.avance_jg.participacion_porcen:'0'}}%
                         </p>
                         <p v-if="eleccion.eleccion==2" style="text-align: center; font-size: 16px; font-weight: bold;">
@@ -177,7 +177,8 @@
                         </p>
                         <p v-if="eleccion.eleccion==4" style="text-align: center; font-size: 16px; font-weight: bold;">
                             {{eleccion.avance_alc.participacion_porcen!=null?eleccion.avance_alc.participacion_porcen:'0'}}%
-                        </p>
+                        </p> -->
+                        {{lnGrafPor}} %
                     </a-col>
                     <a-col class="gutter-row" justify="left" :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
                         <a-row>
@@ -262,6 +263,9 @@
 </template>
 
 <script setup>
+
+    import { useRouter } from 'vue-router'
+    const router = useRouter();
     import { ref, onMounted, onBeforeMount } from 'vue';
     import { message as msg } from 'ant-design-vue';
 
@@ -398,12 +402,24 @@
                 }
             }
 
+           // if(ln_esperada.value>0)
+            // {
+                //lnGrafPor.value = (sin_especiales.value.replace(/,/g, "") * 100) / suma_esp_s_esp.value
+                //lnGrafPor.value = (sin_especiales.value.replace(/,/g, "") * 100) / suma_esp_s_esp .value
+
+            //    lnGrafPor.value = (sin_especiales.value.replace(/,/g, "") * 100) / ln_esperada.value
+            //    lnGrafPor.value =  lnGrafPor.value>100 ? '***' : lnGrafPor.value.toFixed(4);
+            //}
+
             if(ln_esperada.value>0)
             {
-                lnGrafPor.value = (sin_especiales.value.replace(/,/g, "") * 100) / ln_esperada.value
+                //lnGrafPor.value = (sin_especiales.value.replace(/,/g, "") * 100) / suma_esp_s_esp .value
+        
+                lnGrafPor.value =  (suma_esp_s_esp.value * 100) / ln_esperada .value;
+
+            // alert(lnGrafPor.value )
                 lnGrafPor.value =  lnGrafPor.value>100 ? '***' : lnGrafPor.value.toFixed(4);
             }
-
         }
         catch{}
     })
