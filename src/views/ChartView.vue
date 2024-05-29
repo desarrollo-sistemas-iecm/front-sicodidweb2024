@@ -28,7 +28,7 @@
   <a-row :gutter="{ xs: 8, sm: 16, md: 24, lg: 32 }">
     <a-col >
       <div :style="{'text-align': 'justify', 'margin-bottom': '15px', color: eleccion.tema ? 'black' : 'white'}">
-        El total de votos calculado y porcentaje que se muestran, se refieren a los votos asentados en las Actas PREP hasta el momento.
+        El total de votos calculado y porcentaje que se muestran, se refieren a los votos asentados en las Actas hasta el momento.
         Por presentación, los decimales de los porcentajes muestran sólo cuatro dígitos. No obstante, al considerar todos los decimales, suman 100%.
         En la gráfica se muestra el número de votos que cada Partido Político o Candidatura Independiente ha obtenido hasta el momento.
       </div>

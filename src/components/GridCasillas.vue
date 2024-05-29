@@ -209,7 +209,7 @@
             
            // const  url ="https://aplicaciones.iecm.mx/prep2024/actas_grid_data.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
             const  url = urlServer + "actas_grid_data.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
-   //  alert(url)
+    // alert(url)
             ///console.log(url)
             //const response = await fetch('../../src/assets/data/actas_contabilizadas.json'); // Cambia la ruta al archivo JSON o API
             //const response = await fetch('https://aplicaciones.iecm.mx/prep2024/actas_grid_data.php');

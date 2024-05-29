@@ -52,7 +52,7 @@ const chartOptions = ref({
         tooltip: { enabled: false },
         credits: { enabled: false },
         title: {
-          text: '<br>Lista Nominal de las casillas<br>con Actas Contabilizadas<br><label style="font-size:16px;color:black; font-weight:bold">'+formatNumber(Number(props.ln_captura))+'</label>',
+          text: '<br>Lista Nominal de las casillas<br>con Actas Computadas<br><label style="font-size:16px;color:black; font-weight:bold">'+formatNumber(Number(props.ln_captura))+'</label>',
           align: 'right',
           style: {
             fontSize: '12px'

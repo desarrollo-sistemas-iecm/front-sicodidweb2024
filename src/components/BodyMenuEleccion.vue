@@ -187,9 +187,6 @@
                   </a-card>
             <!-- </a-layout-content> -->
             
-            <div :style="{padding:'15px', 'text-align': 'center', color: eleccion.tema ? 'black':'white'}">
-              Los resultados presentados tienen un carácter informativo y no son definitivos, por tanto, no tienen efectos jurídicos.
-            </div>
       </a-layout>
 
           

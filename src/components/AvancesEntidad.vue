@@ -43,7 +43,7 @@
                         <a-card size="small" :bordered="true" :style="{height:'100%', width: '100%', 'background-color': eleccion.tema? '#F9F9F9': ''}" >
                             <div align="left">
 
-                                <b>Actas capturadas</b> 
+                                <b>Actas computadas</b> 
                             </div>
                             <div v-if="eleccion.eleccion==1" align="right">
                                 <p>{{eleccion.avance_jg.actas_capturadas!=null?cifrasMiles(eleccion.avance_jg.actas_capturadas):'0' }} de <b>{{eleccion.avance_jg.actas_capturadas_de!=null?cifrasMiles(eleccion.avance_jg.actas_capturadas_de):'0'}}</b></p>
@@ -122,19 +122,19 @@
                 <a-row v-else>
                     <a-col class="gutter-row" justify="center" :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
                         <div v-if="eleccion.eleccion==1" align="right" :style="{height:'100%', width: '100%'}">
-                            <strong><p>Actas capturadas</p></strong>
+                            <strong><p>Actas computadas</p></strong>
                             <p>{{eleccion.avance_jg.actas_capturadas!=null?cifrasMiles(eleccion.avance_jg.actas_capturadas):'0' }} de <b>{{eleccion.avance_jg.actas_capturadas_de!=null?cifrasMiles(eleccion.avance_jg.actas_capturadas_de):'0'}}</b></p>
                         </div>
                         <div v-if="eleccion.eleccion==2" align="right" :style="{height:'100%', width: '100%'}">
-                            <strong><p>Actas capturadas</p></strong>
+                            <strong><p>Actas computadas</p></strong>
                             <p>{{eleccion.avance_dmr.actas_capturadas!=null?cifrasMiles(eleccion.avance_dmr.actas_capturadas):0}} de <b>{{eleccion.avance_dmr.actas_capturadas_de!=null? cifrasMiles(eleccion.avance_dmr.actas_capturadas_de): '0'}}</b></p>
                         </div>
                         <div v-if="eleccion.eleccion==3" align="right" :style="{height:'100%', width: '100%'}">
-                            <strong><p>Actas capturadas</p></strong>
+                            <strong><p>Actas computadas</p></strong>
                             <p>{{eleccion.avance_rp.actas_capturadas!=null?cifrasMiles(eleccion.avance_rp.actas_capturadas):'0'}} de <b>{{eleccion.avance_rp.actas_capturadas_de!=null?cifrasMiles(eleccion.avance_rp.actas_capturadas_de):'0'}}</b></p>
                         </div>
                         <div v-if="eleccion.eleccion==4" align="right" :style="{height:'100%', width: '100%'}">
-                            <strong><p>Actas capturadas</p></strong>
+                            <strong><p>Actas computadas</p></strong>
                             <p>{{eleccion.avance_alc.actas_capturadas!=null?cifrasMiles(eleccion.avance_alc.actas_capturadas):'0'}} de <b>{{eleccion.avance_alc.actas_capturadas_de!=null?cifrasMiles(eleccion.avance_alc.actas_capturadas_de):'0'}}</b></p>
                         </div>
                     </a-col>
@@ -318,7 +318,8 @@
 
     //------------------------------------------------
     // Tooltips para porcentaje de participación
-    const tooltips1 = 'La Participación ciudadana es el porcentaje de ciudadanas y ciudadanos que votaron, con base en la Lista Nominal de las Casillas con Actas Contabilizadas. Por ejemplo, si en una casilla votan 500 electores y el número de personas inscritas en la Lista Nominal para esa casilla es de 750, entonces: Multiplicamos 500 por 100 y el resultado lo dividimos entre 750. La votación emitida en las Casillas Especiales se tomará en cuenta para el cálculo de la Participación ciudadana, hasta el último corte de información que se publique, previo al cierre del PREP.';
+    const tooltips1 = 'La Participación ciudadana es el porcentaje de ciudadanas y ciudadanos que votaron, con base en la Lista Nominal de las Casillas con Actas Computadas. Por ejemplo, si en una casilla votan 500 electores y el número de personas inscritas en la Lista Nominal para esa casilla es de 750, entonces: Multiplicamos 500 por 100 y el resultado lo dividimos entre 750. La votación emitida en las Casillas Especiales se tomará en cuenta para el cálculo de la Participación ciudadana.';
+    // const tooltips1 = 'La Participación ciudadana es el porcentaje de ciudadanas y ciudadanos que votaron, con base en la Lista Nominal de las Casillas con Actas Computadas. Por ejemplo, si en una casilla votan 500 electores y el número de personas inscritas en la Lista Nominal para esa casilla es de 750, entonces: Multiplicamos 500 por 100 y el resultado lo dividimos entre 750. La votación emitida en las Casillas Especiales se tomará en cuenta para el cálculo de la Participación ciudadana, hasta el último corte de información que se publique, previo al cierre del PREP.';
     // Antes de cargar componente checamos dispositivo
     onBeforeMount(async () => {
         try {

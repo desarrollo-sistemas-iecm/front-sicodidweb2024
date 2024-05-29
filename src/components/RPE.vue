@@ -6,7 +6,7 @@
             </label>
             <br>
             <div :style="{'font-size': '1.1em', 'font-weight': 'normal', width: '600px', 'margin-top': '30px', 'margin-bottom': '40px', color: eleccion.tema ? '' : 'white'}">
-                El apartado "Actas RP" muestra la cantidad de votos asentada en las Actas PREP de Casilla Especial de Representación Proporcional, los cuales se suman únicamente a nivel Entidad.
+                El apartado "Actas RP" muestra la cantidad de votos asentada en las Actas de Casilla Especial de Representación Proporcional, los cuales se suman únicamente a nivel Entidad.
             </div>   
 
             <div style="margin-bottom: 40px;">

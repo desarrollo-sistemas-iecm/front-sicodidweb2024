@@ -25,7 +25,7 @@
 
   <GridCasillasParticipaPrision titulo="Anticipado" tipo="A" v-if="eleccion.cmb1 != ''"></GridCasillasParticipaPrision>
 
-  <ObservacionesActa v-if="eleccion.cmb1 != ''"></ObservacionesActa>
+  <!-- <ObservacionesActa v-if="eleccion.cmb1 != ''"></ObservacionesActa> -->
 </template>
 
 <script setup>

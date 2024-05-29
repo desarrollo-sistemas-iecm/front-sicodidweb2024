@@ -30,7 +30,8 @@
                     <label style="font-size: 17px; font-weight: bold; ">Estadística de Mesas de Escrutinio y Cómputo</label> <br>
             </a-col>
     </a-row> <br>     
-    <label style="font-size: 12px; font-weight: bold;text-decoration: underline;">Participación ciudadana con base en la Lista Nominal de las Actas PREP Contabilizadas</label>
+    <label style="font-size: 12px; font-weight: bold;text-decoration: underline;">Participación ciudadana con base en la Lista Nominal</label>
+    <!-- de las Actas PREP Contabilizadas -->
            
 
       <a-table :scroll="{x:800}" :columns="columns" :data-source="participacion" @resizeColumn="handleResizeColumn">
@@ -176,7 +177,8 @@
           import {
             ExclamationCircleOutlined
           } from '@ant-design/icons-vue';
-          const tooltips1 = 'Se refiere a la suma total de votos que realiza el sistema informático con base en los datos que muestran en cada Acta; podrás consultar la cifra del total de votos mostrado en cada Acta en la base de datos del PREP (numeral 26, fr. XIV del Anexo 13 del Reglamento de Elecciones).';
+          // TODO: Esta leyenda
+          const tooltips1 = 'Se refiere a la suma total de votos que realiza el sistema informático con base en los datos que muestran en cada Acta; podrás consultar la cifra del total de votos mostrado en cada Acta en la base de datos (numeral 26, fr. XIV del Anexo 13 del Reglamento de Elecciones).';
               
   
           onBeforeMount(async () => {

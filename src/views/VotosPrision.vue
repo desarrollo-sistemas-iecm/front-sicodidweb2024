@@ -26,7 +26,7 @@
 
   <GridCasillasParticipaPrision titulo="en Prisión Preventiva" tipo="P" v-if="eleccion.cmb1 != ''"></GridCasillasParticipaPrision>
 
-  <ObservacionesActa v-if="eleccion.cmb1 != ''"></ObservacionesActa>
+  <!-- <ObservacionesActa v-if="eleccion.cmb1 != ''"></ObservacionesActa> -->
 </template>
 
 <script setup>

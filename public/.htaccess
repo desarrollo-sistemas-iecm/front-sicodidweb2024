@@ -1,8 +1,8 @@
 Options -MultiViews
 
 RewriteEngine On
-RewriteBase /prep2024
-RewriteRule ^prep2024/index\.html$ - [L]
+RewriteBase /v2-sicodid-web2024
+RewriteRule ^v2-sicodid-web2024/index\.html$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /prep2024/index.html [L]
+RewriteRule . /v2-sicodid-web2024/index.html [L]

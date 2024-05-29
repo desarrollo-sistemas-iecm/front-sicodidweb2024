@@ -68,14 +68,19 @@ export const getUrlPrep=()=>{
   const search = window.location.search;
 
 
-  // PARA DIR 2024
-//const newURL = window.location.protocol.toString() + "//" + window.location.host.toString() + "/prep2024/";
+  // PARA Desarrollo
+// const newURL = window.location.protocol.toString() + "//" + window.location.host.toString() + "/v2-sicodid-web2024/services/";
+// Para Aplicaciones
+const newURL = window.location.protocol.toString() + "//" + window.location.host.toString() + "/v2-sicodid-web2024/services/";
  
  
 // const newURL = window.location.protocol.toString() + "//" + window.location.host.toString() + "/";
+
+// alert(newURL);
   
- const newURL = "http://localhost/2024/sicodid/publicador/api/";
- // const newURL = "http://145.0.40.76/prep2024/";
+//  const newURL = "http://localhost/2024/sicodid/publicador/api/";
+//  const newURL = "http://145.0.40.76/prep2024/";
+// const newURL = "http://145.0.40.76/2024/v2-sicodid2024/services/";
   
   return newURL;
 }

@@ -45,7 +45,7 @@
           </label> 
           </div>
            <br>
-          <label style="text-decoration: underline; font-weight: bold; font-size: 0.8em;">Participación ciudadana con base en la Lista Nominal de la mesa con Acta PREP Contabilizada</label><br><br>
+          <label style="text-decoration: underline; font-weight: bold; font-size: 0.8em;">Participación ciudadana con base en la Lista Nominal de la mesa con Acta Computada</label><br><br>
           <div  v-for="(item,index) in participacion" :key="index">
             <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
                   <div style="justify-content: start;">

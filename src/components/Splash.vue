@@ -19,36 +19,27 @@
                 },
         }"
     >
-    <a-watermark :content="['PROTOTIPO', 'PARA PREP 2024!!!', 'DATOS DE PRUEBA']">
+    <a-watermark :content="['PROTOTIPO', 'PARA SICODID 2024', 'DATOS DE PRUEBA']">
         <div class="back container">
             <div class="centrarDiv container">
                 <div style='display: flex; flex-wrap: wrap; justify-content: start;' :style="{width:'100%', padding:'10px'}">
                     <p><img src="@/assets/iecm_gimp_medium.png" alt=""></p>
-                    <p><img width="290" src="@/assets/logo.png" alt=""></p> 
+                    <p><img width="290" src="@/assets/sicodid.jpg" alt=""></p> 
                 </div>
                 <div :style="{width:'100%', fontSize:'2.6em', fontWeight:'boldest'}">
-                    Elecciones Estatales de <br>
+                    Proceso Electoral Local Ordinario <br>
                     <p style="color: #582d73;">La Ciudad de México <label style="color: black">2024</label></p>
                 </div>
-                <div :style="{width:'60%', padding:'10px'}">
-                    El Programa de Resultados Electorales Preliminares (PREP) inicia la publicación el 2 de junio a partir de la 20:00 horas, hora local.
-                    <br><br>
-                    Los resultados presentados son preliminares y no son definitivos, por lo tanto carecen de efectos jurídicos.
-                    <br><br>
-                    El día 2 de junio de 2024 darán inicio los Cómputos Distritales, los cuales determinan los resultados electorales en cada uno de los Distritos de la entidad.
-                </div>
-                <div :style="{width:'40%', padding:'10px'}">
                 
-                </div>  
                 <div style="justify-content: start; "  :style="{marginTop:'1px' }">
                     <a-button :style="{width:'280px', color:'black'}" 
                         type="primary" @click="clickBoton"
                         :disabled="!buttonActivated"
                         >
-                        <b>Consultar Resultados Preliminares</b>
+                        <b>Consultar Resultados</b>
                     </a-button>  
                     <br>
-                    <p>Hora de apertura: {{ eleccion.horaabre }}</p>
+                    <!-- <p>Hora de apertura: {{ eleccion.horaabre }}</p> -->
                 </div> 
             </div>
              

@@ -18,7 +18,7 @@
     -->
     <GridCasillasRPE titulo="Anticipado"></GridCasillasRPE>
 
-    <ObservacionesActa></ObservacionesActa>
+    <!-- <ObservacionesActa></ObservacionesActa> -->
 </template>
 
 <script setup>

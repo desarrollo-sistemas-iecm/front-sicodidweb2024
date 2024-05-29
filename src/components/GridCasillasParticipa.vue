@@ -14,7 +14,8 @@
 
     <label style="color: #333333; font-size: 18px; font-weight: bold;">
    
-    <label style="font-size: 17px; font-weight: bold;">Participación ciudadana con base en la Lista Nominal de las Actas PREP Contabilizadas</label>
+    <label style="font-size: 17px; font-weight: bold;">Participación ciudadana con base en la Lista Nominal </label>
+    <!-- de las Actas PREP Contabilizadas -->
   
     </label>
 
@@ -160,7 +161,8 @@
         import {
           ExclamationCircleOutlined
         } from '@ant-design/icons-vue';
-        const tooltips1 = 'Se refiere a la suma total de votos que realiza el sistema informático con base en los datos que muestran en cada Acta; podrás consultar la cifra del total de votos mostrado en cada Acta en la base de datos del PREP (numeral 26, fr. XIV del Anexo 13 del Reglamento de Elecciones).';
+        // TODO: Este texto
+        const tooltips1 = 'Se refiere a la suma total de votos que realiza el sistema informático con base en los datos que muestran en cada Acta; podrás consultar la cifra del total de votos mostrado en cada Acta en la base de datos (numeral 26, fr. XIV del Anexo 13 del Reglamento de Elecciones).';
             
 
         onBeforeMount(async () => {

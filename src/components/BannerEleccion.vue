@@ -16,16 +16,17 @@
       </a-col>
       <a-col :xs="24" :sm="24" :md="24" :lg="18" :xl="18" style="text-align: center;">
         <p :style="{fontSize:'30px',fontWeight:'bold', color: eleccion.tema? 'black':'white', 'margin-bottom': '-10px', 'margin-top': '9px' }">
-            <p style="margin-bottom: -20px;">Programa de Resultados Electorales Preliminares 2024</p>
+            <p style="margin-bottom: -20px;">Sistema de Cómputos Distritales y de Demarcación 2024</p>
             <label :style="{fontSize:'18px', fontWeight: 'normal', color: eleccion.tema? 'black':'white', 'margin-bottom': '-10px' }">
-              Elecciones Estatales de la <label style="color:#B283B9">Ciudad de México</label> 
+              Proceso Electoral Local Ordinario <label style="color:#B283B9">2024</label> 
             </label> 
         
           </p>  
       </a-col>
       <a-col :xs="0" :sm="0" :md="0" :lg="0" :xl="3">
-        <img v-if="!isMobile() &&  eleccion.tema" class="imagen2" src = "@/assets/logo.png" />
-        <img v-if="!isMobile() &&  !eleccion.tema" class="imagen2" src = "@/assets/logo_blanco.png" />
+        <!-- <small>SICODID</small> -->
+        <img v-if="!isMobile() &&  eleccion.tema" class="imagen2" src = "@/assets/sicodid.jpg" />
+        <img v-if="!isMobile() &&  !eleccion.tema" class="imagen2" src = "@/assets/sicodid.jpg" />
       </a-col>
     </a-row>
     <!-- Icono de la Institución-->
@@ -58,7 +59,7 @@
 <style scoped>
   
   .imagen{
-      width: 140px;
+      /* width: 140px; */
       height: 70px;
       margin: 12px 2px 2px 45px;
       background-size: cover;

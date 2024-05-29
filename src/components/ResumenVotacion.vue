@@ -8,7 +8,7 @@
 
 <!--
     <a-descriptions style="margin-top: 20px;">
-      <a-descriptions-item>No se considera la cantidad de votos asentada en las Actas PREP de Casilla Especial de Representación Proporcional.</a-descriptions-item>
+      <a-descriptions-item>No se considera la cantidad de votos asentada en las Actas de Casilla Especial de Representación Proporcional.</a-descriptions-item>
   </a-descriptions>
 -->
   <div v-if="router.currentRoute.value.name != 'votoextranjero' " :style="{'padding-top': '30px', 'font-size': '12px', 'font-weight': bolder, 'color': eleccion.tema ? 'black' : 'white'}">
@@ -161,7 +161,7 @@
   })
 
   const tooltips1 = 'Es la suma de los votos en territorio estatal (Casillas, Anticipados y Prisión Preventiva), así como los emitidos en el Extranjero; desglosados por partidos Político, Coalición y Candidatura Independiente. Sin incluir candidaturas no registradas, ni votos nulos.';
-  const tooltips2 = 'Se refiere a la suma total de votos que realiza el sistema informático con base en los datos que muestran en cada Acta; podrás consultar la cifra del total de votos mostrado en cada Acta en la base de datos del PREP (numeral 26, fr. XIV del Anexo 13 del Reglamento de Elecciones).';
+  const tooltips2 = 'Se refiere a la suma total de votos que realiza el sistema informático con base en los datos que muestran en cada Acta; podrás consultar la cifra del total de votos mostrado en cada Acta en la base de datos (numeral 26, fr. XIV del Anexo 13 del Reglamento de Elecciones).';
   const toolTips3 = 'El total y el porcentaje de votos para candidaturas no registradas y nulos, considera la votación en Casillas, en el Extranjero, Anticipado y Prisión Preventiva.';
   console.log("CATALOGO EN RESUMEN", props.datosResumen);
 

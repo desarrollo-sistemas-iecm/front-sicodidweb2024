@@ -106,11 +106,6 @@
                                 </a-row>                           
                             </div>  
                         </center>
-                        <div>
-                            <label :style="{'font-size': '10px', 'text-align': 'left', 'letter-spacing': '0px', color: eleccion.tema ? '#4B3943' : 'white',  width: '100%'}">
-                                Por su naturaleza, las casillas especiales no cuentan con lista nominal, por tanto, para el cálculo de la participación ciudadana, la cantidad de votos asentada en las Actas PREP de casilla especial, se deberá considerar hasta el último corte de información que se publique, al cierre del PREP (numeral 29, fr. IX del Anexo 13 del Reglamento de Elecciones).
-                            </label>  
-                        </div>
                         
                     </div>
                    <!--

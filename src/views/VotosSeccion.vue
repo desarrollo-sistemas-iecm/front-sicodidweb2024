@@ -20,7 +20,7 @@
 
     <a-row :gutter="{ xs: 8, sm: 16, md: 24, lg: 32 }">
       <div :style="{'text-align': justify, margin: '15px', color: eleccion.tema ? 'black' : 'white'}">
-        El total de votos calculado y porcentaje que se muestran, se refieren a los votos asentados en las Actas PREP hasta el momento.
+        El total de votos calculado y porcentaje que se muestran, se refieren a los votos asentados en las Actas hasta el momento.
         Por presentación, los decimales de los porcentajes muestran sólo cuatro dígitos. No obstante, al considerar todos los decimales, suman 100%.
       </div>
     </a-row>
@@ -79,7 +79,7 @@
   
     <GridCasillas titulo="SECCION DOS"></GridCasillas>
 
-    <ObservacionesActa></ObservacionesActa>
+    <!-- <ObservacionesActa></ObservacionesActa> -->
 
 </template>
 

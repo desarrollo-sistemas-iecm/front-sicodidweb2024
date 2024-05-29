@@ -15,11 +15,7 @@
     <DivColor v-if="eleccion.eleccion==4" :fontsize="'22px'" :color="'#582D73'" text="Estadística Alcaldía"/>
     <a-card :headStyle="{backgroundColor: 'rgba(255, 255, 255, 0.4)', border: 0 }"
     size="small" style="width: 100%; background-color: white;">
-        <div :style="{marginTop:'20px', padding:'5px'}" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
-
-            <!--
-                GRAFICAS DE BARRAS y DATOS URBANA/NO URBANA
-            -->     
+        <!-- <div :style="{marginTop:'20px', padding:'5px'}" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
             
                 <div>
                     <ChartMiniCategoria :key="eleccion.type+2"
@@ -33,7 +29,7 @@
         
                 <div style="margin-bottom: 20px;">
                     <label>
-                        <b>Actas Contabilizadas por ubicación de casilla:</b><br>
+                        <b>Actas Computadas por ubicación de casilla:</b><br>
                     </label>
 
                     <a-row>
@@ -49,14 +45,13 @@
                                         <p style="margin-top: -23%;">No urbanas</p>
                                     </a-col>
                                 </a-row>
-                                <!-- <img style="width:280px; justify-content: start; margin-top: 30px;"  src="/estadisticas/urbano_nourbano.png" alt="Urbanas/nourbanas"> -->
                             </div>
                         </a-col>
                     </a-row>
 
                 </div>
   
-        </div>
+        </div> -->
 
 
         <div :style="{marginTop:'20px', padding:'5px'}" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
@@ -69,7 +64,8 @@
                 </label>
 
                 <Gauge :key="eleccion.type+3" :ln='eleccion.lista_nominal' :ln_captura="eleccion.lista_nominal_contabilizadas"  style="height:300px; margin: 0 auto;"></Gauge>
-                <label>En el gráfico no se considera la cantidad de votos asentada en las Actas PREP de Casilla Especial de Representación Proporcional.</label>
+                <label>En el gráfico no se considera la cantidad de votos asentada en las Actas de Casilla Especial de Representación Proporcional.</label>
+                <!-- <label>En el gráfico no se considera la cantidad de votos asentada en las Actas PREP de Casilla Especial de Representación Proporcional.</label> -->
             </div>
 
             <div style="width: 400px">

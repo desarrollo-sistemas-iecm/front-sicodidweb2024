@@ -50,7 +50,7 @@
     
     -->
     <a-watermark 
-      :content="['- PREP 2024 -', '[[*** DATOS DE PRUEBA SIN VALOR ***]]', 'Última act. 17/05/2024 16:00 hrs']"
+      :content="['- SICODID 2024 -', '[[*** DATOS DE PRUEBA SIN VALOR ***]]', 'Última act. 17/05/2024 16:00 hrs']"
       :font="{color: eleccion.tema ? 'rgba(105,105,105,.2)':'rgba(255,255,255,.10)'}"
       >
   
@@ -97,7 +97,7 @@
         <a-button style="color: white" type="link" :size="large" @click="$router.push({ name: 'bd' });">
                               
       -->
-                            <a-button style="color: white" type="link" :size="large" @click="databaseGO()">
+                            <a-button v-if="false" style="color: white" type="link" :size="large" @click="databaseGO()">
         
                                 <template #icon>
                                       <database-outlined/>
@@ -105,13 +105,13 @@
                                 Base de Datos
                               </a-button>
   
-                              <a-button style="color: white" type="link" :size="large" @click="$router.push({ name: 'preguntas' });">
+                              <a-button v-if="false" style="color: white" type="link" :size="large" @click="$router.push({ name: 'preguntas' });">
                                 <template #icon>
                                       <QuestionCircleOutlined />
                                 </template>
                                   Preguntas frecuentes
                               </a-button>
-                              <a-button style="color: white" type="link" :size="large" @click="$router.push({ name: 'help' });">
+                              <a-button v-if="false" style="color: white" type="link" :size="large" @click="$router.push({ name: 'help' });">
                                 <template #icon>
                                       <ExclamationCircleOutlined/>
                                 </template>

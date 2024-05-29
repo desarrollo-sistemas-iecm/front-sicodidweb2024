@@ -36,7 +36,7 @@
     <!--
       PARA MOSTRAR TITULO CON CUADRO DE COLOR
     --> 
-    <DivColor :color="'#582D73'" text="Votos en Actas Contabilizadas"/>
+    <DivColor :color="'#582D73'" text="Votos en Actas Computadas"/>
 
     <br><br>
     <label :style="{color: eleccion.tema ? '#333333' : 'white', 'font-size': '12px', 'font-weight': 'normal'}">
@@ -114,7 +114,7 @@
     <br>
 
     <label :style="{'font-size': '12px', 'font-weight': 'bolder', 'margin-bottom': '10px', color: eleccion.tema ? 'black': 'white'}">
-      No se considera la cantidad de votos asentada en las Actas PREP de Casilla Especial de Representación Proporcional. Por presentación, los decimales de los porcentajes muestran sólo cuatro dígitos. No obstante, al considerar todos los decimales, suman 100%.  
+      No se considera la cantidad de votos asentada en las Actas de Casilla Especial de Representación Proporcional. Por presentación, los decimales de los porcentajes muestran sólo cuatro dígitos. No obstante, al considerar todos los decimales, suman 100%.  
     </label>
 <!--
   <h3> <br>

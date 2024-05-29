@@ -6,7 +6,7 @@
   Hijo de MapView.vue
 -->
 <template>
-    <a-divider orientation="left"><h2 class="subtitulo-seccion pleca-izquierda">Votos de Actas Contabilizadas</h2></a-divider>
+    <a-divider orientation="left"><h2 class="subtitulo-seccion pleca-izquierda">Votos de Actas Computadas</h2></a-divider>
     <a-row :gutter="{ xs: 8, sm: 16, md: 24, lg: 32 }">
       <a-col v-for="category in categories" :key="category.id" class="gutter-row" :span="6">
         <a-card title="" style="margin-bottom: 1px; margin-top: 1px; border-color:purple">
