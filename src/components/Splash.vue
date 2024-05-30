@@ -35,7 +35,7 @@
                         type="primary" @click="clickBoton"
                         :disabled="deshabilita"
                     >
-                        <b>Consultar Resultados Preliminares</b>
+                        <b>Consultar Resultados</b>
                     </a-button>  
                 </div> 
             </div>
@@ -74,11 +74,7 @@ onMounted(() => {
     setTimeout(() => {
         // Ejecutar después de 2 segundos
         console.log("Han pasado 2 segundos");
-                 deshabilita.value = false;
-                 deshabilita.value = false;
-                  
         deshabilita.value = false;
-                  
     }, 2000); // 2000 milisegundos = 2 segundos
 });
 </script>

@@ -89,8 +89,8 @@ export const getUrlPrep=()=>{
   const search = window.location.search;
 
 
-  // PARA DIR 2024
-  // const newURL = window.location.protocol.toString() + "//" + window.location.host.toString() + "/prep2024/";
+  // PARA DIR SICODID2024
+  // const newURL = window.location.protocol.toString() + "//" + window.location.host.toString() + "/v2-sicodid-web2024/services/";
  
  
   // const newURL = window.location.protocol.toString() + "//" + window.location.host.toString() + "/";
@@ -331,7 +331,7 @@ export const leeEleccion = async (ultima)=> {
       // quito Sppiner
       if( eleccion.eleccion ==0 )  {
           eleccion.eleccion = 1;
-          $router.push({ name: 'home' });
+          // router.push({ name: 'home' });
           //router.push({ name: 'home' });
       }
 
