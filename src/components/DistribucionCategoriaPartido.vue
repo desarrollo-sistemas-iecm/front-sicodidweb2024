@@ -44,7 +44,7 @@
               <a-divider type="horizontal"/>
             </a-col>
             <a-col style="width: 12%; " align="middle" v-if="category.icono != 8 && category.icono != 9 ">
-              <p>{{ category.name }}</p>
+              <p>{{ namePartido(category.icono) }}</p>
               <p><img :src="getImagePathPartido(category.icono)" alt=""> </p>
             </a-col>
             <a-col style="width: 12%; " align="middle" v-if="category.icono != 8 && category.icono != 9 ">
@@ -58,33 +58,33 @@
               <!-- MAS VOTOS<br><br> -->
               <template v-if="category.icono == '1'">
               <!-- {{  category.icono }} -->
-                <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-1')" alt=""> <strong>{{ cifrasMiles(votosDistribuidos1['P1']) }}</strong></p>
-                <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-2')" alt=""> <strong>+ {{ cifrasMiles(votosDistribuidos2['P1']) }}</strong></p>
+                <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-1')" alt=""> <strong>{{ cifrasMiles(votosDistribuidos1['P1'] + (Math.round(decimalesPPP) >= 1 ? 1 : 0)) }}</strong></p>
+                <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-2')" alt=""> <strong>+ {{ cifrasMiles(votosDistribuidos2['P1'] + Math.round(decimalesPAN)) }}</strong></p>
                 <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-3')" alt=""> <strong>+ {{ cifrasMiles(votosDistribuidos3['P1']) }}</strong></p>
               </template>
               <template v-else-if="category.icono == '2'">
               <!-- {{  category.icono }} -->
-                <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-1')" alt=""> <strong>{{ cifrasMiles(votosDistribuidos1['P2']) }}</strong></p>
+                <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-1')" alt=""> <strong>{{ cifrasMiles(votosDistribuidos1['P2'] + (Math.round(decimalesPPP) == 2 ? 1 : 0)) }}</strong></p>
                 <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-2')" alt=""> <strong>+ {{ cifrasMiles(votosDistribuidos2['P2']) }}</strong></p>
-                <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-3')" alt=""> <strong>+ {{ cifrasMiles(votosDistribuidos4['P2']) }}</strong></p>
+                <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-3')" alt=""> <strong>+ {{ cifrasMiles(votosDistribuidos4['P2'] + Math.round(decimalesPRI)) }}</strong></p>
               </template>
               <template v-else-if="category.icono == '3'">
               <!-- {{  category.icono }} -->
-                <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-1')" alt=""> <strong>{{ cifrasMiles(votosDistribuidos1['P3']) }}</strong></p>
+                <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-1')" alt=""> <strong>{{ cifrasMiles(votosDistribuidos1['P3'] + (Math.round(decimalesPPP) == 3 ? 1 : 0)) }}</strong></p>
                 <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-2')" alt=""> <strong>+ {{ cifrasMiles(votosDistribuidos3['P3']) }}</strong></p>
                 <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-3')" alt=""> <strong>+ {{ cifrasMiles(votosDistribuidos4['P3']) }}</strong></p>
               </template>
               <template v-else-if="category.icono == '4'">
               <!-- {{  category.icono }} -->
                 <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-1')" alt=""> <strong>{{ cifrasMiles(votosDistribuidos5['P4']) }}</strong></p>
-                <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-2')" alt=""> <strong>+ {{ cifrasMiles(votosDistribuidos6['P4']) }}</strong></p>
+                <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-2')" alt=""> <strong>+ {{ cifrasMiles(votosDistribuidos6['P4'] + Math.round(decimalesVerde)) }}</strong></p>
                 <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-3')" alt=""> <strong>+ {{ cifrasMiles(votosDistribuidos7['P4']) }}</strong></p>
               </template>
               <template v-else-if="category.icono == '5'">
               <!-- {{  category.icono }} -->
                 <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-1')" alt=""> <strong>{{ cifrasMiles(votosDistribuidos5['P5']) }}</strong></p>
                 <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-2')" alt=""> <strong>+ {{ cifrasMiles(votosDistribuidos6['P5']) }}</strong></p>
-                <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-3')" alt=""> <strong>+ {{ cifrasMiles(votosDistribuidos8['P5']) }}</strong></p>
+                <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-3')" alt=""> <strong>+ {{ cifrasMiles(votosDistribuidos8['P5'] + Math.round(decimalesPT)) }}</strong></p>
               </template>
               <template v-else-if="category.icono == '6'">
                 <!-- {{  category.icono }} -->
@@ -92,7 +92,7 @@
               </template>
               <template v-else-if="category.icono == '7'">
               <!-- {{  category.icono }} -->
-                <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-1')" alt=""> <strong>{{ cifrasMiles(votosDistribuidos5['P7']) }}</strong></p>
+                <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-1')" alt=""> <strong>{{ cifrasMiles(votosDistribuidos5['P7'] + Math.round(decimalesMorena)) }}</strong></p>
                 <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-2')" alt=""> <strong>+ {{ cifrasMiles(votosDistribuidos7['P7']) }}</strong></p>
                 <p><img style="width: 70%; " :src="getImagePathPartidoCoalicion(category.icono+'-3')" alt=""> <strong>+ {{ cifrasMiles(votosDistribuidos8['P7']) }}</strong></p>
               </template>
@@ -109,23 +109,23 @@
               <!-- <h5>SUMA</h5>          -->
               <template v-if="category.icono == '1'">
                 <!-- {{  category.icono }} -->
-                <p><strong>{{ cifrasMiles(sumatoriasTMP['PP'+category.icono] + votosDistribuidos1['P1'] + votosDistribuidos2['P1'] + votosDistribuidos3['P1']) }}</strong></p>
+                <p><strong>{{ cifrasMiles(sumatoriasTMP['PP'+category.icono] + votosDistribuidos1['P1'] + votosDistribuidos2['P1'] + votosDistribuidos3['P1'] + Math.round(decimalesPAN) + (Math.round(decimalesPPP) >= 1 ? 1 : 0)) }}</strong></p>
               </template>
               <template v-else-if="category.icono == '2'">
                 <!-- {{  category.icono }} -->
-                <p><strong>{{ cifrasMiles(sumatoriasTMP['PP'+category.icono] + votosDistribuidos1['P2'] + votosDistribuidos2['P2'] + votosDistribuidos4['P2']) }}</strong></p>
+                <p><strong>{{ cifrasMiles(sumatoriasTMP['PP'+category.icono] + votosDistribuidos1['P2'] + votosDistribuidos2['P2'] + votosDistribuidos4['P2'] + Math.round(decimalesPRI) + (Math.round(decimalesPPP) == 2 ? 1 : 0)) }}</strong></p>
               </template>
               <template v-else-if="category.icono == '3'">
                 <!-- {{  category.icono }} -->
-                <p><strong>{{ cifrasMiles(sumatoriasTMP['PP'+category.icono] + votosDistribuidos1['P3'] + votosDistribuidos3['P3'] + votosDistribuidos4['P3']) }}</strong></p>
+                <p><strong>{{ cifrasMiles(sumatoriasTMP['PP'+category.icono] + votosDistribuidos1['P3'] + votosDistribuidos3['P3'] + votosDistribuidos4['P3'] + (Math.round(decimalesPPP) == 3 ? 1 : 0)) }}</strong></p>
               </template>
               <template v-else-if="category.icono == '4'">
                 <!-- {{  category.icono }} -->
-                <p><strong>{{ cifrasMiles(sumatoriasTMP['PP'+category.icono] + votosDistribuidos5['P4'] + votosDistribuidos6['P4'] + votosDistribuidos7['P4']) }}</strong></p>
+                <p><strong>{{ cifrasMiles(sumatoriasTMP['PP'+category.icono] + votosDistribuidos5['P4'] + votosDistribuidos6['P4'] + votosDistribuidos7['P4'] + Math.round(decimalesVerde)) }}</strong></p>
               </template>
               <template v-else-if="category.icono == '5'">
                 <!-- {{  category.icono }} -->
-                <p><strong>{{ cifrasMiles(sumatoriasTMP['PP'+category.icono] + votosDistribuidos5['P5'] + votosDistribuidos6['P5'] + votosDistribuidos8['P5']) }}</strong></p>
+                <p><strong>{{ cifrasMiles(sumatoriasTMP['PP'+category.icono] + votosDistribuidos5['P5'] + votosDistribuidos6['P5'] + votosDistribuidos8['P5'] + Math.round(decimalesPT)) }}</strong></p>
               </template>
               <template v-else-if="category.icono == '6'">
                 <!-- {{  category.icono }} -->
@@ -133,7 +133,7 @@
               </template>
               <template v-else-if="category.icono == '7'">
                 <!-- {{  category.icono }} -->
-                <p><strong>{{ cifrasMiles(sumatoriasTMP['PP'+category.icono] + votosDistribuidos5['P7'] + votosDistribuidos7['P7'] + votosDistribuidos8['P7']) }}</strong></p>
+                <p><strong>{{ cifrasMiles(sumatoriasTMP['PP'+category.icono] + votosDistribuidos5['P7'] + votosDistribuidos7['P7'] + votosDistribuidos8['P7'] + Math.round(decimalesMorena)) }}</strong></p>
               </template>
 
             </a-col>
@@ -141,7 +141,7 @@
               <a-divider type="horizontal"/>
             </a-col>
       </a-row>
-      <!-- {{ sumatoriasTMP }} -->
+      <!-- {{ decimalesMorena }} -->
 
   </div>
 
@@ -149,11 +149,18 @@
 
 <script setup>
   import {useEleccionStore} from "../stores/eleccion_actual";
-  import { getImagePath,  getImagePathPartido, formatNumber, getImagePathPartidoCoalicion, cifrasMiles} from "../helpers";
+  import { getImagePath,  getImagePathPartido, formatNumber, getImagePathPartidoCoalicion, cifrasMiles, namePartido} from "../helpers";
   import { ref, onMounted, computed } from 'vue';
   const eleccion = useEleccionStore();
   const data = ref([]);
   let categories = ref([]);
+  let decimalesPAN = ref(0);
+  let decimalesPRI = ref(0);
+  let decimalesPRD = ref(0);
+  let decimalesMorena = ref(0);
+  let decimalesVerde = ref(0);
+  let decimalesPT = ref(0);
+  let decimalesPPP = ref(0);
 
   let sumatoriasTMP = ref({ PP1: 0 ,  PP2: 0 ,  PP3: 0 ,  PP4: 0 ,  PP5: 0 ,  PP6: 0 ,  PP7: 0 ,  PP8: 0 , PP9: 0, PP10: 0, PP11:0, PP12:0, PP13:0, PP14:0, PP15: 0, PP16:0, PP17:0, COAL1: 0 ,  COAL2: 0 ,  COAL3: 0 ,  COAL4: 0 ,  COAL5: 0 ,  COAL6: 0 ,  COAL7:0 ,  COAL8:0 ,  COAL9:0, P1:0, P2:0, P3:0, P4:0, P5:0, P6:0, P7:0, P8:0 });
   let VotosCoaliciones1 = ref([0,0,0]);
@@ -196,6 +203,7 @@
       const type = eleccion.eleccion;
       const  url = urlServer+"actas_grid_data.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
       const responseURL = await fetch(url);
+      //http://localhost/prep2024/
       let jsonData2 = await responseURL.json();
       data.value = jsonData2.resumen;
 
@@ -338,70 +346,163 @@
     }
   });
 
+  // function distribucionVotos1(coalicion, votosCoalicion, votosPart){
+  //   console.log(coalicion, votosCoalicion, votosPart, ' Esto es');
+  //   // console.log(coalicion);
+  //   const coaliciones =  { COAL1: [1,2,3],             COAL2: [1,2],   COAL3: [1,3],   COAL4: [2,3],   COAL5: [4,5,7],          COAL6: [4,5],   COAL7: [4,7],   COAL8: [5,7]} ;
+  //   const porcentajes =  { COAL1: [33.33,33.33,33.33], COAL2: [50,50], COAL3: [50,50], COAL4: [50,50], COAL5: [26.67,20,53.33], COAL6: [50,50], COAL7: [50,50], COAL8: [50,50]} ;
+  //   const partidosCCArray = coaliciones[coalicion];
+  //   const porcentajeArray = porcentajes[coalicion];
+  //   const partidos = partidosCCArray.length;
+  //   console.log(partidosCCArray);
+  //   console.log(sumatoriasTMP.value);
+  //   console.table(porcentajeArray);
+  //   let bandera = false;
+  //   let sortVotosPart = [...votosPart];
+  //   let reparto = [];
+  //   if (coalicion != 'COAL5'){
+  //     const division = Math.trunc(votosCoalicion/partidos);
+  //     console.log('division', division);
+  //     const modulo = (votosCoalicion%partidos);
+  //     console.log('modulo', modulo);
+  //     for(let b =0; b< partidos; b++){
+  //       reparto[b] = division;
+  //     }
+  //   } else {
+  //     bandera = true;
+  //   }
+  //   if ( bandera ){
+  //     for(let a = 0; a < partidos; a++ ){
+  //       reparto[a] = Math.trunc((votosCoalicion*porcentajeArray[a]) / 100);
+  //     }
+  //   }
+    
+    
+  //   console.table(reparto);
+  //   for (let i=0; i<partidos; i++){
+  //     let indice = 'P'+coaliciones[coalicion][i];
+  //     console.log(coalicion, indice);
+  //     sumatoriasTMP.value[indice] += reparto[i];
+  //     if( coalicion == 'COAL1'){
+  //       votosDistribuidos1.value[indice] += reparto[i];
+  //       console.table(votosDistribuidos1.value);
+  //     } else if(coalicion == 'COAL2'){
+  //       console.table(votosDistribuidos2.value);
+  //       votosDistribuidos2.value[indice] += reparto[i];
+  //     } else if(coalicion == 'COAL3'){
+  //       console.table(votosDistribuidos3.value);
+  //       votosDistribuidos3.value[indice] += reparto[i];
+  //     } else if(coalicion == 'COAL4'){
+  //       votosDistribuidos4.value[indice] += reparto[i];
+  //       console.table(votosDistribuidos4.value);
+  //     } else if(coalicion == 'COAL5'){
+  //       votosDistribuidos5.value[indice] += reparto[i];
+  //       console.table(votosDistribuidos5.value);
+  //     } else if(coalicion == 'COAL6'){
+  //       votosDistribuidos6.value[indice] += reparto[i];
+  //       console.table(votosDistribuidos6.value);
+  //     } else if(coalicion == 'COAL7'){
+  //       votosDistribuidos7.value[indice] += reparto[i];
+  //       console.table(votosDistribuidos7.value);
+  //     } else if(coalicion == 'COAL8'){
+  //       votosDistribuidos8.value[indice] += reparto[i];
+  //       console.table(votosDistribuidos8.value);
+  //     }
+  //   }
+  //   console.table(sumatoriasTMP.value);
+  // }
   function distribucionVotos1(coalicion, votosCoalicion, votosPart){
-    console.log(coalicion, votosCoalicion, votosPart, ' Esto es');
-    // console.log(coalicion);
+    //console.log(coalicion, votosCoalicion, votosPart, ' Esto es');
+    // //console.log(coalicion);
     const coaliciones =  { COAL1: [1,2,3],             COAL2: [1,2],   COAL3: [1,3],   COAL4: [2,3],   COAL5: [4,5,7],          COAL6: [4,5],   COAL7: [4,7],   COAL8: [5,7]} ;
     const porcentajes =  { COAL1: [33.33,33.33,33.33], COAL2: [50,50], COAL3: [50,50], COAL4: [50,50], COAL5: [26.67,20,53.33], COAL6: [50,50], COAL7: [50,50], COAL8: [50,50]} ;
     const partidosCCArray = coaliciones[coalicion];
     const porcentajeArray = porcentajes[coalicion];
     const partidos = partidosCCArray.length;
-    console.log(partidosCCArray);
-    console.log(sumatoriasTMP.value);
-    console.table(porcentajeArray);
+    //console.log(partidosCCArray);
+    //console.log(sumatoriasTMP.value);
+    //console.table(porcentajeArray);
     let bandera = false;
     let sortVotosPart = [...votosPart];
     let reparto = [];
-    if (coalicion != 'COAL5' && coalicion != 'COAL8'){
-      const division = Math.trunc(votosCoalicion/partidos);
-      console.log('division', division);
-      const modulo = (votosCoalicion%partidos);
-      console.log('modulo', modulo);
+    let decimales = 0;
+
+    const division = Math.trunc(votosCoalicion/partidos);
+    //console.log('division', division);
+    const modulo = (votosCoalicion%partidos);
+    if (modulo!=0){
+      bandera = true;
+    }
+    if(coalicion != 'COAL5' || bandera == true){
+      //console.log('modulo', modulo);
       for(let b =0; b< partidos; b++){
         reparto[b] = division;
       }
     } else {
       bandera = true;
     }
-    if ( bandera ){
+    if (bandera) {
       for(let a = 0; a < partidos; a++ ){
         reparto[a] = Math.trunc((votosCoalicion*porcentajeArray[a]) / 100);
+        if(coalicion == 'COAL1'){
+          // decimales +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+          decimalesPPP.value +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+        }
+        else if(coalicion == 'COAL2'){
+          decimalesPAN.value +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+        } 
+        else if(coalicion == 'COAL3'){
+          decimalesPAN.value +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+        } 
+        else if(coalicion == 'COAL4'){
+          decimalesPRI.value +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+        } 
+        else if(coalicion == 'COAL5'){
+          // decimales +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+          decimalesMorena.value +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+        }
+        else if(coalicion == 'COAL6'){
+          // decimales +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+          decimalesVerde.value +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+        }
+        else if(coalicion == 'COAL7'){
+          // decimales +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+          decimalesVerde.value +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+        }
+        else if(coalicion == 'COAL8'){
+          // decimales +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+          decimalesPT.value +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+        }
       }
     }
     
     
-    console.table(reparto);
+    //console.table(reparto);
     for (let i=0; i<partidos; i++){
       let indice = 'P'+coaliciones[coalicion][i];
-      console.log(coalicion, indice);
+      //console.log(coalicion, indice);
       sumatoriasTMP.value[indice] += reparto[i];
       if( coalicion == 'COAL1'){
         votosDistribuidos1.value[indice] += reparto[i];
-        console.table(votosDistribuidos1.value);
       } else if(coalicion == 'COAL2'){
-        console.table(votosDistribuidos2.value);
         votosDistribuidos2.value[indice] += reparto[i];
       } else if(coalicion == 'COAL3'){
-        console.table(votosDistribuidos3.value);
         votosDistribuidos3.value[indice] += reparto[i];
       } else if(coalicion == 'COAL4'){
         votosDistribuidos4.value[indice] += reparto[i];
-        console.table(votosDistribuidos4.value);
       } else if(coalicion == 'COAL5'){
         votosDistribuidos5.value[indice] += reparto[i];
-        console.table(votosDistribuidos5.value);
+        // if(indice == 'P7'){
+        //   votosDistribuidos5.value[indice]+= decimales;
+        // }
       } else if(coalicion == 'COAL6'){
         votosDistribuidos6.value[indice] += reparto[i];
-        console.table(votosDistribuidos6.value);
       } else if(coalicion == 'COAL7'){
         votosDistribuidos7.value[indice] += reparto[i];
-        console.table(votosDistribuidos7.value);
       } else if(coalicion == 'COAL8'){
         votosDistribuidos8.value[indice] += reparto[i];
-        console.table(votosDistribuidos8.value);
       }
     }
-    console.table(sumatoriasTMP.value);
   }
   const prop = defineProps({
     categories: {

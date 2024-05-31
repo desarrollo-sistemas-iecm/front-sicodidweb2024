@@ -17,6 +17,10 @@ export const cifrasMiles = (numeros) =>{
   return isNaN(numeros) ? '0' : new Intl.NumberFormat('es-MX').format(numeros);
 }
 
+export const isNaNCero = (numeros) =>{
+  return isNaN(numeros) ? '0' : numeros
+}
+
 // Función para aplicar prefijos (000) a números
 export const formatNumberWithPrefix = number => {
     const formattedNumber = Math.floor(number).toLocaleString('en-US', { minimumIntegerDigits: 1 })
@@ -24,8 +28,6 @@ export const formatNumberWithPrefix = number => {
 };
 
 // Sin uso --------------
-// TODO: aqui
-
 export const getImagePath = (imageName) => {
    // return `../personas/${imageName}.png`;
     return `/prep2024/personas/${imageName}.png`;
@@ -51,6 +53,13 @@ export const getImagePathJG = (imageName) => {
   return `/prep2024/personas_jg/${imageName}.png`;
 };
 
+export const namePartido = (idPartido)=>{
+  const nombres = [{id:'1', nombre: 'PAN'}, {id:'2', nombre: 'PRI'}, {id:'3', nombre: 'PRD'}, {id:'4', nombre: 'VERDE'}, {id:'5', nombre: 'PT'}, {id:'6', nombre: 'MVC'}, {id:'7', nombre: 'MORENA'}, {id:'8', nombre: 'EBM'}, {id:'9', nombre: 'JRAA'}];
+  const objetoNombre = nombres.find(objeto => objeto.id === idPartido);
+
+  return objetoNombre ? objetoNombre.nombre : `Sin Nombre ${idCandidataCandidato}`;
+}
+
 export const nombresJG = (idCandidataCandidato) =>{
   const nombres = [ { id: 6, nombre : 'SALOMON CHERTORIVSKI WOLDENBERG' }, { id: 10, nombre: 'SANTIAGO TABOADA CORTINA' }, { id:14, nombre: 'CLARA MARINA BRUGADA MOLINA' } ];
 
@@ -66,7 +75,7 @@ export const getDelegacion = (idx) => {
 
   const delegacion = ["S/D","S/D","Azcapotzalco","Coyoacán","Cuajimalpa de Morelos","Gustavo A. Madero","Iztacalco",
   "Iztapalapa","La Magdalena Contreras","Milpa Alta","Álvaro Obregón","Tláhuac ","Tlalpan","Xochimilco","Benito Juárez",
-  "Cuauht&eacute;moc","Miguel Hidalgo","Venustiano Carranza"];
+  "Cuauhtémoc","Miguel Hidalgo","Venustiano Carranza"];
 
   if(idx<0) return "S/D";
   
@@ -262,24 +271,24 @@ export const leeEleccion = async (ultima)=> {
 
       // AQUI DEFINIR COLORES DE MAPA
       const colores = [
-        '#00579c',   //votos_part_1
-        'blue',      //votos_part_2
-        'green',    //votos_part_3
-        '#87c344',    //votos_part_4
-        '#ee3d44',    //votos_part_5
-        '#fd8204',    //votos_part_6
-        '#a53421',    //votos_part_7
-        '#e6057e' ,   //votos_part_8
-        '#722f8b',    //votos_part_9
-        '#4479e1',    //votos_part_10
-        'silver',    //votos_part_11
+        '#00579c',   //0
+        '#2caffe',      //votos_part_1
+        '#009f65',    //votos_part_2
+        '#ffcd04',    //votos_part_3
+        '#4eb45b',    //votos_part_4
+        '#ef1c1e',    //votos_part_5
+        '#f58100',    //votos_part_6
+        '#7b2629' ,   //votos_part_7
+        '#fd8204',    //votos_part_8
+        '#15a152',    //votos_part_9
+        'silver',    //votos_part_10
+        'silver',     //votos_part_11
         'silver',     //votos_part_12
-        'silver',     //votos_part_13
-        '#800040',     //votos_part_14
+        '#800040',     //votos_part_13
+        'gray',       //votos_part_14
         'gray',       //votos_part_15
         'gray',       //votos_part_16
         'gray',       //votos_part_17
-        'gray', 
         'gray', 
         'gray', 
         'gray', 
@@ -329,7 +338,7 @@ export const leeEleccion = async (ultima)=> {
       // quito Sppiner
       if( eleccion.eleccion ==0 )  {
           eleccion.eleccion = 1;
-          // router.push({ name: 'home' });
+          $router.push({ name: 'home' });
           //router.push({ name: 'home' });
       }
 

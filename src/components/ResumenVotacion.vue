@@ -68,7 +68,7 @@
       <b>Resumen de la votación</b>
     </v-col>  
     <v-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" style="text-align: center; align-items: center; align-content: center; width: 100%; margin: 0%; padding: 0%;">
-      <a-card hoverable style="margin-top: 2%; margin-bottom: 2%;" :style="{'background-color': eleccion.tema ?  'white' : '#9c9c9c'}">
+      <a-card hoverable style="margin-top: 2%; margin-bottom: 2%;" :style="{'background-color': eleccion.tema ?  'white' : '#2c2c2c'}">
         <a-row :gutter="{ xs: 24, sm: 24, md: 24, lg: 24 }">
           <v-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" style="text-align: center; align-items: center; align-content: center; width: 100%; margin: 0%; padding: 0%;">
             <p><b>Votos acumulados <a-tooltip :title="tooltips1" :color="'#582D73'" ><ExclamationCircleOutlined /></a-tooltip></b></p> 
@@ -115,7 +115,7 @@
       </a-card>
     </v-col>
     <v-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" style="text-align: center; align-items: center; align-content: center; width: 100%; margin: 0%; padding: 0%;">
-      <p style="color: #582D73; font-size: 25px"><b>Total de votos <a-tooltip :title="tooltips2" :color="'#582D73'" ><ExclamationCircleOutlined /></a-tooltip></b></p> 
+      <p style="font-size: 25px" :style="{ 'color': eleccion.tema ? '##582D73' : 'white' }"><b>Total de votos <a-tooltip :title="tooltips2" :color="'#582D73'" ><ExclamationCircleOutlined /></a-tooltip></b></p> 
     </v-col>
     <v-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" style="text-align: center; align-items: center; align-content: center; width: 100%; margin: 0%; padding: 0%;">
       <img src="@/../public/icons/icon_equal_24.png" alt="" style="padding-right: 75px;">

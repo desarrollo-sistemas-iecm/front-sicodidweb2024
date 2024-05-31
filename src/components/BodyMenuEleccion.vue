@@ -54,6 +54,7 @@
                         </a-descriptions-item>
                       </a-descriptions> 
                   </div>
+                  <br><br>
                   <p v-if="!collapsed && !eleccion.es_bd" :style="{ paddingLeft:'15px'}">
                     Detalle por:
                   </p>

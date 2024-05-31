@@ -3,7 +3,7 @@
     <a-row style="align-items: center; text-align: center; justify-content: center" v-else>
         <template v-for="(cat) in dataChart" :key="cat.name">
             <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                <a-card hoverable style="margin-top: 4%; margin-bottom: 4%;" :style="{'background-color': eleccion.tema ?  '#eae3e7' : '#9c9c9c'}">
+                <a-card hoverable style="margin-top: 4%; margin-bottom: 4%;" :style="{'background-color': eleccion.tema ?  '#eae3e7' : '#2a2a2a'}">
                     <img :src="getImagePathPartido(cat.name)">
                     <a-row style="align-items: center; text-align: center; margin-top: 5%;">
                         <a-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
@@ -23,12 +23,14 @@
             </a-col>
         </template>
     </a-row>
+    <!-- Para checar valores -->
+    <!-- {{ sumatoriasTMP }} -->
 </template>
 <script setup>
   import {useEleccionStore} from "../stores/eleccion_actual";
   import { getImagePathPartido, formatNumber, getImagePathPartidoCoalicion, cifrasMiles} from "../helpers";
   import { ref, onMounted, computed, onBeforeMount } from 'vue';
-  import { isMobile, nombresJG } from "../helpers";
+  import { isMobile, nombresJG, isNaNCero } from "../helpers";
 
   const getImagePath = (tipo, imageName) => {
     return (eleccion.urlPrep + tipo + "/"+ imageName);
@@ -37,7 +39,13 @@
   const eleccion = useEleccionStore();
   const data = ref([]);
   let categories = ref([]);
-  let decimales = ref(0);
+  let decimalesPAN = ref(0);
+  let decimalesPRI = ref(0);
+  let decimalesPRD = ref(0);
+  let decimalesMorena = ref(0);
+  let decimalesVerde = ref(0);
+  let decimalesPT = ref(0);
+  let decimalesPPP = ref(0);
 
   let sumatoriasTMP = ref({ PP1: 0 ,  PP2: 0 ,  PP3: 0 ,  PP4: 0 ,  PP5: 0 ,  PP6: 0 ,  PP7: 0 ,  PP8: 0 , PP9: 0, PP10: 0, PP11:0, PP12:0, PP13:0, PP14:0, PP15: 0, PP16:0, PP17:0, COAL1: 0 ,  COAL2: 0 ,  COAL3: 0 ,  COAL4: 0 ,  COAL5: 0 ,  COAL6: 0 ,  COAL7:0 ,  COAL8:0 ,  COAL9:0, P1:0, P2:0, P3:0, P4:0, P5:0, P6:0, P7:0, P8:0, votacion_total: 0 });
   let VotosCoaliciones1 = ref([0,0,0]);
@@ -269,19 +277,19 @@
                     }
                     else{
                       if(value == 1){
-                        return '<b>'+ nombres[value] +'</b><br><br><img style="display: block; border: 1px solid #000; margin-left: auto; margin-right: auto;" src="' + getImagePath("partidos" ,prefijo + value) + '.jpg" /><br><br><br>'+cifrasMiles(totales(value))+'<br>'+((totales(value)*100)/sumatoriasTMP.value['votacion_total']).toFixed(4)+'%<br><br><br><br>';             
+                        return '<b>'+ nombres[value] +'</b><br><br><img style="display: block; border: 1px solid #000; margin-left: auto; margin-right: auto;" src="' + getImagePath("partidos" ,prefijo + value) + '.jpg" /><br><br><br>'+cifrasMiles(totales(value))+'<br>'+isNaNCero(((totales(value)*100)/sumatoriasTMP.value['votacion_total']).toFixed(4))+'%<br><br><br><br>';             
                       } else if(value == 2){
-                        return '<b>'+ nombres[value] +'</b><br><br><img style="display: block; border: 1px solid #000; margin-left: auto; margin-right: auto;" src="' + getImagePath("partidos" ,prefijo + value) + '.jpg" /><br><br><br>'+cifrasMiles(totales(value))+'<br>'+((totales(value)*100)/sumatoriasTMP.value['votacion_total']).toFixed(4)+'%<br><br><br><br>';             
+                        return '<b>'+ nombres[value] +'</b><br><br><img style="display: block; border: 1px solid #000; margin-left: auto; margin-right: auto;" src="' + getImagePath("partidos" ,prefijo + value) + '.jpg" /><br><br><br>'+cifrasMiles(totales(value))+'<br>'+isNaNCero(((totales(value)*100)/sumatoriasTMP.value['votacion_total']).toFixed(4))+'%<br><br><br><br>';             
                       } else if(value == 3){
-                        return '<b>'+ nombres[value] +'</b><br><br><img style="display: block; border: 1px solid #000; margin-left: auto; margin-right: auto;" src="' + getImagePath("partidos" ,prefijo + value) + '.jpg" /><br><br><br>'+cifrasMiles(totales(value))+'<br>'+((totales(value)*100)/sumatoriasTMP.value['votacion_total']).toFixed(4)+'%<br><br><br><br>';             
+                        return '<b>'+ nombres[value] +'</b><br><br><img style="display: block; border: 1px solid #000; margin-left: auto; margin-right: auto;" src="' + getImagePath("partidos" ,prefijo + value) + '.jpg" /><br><br><br>'+cifrasMiles(totales(value))+'<br>'+isNaNCero(((totales(value)*100)/sumatoriasTMP.value['votacion_total']).toFixed(4))+'%<br><br><br><br>';             
                       } else if(value == 4){
-                        return '<b>'+ nombres[value] +'</b><br><br><img style="display: block; border: 1px solid #000; margin-left: auto; margin-right: auto;" src="' + getImagePath("partidos" ,prefijo + value) + '.jpg" /><br><br><br>'+cifrasMiles(totales(value))+'<br>'+((totales(value)*100)/sumatoriasTMP.value['votacion_total']).toFixed(4)+'%<br><br><br><br>';             
+                        return '<b>'+ nombres[value] +'</b><br><br><img style="display: block; border: 1px solid #000; margin-left: auto; margin-right: auto;" src="' + getImagePath("partidos" ,prefijo + value) + '.jpg" /><br><br><br>'+cifrasMiles(totales(value))+'<br>'+isNaNCero(((totales(value)*100)/sumatoriasTMP.value['votacion_total']).toFixed(4))+'%<br><br><br><br>';             
                       } else if(value == 5){
-                        return '<b>'+ nombres[value] +'</b><br><br><img style="display: block; border: 1px solid #000; margin-left: auto; margin-right: auto;" src="' + getImagePath("partidos" ,prefijo + value) + '.jpg" /><br><br><br>'+cifrasMiles(totales(value))+'<br>'+((totales(value)*100)/sumatoriasTMP.value['votacion_total']).toFixed(4)+'%<br><br><br><br>';             
+                        return '<b>'+ nombres[value] +'</b><br><br><img style="display: block; border: 1px solid #000; margin-left: auto; margin-right: auto;" src="' + getImagePath("partidos" ,prefijo + value) + '.jpg" /><br><br><br>'+cifrasMiles(totales(value))+'<br>'+isNaNCero(((totales(value)*100)/sumatoriasTMP.value['votacion_total']).toFixed(4))+'%<br><br><br><br>';             
                       } else if(value == 7){
-                        return '<b>'+ nombres[value] +'</b><br><br><img style="display: block; border: 1px solid #000; margin-left: auto; margin-right: auto;" src="' + getImagePath("partidos" ,prefijo + value) + '.jpg" /><br><br><br>'+cifrasMiles(totales(value))+'<br>'+((totales(value)*100)/sumatoriasTMP.value['votacion_total']).toFixed(4)+'%<br><br><br><br>';             
+                        return '<b>'+ nombres[value] +'</b><br><br><img style="display: block; border: 1px solid #000; margin-left: auto; margin-right: auto;" src="' + getImagePath("partidos" ,prefijo + value) + '.jpg" /><br><br><br>'+cifrasMiles(totales(value))+'<br>'+isNaNCero(((totales(value)*100)/sumatoriasTMP.value['votacion_total']).toFixed(4))+'%<br><br><br><br>';             
                       } else {
-                        return '<b>'+ nombres[value] +'</b><br><br><img style="display: block; border: 1px solid #000; margin-left: auto; margin-right: auto;" src="' + getImagePath("partidos" ,prefijo + value) + '.jpg" /><br><br><br>'+cifrasMiles(totales(value))+'<br>'+((totales(value)*100)/sumatoriasTMP.value['votacion_total']).toFixed(4)+'%<br><br><br><br>';             
+                        return '<b>'+ nombres[value] +'</b><br><br><img style="display: block; border: 1px solid #000; margin-left: auto; margin-right: auto;" src="' + getImagePath("partidos" ,prefijo + value) + '.jpg" /><br><br><br>'+cifrasMiles(totales(value))+'<br>'+isNaNCero(((totales(value)*100)/sumatoriasTMP.value['votacion_total']).toFixed(4))+'%<br><br><br><br>';             
                       }
                     }
                     //return '<span><img style="display: block; margin-left: auto; margin-right: auto;" src="' + getImagePath("personas" , data[output-1].name) + '.png" /><br><b>Nombre(s)</b><br><b>Apellidos(s)</b><img style="display: block; border: 1px solid #000; margin-left: auto; margin-right: auto;" src="' + getImagePath("partidos" ,prefijo + data[output-1].name) + '.jpg" /><br><br><br>'+totalVotosPar[output-1]+'<br>'+totalPorcentajes[output-1]+'<br><br>10000<br>900<br>200<br>100<br><br><br><br></span>';
@@ -409,18 +417,29 @@
   });
 
   function totales(value){
+    if(Math.round(decimalesPPP.value) == 1){
+      decimalesPAN.value += 1;
+    } else if(Math.round(decimalesPPP.value) == 2) { 
+      decimalesPAN.value += 1;
+      decimalesPRI.value += 1;
+    } else if(Math.round(decimalesPPP.value) == 3){
+      decimalesPAN.value += 1;
+      decimalesPRI.value += 1;
+      decimalesPRD.value += 1;
+    }
+    decimalesPPP.value = 0;
     if(value == '1'){
-      return sumatoriasTMP.value['PP'+value] + votosDistribuidos1.value['P'+value] + votosDistribuidos2.value['P'+value] + votosDistribuidos3.value['P'+value];             
+      return sumatoriasTMP.value['PP'+value] + votosDistribuidos1.value['P'+value] + votosDistribuidos2.value['P'+value] + votosDistribuidos3.value['P'+value] + Math.round(decimalesPAN.value);             
     } else if(value == '2'){
-      return sumatoriasTMP.value['PP'+value] + votosDistribuidos1.value['P'+value] + votosDistribuidos2.value['P'+value] + votosDistribuidos4.value['P'+value];             
+      return sumatoriasTMP.value['PP'+value] + votosDistribuidos1.value['P'+value] + votosDistribuidos2.value['P'+value] + votosDistribuidos4.value['P'+value] + Math.round(decimalesPRI.value);             
     } else if(value == '3'){
-      return sumatoriasTMP.value['PP'+value] + votosDistribuidos1.value['P'+value] + votosDistribuidos3.value['P'+value] + votosDistribuidos4.value['P'+value];             
+      return sumatoriasTMP.value['PP'+value] + votosDistribuidos1.value['P'+value] + votosDistribuidos3.value['P'+value] + votosDistribuidos4.value['P'+value] + Math.round(decimalesPRD.value);             
     } else if(value == '4'){
-      return sumatoriasTMP.value['PP'+value] + votosDistribuidos5.value['P'+value] + votosDistribuidos6.value['P'+value] + votosDistribuidos7.value['P'+value];             
+      return sumatoriasTMP.value['PP'+value] + votosDistribuidos5.value['P'+value] + votosDistribuidos6.value['P'+value] + votosDistribuidos7.value['P'+value] + Math.round(decimalesVerde.value);             
     } else if(value == '5'){
-      return sumatoriasTMP.value['PP'+value] + votosDistribuidos5.value['P'+value] + votosDistribuidos6.value['P'+value] + votosDistribuidos8.value['P'+value];             
+      return sumatoriasTMP.value['PP'+value] + votosDistribuidos5.value['P'+value] + votosDistribuidos6.value['P'+value] + votosDistribuidos8.value['P'+value] + Math.round(decimalesPT.value);             
     } else if(value == '7'){
-      return sumatoriasTMP.value['PP'+value] + votosDistribuidos5.value['P'+value] + votosDistribuidos7.value['P'+value] + votosDistribuidos8.value['P'+value] + Math.round(decimales.value);             
+      return sumatoriasTMP.value['PP'+value] + votosDistribuidos5.value['P'+value] + votosDistribuidos7.value['P'+value] + votosDistribuidos8.value['P'+value] + Math.round(decimalesMorena.value);             
     } else {
       return sumatoriasTMP.value['PP'+value];            
     }
@@ -440,10 +459,15 @@
     let bandera = false;
     let sortVotosPart = [...votosPart];
     let reparto = [];
-    if (coalicion != 'COAL5' && coalicion != 'COAL8'){
-      const division = Math.trunc(votosCoalicion/partidos);
-      //console.log('division', division);
-      const modulo = (votosCoalicion%partidos);
+    let decimales = 0;
+
+    const division = Math.trunc(votosCoalicion/partidos);
+    //console.log('division', division);
+    const modulo = (votosCoalicion%partidos);
+    if (modulo!=0){
+      bandera = true;
+    }
+    if(coalicion != 'COAL5' || bandera == true){
       //console.log('modulo', modulo);
       for(let b =0; b< partidos; b++){
         reparto[b] = division;
@@ -451,11 +475,37 @@
     } else {
       bandera = true;
     }
-    if ( bandera ){
+    if (bandera) {
       for(let a = 0; a < partidos; a++ ){
         reparto[a] = Math.trunc((votosCoalicion*porcentajeArray[a]) / 100);
-        if(coalicion == 'COAL5'){
-          decimales.value += ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+        if(coalicion == 'COAL1'){
+          // decimales +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+          decimalesPPP.value +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+        }
+        else if(coalicion == 'COAL2'){
+          decimalesPAN.value +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+        } 
+        else if(coalicion == 'COAL3'){
+          decimalesPAN.value +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+        } 
+        else if(coalicion == 'COAL4'){
+          decimalesPRI.value +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+        } 
+        else if(coalicion == 'COAL5'){
+          // decimales +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+          decimalesMorena.value +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+        }
+        else if(coalicion == 'COAL6'){
+          // decimales +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+          decimalesVerde.value +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+        }
+        else if(coalicion == 'COAL7'){
+          // decimales +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+          decimalesVerde.value +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+        }
+        else if(coalicion == 'COAL8'){
+          // decimales +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
+          decimalesPT.value +=  ((votosCoalicion*porcentajeArray[a]) / 100) % 1;
         }
       }
     }
@@ -468,31 +518,25 @@
       sumatoriasTMP.value[indice] += reparto[i];
       if( coalicion == 'COAL1'){
         votosDistribuidos1.value[indice] += reparto[i];
-        //console.table(votosDistribuidos1.value);
       } else if(coalicion == 'COAL2'){
-        //console.table(votosDistribuidos2.value);
         votosDistribuidos2.value[indice] += reparto[i];
       } else if(coalicion == 'COAL3'){
-        //console.table(votosDistribuidos3.value);
         votosDistribuidos3.value[indice] += reparto[i];
       } else if(coalicion == 'COAL4'){
         votosDistribuidos4.value[indice] += reparto[i];
-        //console.table(votosDistribuidos4.value);
       } else if(coalicion == 'COAL5'){
         votosDistribuidos5.value[indice] += reparto[i];
-        //console.table(votosDistribuidos5.value);
+        // if(indice == 'P7'){
+        //   votosDistribuidos5.value[indice]+= decimales;
+        // }
       } else if(coalicion == 'COAL6'){
         votosDistribuidos6.value[indice] += reparto[i];
-        //console.table(votosDistribuidos6.value);
       } else if(coalicion == 'COAL7'){
         votosDistribuidos7.value[indice] += reparto[i];
-        //console.table(votosDistribuidos7.value);
       } else if(coalicion == 'COAL8'){
         votosDistribuidos8.value[indice] += reparto[i];
-        //console.table(votosDistribuidos8.value);
       }
     }
-    //console.table(sumatoriasTMP.value);
   }
   const prop = defineProps({
     categories: {

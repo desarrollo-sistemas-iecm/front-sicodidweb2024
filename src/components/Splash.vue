@@ -107,9 +107,14 @@ onMounted(() => {
     background-size: 100%;
             border-radius: 15px;
             border-radius: 15px;
+            border-radius: 15px;
+            
+    border-radius: 15px;
+            
+    border-radius: 15px;
+            border-radius: 15px;
             
     border-radius: 15px;
             
 }
 </style>
-

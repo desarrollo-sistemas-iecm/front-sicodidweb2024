@@ -22,7 +22,7 @@
         <!--<video-camera-outlined />-->
         
         <span style="hyphens: 'auto'; text-align: justify;">
-          <RouterLink :to="{name:'partidos', params:{id: 'Partidos!!!'}} ">Votos por Partido Político y Candidatura Independiente</RouterLink>
+          <RouterLink :to="{name:'partidos', params:{id: 'Partidos!!!'}} ">Votos por Partido Político y Candidatura sin Partido</RouterLink>
         </span>
       </a-menu-item>
       <a-menu-item :style="{height:'64px', whiteSpace: 'pre-wrap', height: 'auto'}" key="3">

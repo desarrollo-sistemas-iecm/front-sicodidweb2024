@@ -41,16 +41,14 @@
         <div class="circle_tiny_red"></div><label style="color:red">No Contabilizada</label>
       </div>
       -->
-    
-      <a-table class="ant-table-striped" :scroll="{x:800}" 
+    <!-- {{ data }} -->
+      <a-table class="ant-table-striped" :scroll="{x:900}" 
           :columns="columns" :data-source="data" @resizeColumn="handleResizeColumn"
           :row-class-name="(_record, index) => (index % 2 === 1 ? 'table-striped' : null)" bordered>
         <template #headerCell="{ column }" >
           <template v-if="column.key >= 1">
             <span>
   
-      <!-- TODO: aqui -->
-
               <img :src="'/prep2024/partidos/'+value_fields[column.key-1].id_participante+'.jpg'">
   
             </span>
@@ -136,6 +134,8 @@
           import { SmileOutlined, DownOutlined } from '@ant-design/icons-vue';
           import { useEleccionStore} from "../stores/eleccion_actual"
           import ResumenVotacion from "../components/ResumenVotacion.vue";
+          import { cifrasMiles } from "../helpers";
+
   
           const prop = defineProps({
             titulo: {
@@ -221,6 +221,13 @@
 
               /// --- DATOS DE LAS SECCIONES
               data.value = jsonData.data;
+
+              if(data.value.length != 0){
+                data.value.forEach((element) =>{
+                  // console.log(element);
+                  element["votacion_total"] = cifrasMiles(element["votacion_total"]);
+                })
+              }
 
               // --- NOMBRES DE LAS COLUMNAS
               columns.value = jsonData.columns;

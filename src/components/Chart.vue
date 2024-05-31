@@ -8,7 +8,7 @@
 
     <highcharts class="hc" :options="chartOptions" v-if="!isMobile()"></highcharts>
     <template v-else v-for="data in dataTmp" :key="data.id">
-        <a-card hoverable style="margin-top: 4%; margin-bottom: 4%;" :style="{'background-color': eleccion.tema ?  '#f5f5f5' : '#9c9c9c', border: winner.value.name == data.id ? '7px solid rgb(88, 45, 115)' : '0px'}">
+        <a-card hoverable style="margin-top: 4%; margin-bottom: 4%;" :style="{'background-color': eleccion.tema ?  '#f5f5f5' : '#2a2a2a', border: winner.value.name == data.id ? '7px solid rgb(88, 45, 115)' : '0px'}">
             <template #actions >
                 <a-row style="color:black; margin-top: -3%; margin-bottom: -3%;" :style="{'background-color': eleccion.tema ?  '#eae3e7' : '#292929'}">
                     <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" style="align-items: left; text-align: left; margin-left: 15%; ">

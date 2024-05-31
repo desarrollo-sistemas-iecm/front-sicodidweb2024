@@ -4,7 +4,7 @@
 
     import 'vue3-carousel/dist/carousel.css'
     import { Carousel, Slide, Navigation, Pagination} from 'vue3-carousel'
-    import { isMobile } from "../helpers";
+    import { isMobile, cifrasMiles } from "../helpers";
 
     import {useEleccionStore} from "../stores/eleccion_actual"
 
@@ -102,7 +102,7 @@
             cmb3: {{ eleccion.cmb3 }} <br>     
 
  -->
-    <Carousel :items-to-show="!isMobile() ? 5.1 : 2.5" :autoplay="false" :wrap-around="true">
+    <Carousel :items-to-show="!isMobile() ? 3 : 0" :autoplay="false" :wrap-around="true">
       <Slide v-for="slide in data" :key="slide.campo">
         <div class="carousel__item">
 
@@ -135,7 +135,7 @@
                     <table :style="{width: '100%', color: eleccion.tema ? '' : 'white'}">
                       <tr>
                         <td style="width: 50%;">
-                          {{slide.valor}}
+                          {{ cifrasMiles(slide.valor) }}
                         </td>
                         <td>
                           {{slide.porcentaje}}

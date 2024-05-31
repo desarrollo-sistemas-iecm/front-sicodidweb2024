@@ -5,9 +5,9 @@
                 <a-card :style="{'background-color': eleccion.tema ? 'white': '#1d1d1d', padding: '1px', 'margin-bottom': '10px',
                'border-radius': '7px', border: '0px solid rgb(49, 16, 42)', color: eleccion.tema ? 'black': 'white'}">
                     <div class="container imageDivMapWorld">
-                        <p>{{titulo_migrante}}</p> 
+                        <p :style="{color: eleccion.tema ? '': 'white'}">{{titulo_migrante}}</p> 
                         <p><img style="width:46px; justify-content: start"  src="/votoext/mundo.png" alt="Urbanas"></p>
-                        <a-button type="primary" :style="{color:'black'}" @click="showData(1, 'Ver resultados')">Ver resultados</a-button>
+                        <a-button type="primary" :style="{color: eleccion.tema ? 'black': 'white'}" @click="showData(1, 'Ver resultados')">Ver resultados</a-button>
                     </div>
                 </a-card>
             </a-col>
@@ -15,9 +15,9 @@
                 <a-card :style="{'background-color': eleccion.tema ? 'white': '#1d1d1d', padding: '1px', 'margin-bottom': '10px',
                'border-radius': '7px', border: '0px solid rgb(49, 16, 42)', color: eleccion.tema ? 'black': 'white'}">
                     <div class="container imageDivPos">
-                        <p>Voto anticipado</p>
+                        <p :style="{color: eleccion.tema ? '': 'white'}">Voto anticipado</p>
                         <p><img style="width:46px; justify-content: start"  src="/votoext/carta.png" alt="Urbanas"></p>
-                        <a-button :style="{color:'black'}" type="primary" @click="showData(2, 'Ver resultados')">Ver resultados</a-button>
+                        <a-button :style="{color: eleccion.tema ? 'black': 'white'}" type="primary" @click="showData(2, 'Ver resultados')">Ver resultados</a-button>
                     </div>
                 </a-card>
             </a-col>
@@ -25,9 +25,9 @@
                 <a-card :style="{'background-color': eleccion.tema ? 'white': '#1d1d1d', padding: '1px', 'margin-bottom': '10px',
                'border-radius': '7px', border: '0px solid rgb(49, 16, 42)', color: eleccion.tema ? 'black': 'white'}">
                     <div class="container imageDivPos">
-                        <p>Voto en prisión preventiva</p>
+                        <p :style="{color: eleccion.tema ? '': 'white'}">Voto en prisión preventiva</p>
                         <p><img style="width:46px; justify-content: start"  src="/votoext/boleta.png" alt="Urbanas"></p>
-                        <a-button :style="{color:'black'}" type="primary" @click="showData(3, 'Ver resultados')">Ver resultados</a-button>
+                        <a-button :style="{color: eleccion.tema ? 'black': 'white'}" type="primary" @click="showData(3, 'Ver resultados')">Ver resultados</a-button>
                     </div>
                 </a-card>
             </a-col>

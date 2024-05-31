@@ -1,4 +1,9 @@
 <template>
+    <!--
+       ESPECIALES {{ especiales }} 
+  -->
+    
+  
     <div>
         <a-row :gutter="{ xs: 8, sm: 16, md: 24, lg: 32 }" :style="{marginTop: '20px'}">
             <a-col :span="24">
@@ -8,6 +13,7 @@
                     </label>
                     <br>
                     <label style="font-size: 10px;text-align: justify; width: '100%';">
+                        <!-- TODO: AQUI -->
                         Se calcula considerando: Total de votos de las Actas Contabilizadas, multiplicado por 100, dividido entre la Lista Nominal de las casillas con Actas Contabilizadas.
                     </label>
                     <div :style="{background: eleccion.tema ? '#e8e8e8' : '#2c2c2c', 'margin-top': '10px'}">
@@ -29,10 +35,22 @@
                                                                             <label style="color:#582D73; font-weight: bold; font-size: 12px;">Total de Votos</label><div class="circle_tiny">A</div>
                                                                         </a-space>
                                                                         <br>
-                                                                        <label style="font-size: 10px; font-weight: bold;">
+                                                                        <!--
+
+                                                                          !!!!!
+                                                                        {{ especiales }}  
+                                                                        -->
+                                                                        
+                                                                        <label v-if="especiales==0" style="font-size: 10px; font-weight: bold;">
                                                                             Sin considerar la votación en Casillas Especiales MR
                                                                         </label>
-                                                                    
+                                                                        <!-- NUEVO: 28/MAYO/2024-->
+                                                                        <label v-else style="font-size: 10px; font-weight: bold;">
+                                                                            Considerando la votación en Casillas Especiales MR
+                                                                        </label>
+
+
+
                                                                         <label style="font-size: 25px; font-weight: bolder;">
                                                                             <!---{{ sin_especiales }} 
                                                                             -->
@@ -73,6 +91,7 @@
                                                            </label>
                                                         <br>
                                                         <label style="font-size:10px; font-weight: normal;">
+                                                            <!-- TODO: AQUI -->
                                                             (Lista Nominal de las casillas con Actas Contabilizadas)
                                                         </label>
                                                          
@@ -86,7 +105,7 @@
                                         <div  style="display: flex;
                                             justify-content: center;
                                             align-items: center;
-                                            height: 200px;">
+                                            " :style="{'height': !isMobile() ? '200px' : '120px'}">
                                             <label>=</label>
                                         </div>
                                     </a-col>
@@ -105,9 +124,8 @@
                                             <p style="display: flex;
                                                 justify-content: center;
                                                 align-items: center;
-                                                height: 200px;
                                                 font-size: 30px; font-weight: bolder;
-                                                color: #582D73;">
+                                                color: #582D73;" :style="{'height': !isMobile() ? '200px' : '60px'}">
 
                                                 {{ lnGrafPor }} %
                                             </p>

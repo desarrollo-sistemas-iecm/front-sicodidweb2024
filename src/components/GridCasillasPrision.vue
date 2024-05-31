@@ -60,7 +60,7 @@
             <img class="img_28" src="@/assets/votoext/acta.png"> Acta de Cómputo Entidad Federativa
           </a-col>
       </a-row>
-      <a-table class="ant-table-striped" :scroll="{x:800}" 
+      <a-table class="ant-table-striped" :scroll="{x:900}" 
           :columns="columns" :data-source="data" @resizeColumn="handleResizeColumn"
           :row-class-name="(_record, index) => (index % 2 === 1 ? 'table-striped' : null)" bordered v-if="eleccion.cmb1 != ''">
         <template #headerCell="{ column }" >
@@ -81,7 +81,7 @@
           </template>
           
           <template v-if="column.key == 'id_distrito'">
-            Acta digitalizada
+            <p style="padding: 10px ;">Acta digitalizada</p>
          </template>
 
          <template v-if="column.key == 'contabilizar'">

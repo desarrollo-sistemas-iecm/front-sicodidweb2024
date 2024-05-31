@@ -24,14 +24,14 @@
                 -->                 
                     </a-col>
                     <a-col :span="4"  class="gutter-row" align="right">
-                        <a-button v-if="!isMobile()" @click="leeEleccion(eleccion.eleccion); eleccion.mainKey = new Date();  " type="primary" shape="round"  :style="{height:'50px', width:'100px', color:'black', fontWeight:'bold'}">
+                        <a-button v-if="!isMobile()" @click="leeEleccion(eleccion.eleccion); eleccion.mainKey = new Date();" type="primary" shape="round"  :style="{height:'50px', width:'100px', color:'black', fontWeight:'bold'}">
                             <template #icon>
                             <ReloadOutlined />
                             </template> 
                             <br>
                             Actualizar
                         </a-button>
-                        <a-button v-if="isMobile()" @click="leeEleccion(); eleccion.mainKey = new Date(); eleccion.ultimaEleccion=['1']; $router.push({ name: 'home' }); " type="primary" shape="round"  style=" color: black">
+                        <a-button v-if="isMobile()" @click="leeEleccion(eleccion.eleccion); eleccion.mainKey = new Date();" type="primary" shape="round"  style=" color: black">
                             <template #icon>
                             <ReloadOutlined />
                             </template>
@@ -199,7 +199,7 @@
         <a-col v-if="!isMobile()" :xs="24" :sm="24" :md="7" :lg="7" :xl="7" class="gutter-row" align="center" style="margin-left: -15px;">
             <a-card size="small" :bordered=" eleccion.tema ? false : true " :style="{height:'97%', 'background-color': eleccion.tema ? '#582D73' : '#1d1d1d', color:'white', 'text-align': 'left', 'border-color': '#c791a8'}" >
                 <p><b>Mi sección</b></p>
-                <p> <a-button @click="showModal" type="link"><QuestionCircleOutlined style="color: white"/></a-button> Para conocer los resultados, el número de tu Sección. <br> * Campo obligatorio</p>
+                <p> <a-button @click="showModal" type="link"><QuestionCircleOutlined style="color: white"/></a-button> Para conocer los resultados, captura el número de tu Sección Electoral. <br> * Campo obligatorio</p>
                 <label for="seccion">Sección*</label>
                 <a-row  style="margin-top:25px;">
                     <a-col :xs="14" :sm="14" :md="14" :lg="14" :xl="14">

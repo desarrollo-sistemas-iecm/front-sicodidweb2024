@@ -32,7 +32,7 @@
                             <img v-else :src="getImagePathPartido(cat.id_participante)" style='padding: 20px;' alt="">
                             <p><strong > {{ cifrasMiles(data[0][cat.campo_votos]) }}</strong></p>
                         </template>
-                        <p style="padding-top:9px"><strong>{{ ((data[0][cat.campo_votos] * 100) / data[0]['votacion_total']).toFixed(3) }} %</strong></p>
+                        <p style="padding-top:9px"><strong>{{ isNaNCero(((data[0][cat.campo_votos] * 100) / data[0]['votacion_total']).toFixed(4)) }} %</strong></p>
                     </a-card>
                 </a-col>
             </template>
@@ -54,7 +54,7 @@
         <a-row style="align-items: center; text-align: center; justify-content: center" v-else>
             <template v-for="(cat) in catalogo" :key="cat.id_participante">
                 <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <a-card hoverable style="margin-top: 4%; margin-bottom: 4%;" :style="{'background-color': eleccion.tema ?  '#eae3e7' : '#9c9c9c'}">
+                    <a-card hoverable style="margin-top: 4%; margin-bottom: 4%;" :style="{'background-color': eleccion.tema ?  '#eae3e7' : '#2a2a2a'}">
                         <a-card-meta :title="data.descripcion">
                             <template #avatar v-if="data.id != 'no_reg' && data.id != 'nulos'">
                                 <a-avatar :size="48" style="box-shadow: 8px 8px 24px 8px rgba(208, 216, 243, 0.6);" :src="getImagePathJG(cat.id_participante)" />
@@ -73,7 +73,7 @@
                                 <p><strong> {{ cifrasMiles(data[0][cat.campo_votos]) }}</strong></p>
                             </a-col>
                             <a-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
-                                <p style="padding-top:9px"><strong>{{ ((data[0][cat.campo_votos] * 100) / data[0]['votacion_total']).toFixed(3) }} %</strong></p>
+                                <p style="padding-top:9px"><strong>{{ isNaNCero(((data[0][cat.campo_votos] * 100) / data[0]['votacion_total']).toFixed(4)) }} %</strong></p>
                             </a-col>
                         </a-row>
                     </a-card>
@@ -86,7 +86,7 @@
 <script setup>
     import {useEleccionStore} from "../stores/eleccion_actual"
     import { ref, onMounted } from 'vue';
-    import { getImagePath,  getImagePathPartido, formatNumber, getImagePathJG, nombresJG, cifrasMiles } from "../helpers";
+    import { getImagePath,  getImagePathPartido, formatNumber, getImagePathJG, nombresJG, cifrasMiles, isNaNCero } from "../helpers";
     import { isMobile } from "../helpers";
 
     const eleccion = useEleccionStore();

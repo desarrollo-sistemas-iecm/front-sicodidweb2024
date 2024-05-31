@@ -50,7 +50,7 @@ onBeforeMount(async () => {
                         colorByPoint: true,
                     }],
                 xAxis: {
-                        categories: ['Esperadas', 'Capturadas', 'Computadas'],
+                        categories: ['Esperadas', 'Capturadas', 'Contabilizadas'],
                         title: {
                             text: null
                         },

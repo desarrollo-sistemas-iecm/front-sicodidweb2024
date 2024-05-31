@@ -50,7 +50,7 @@ onBeforeMount(async () => {
                         colorByPoint: true,
                     }],
                 xAxis: {
-                        categories: ['Esperadas', 'Capturadas', 'Computadas'],
+                        categories: ['Esperadas', 'Capturadas', 'Contabilizadas'],
                         title: {
                             text: null
                         },
@@ -75,9 +75,14 @@ onBeforeMount(async () => {
                                 var tmpVal =0;
                                 if(props.actas_capturadas_de){
                                     value2 = this.axis.series[0].yData[this.pos]; 
-                                    tmpVal = props.actas_cap_porcen;
+                            
+                                    
+                                        tmpVal =  (value2)*100/ props.actas_capturadas_de;
+
+              
+                                    
                                 }
-                                return '<span><br>'+cifrasMiles(value2)+'<br>'+tmpVal+'%<br><br>'+this.value+'</span>';
+                                return '<span><br>'+cifrasMiles(value2)+'<br>'+tmpVal.toFixed(4)+'%<br><br>'+this.value+'</span>';
                                                     
                             },
                             align: 'center',

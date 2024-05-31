@@ -40,9 +40,10 @@
 
     <br><br>
     <label :style="{color: eleccion.tema ? '#333333' : 'white', 'font-size': '12px', 'font-weight': 'normal'}">
+      <!-- TODO: AQUI -->
       En la tabla se muestran los votos que cada Partido Político, Coalición o Candidatura Independiente ha obtenido hasta el momento.
     </label>
-    <a-table class="ant-table-striped" :scroll="{x:800}" 
+    <a-table class="ant-table-striped" :scroll="{x:900}" 
         :columns="columns" :data-source="data" @resizeColumn="handleResizeColumn"
         :row-class-name="(_record, index) => (index % 2 === 1 ? 'table-striped' : null)" bordered
         :pagination="false" style="margin-bottom: 10px,">
@@ -105,6 +106,7 @@
     <br>
 
     <label :style="{'font-size': '12px', 'font-weight': 'bolder', 'margin-bottom': '10px', color: eleccion.tema ? 'black': 'white'}">
+      <!-- TODO: aQUI -->
       No se considera la cantidad de votos asentada en las Actas de Casilla Especial de Representación Proporcional. Por presentación, los decimales de los porcentajes muestran sólo cuatro dígitos. No obstante, al considerar todos los decimales, suman 100%.  
     </label>
 <!--

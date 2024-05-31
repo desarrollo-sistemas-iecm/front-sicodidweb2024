@@ -3,6 +3,7 @@
 
       <a-row :gutter="{ xs: 8, sm: 16, md: 24, lg: 32 }">
               <div style='text-align: justify; margin: 15px;'>
+                <!-- TODO: AQUI -->
               El total de votos calculado y porcentaje que se muestran, se refieren a los votos asentados en las Actas hasta el momento.
               Por presentación, los decimales de los porcentajes muestran sólo cuatro dígitos. No obstante, al considerar todos los decimales, suman 100%.
               </div>
@@ -22,7 +23,7 @@
           >
         </div>
         <label  style="font-size: 1.4em;"> 
-          Votos en Acta Contabilizada
+          Votos en Acta Computada
         </label><br> 
       </div>
   </div>

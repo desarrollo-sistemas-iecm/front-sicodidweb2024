@@ -86,8 +86,7 @@
                                     <a-col :xs="2" :sm="2" :md="2" :lg="2" :xl="2"  >
                                         <div  style="display: flex;
                                             justify-content: center;
-                                            align-items: center;
-                                            height: 200px;">
+                                            align-items: center;" :style="{'height': !isMobile() ? '200px' : '120px'}">
                                             <label>=</label>
                                         </div>
                                     </a-col>
@@ -101,14 +100,29 @@
                                             <p style="display: flex;
                                                 justify-content: center;
                                                 align-items: center;
-                                                height: 200px;
                                                 font-size: 30px; font-weight: bolder;
-                                                color: #582D73;">
+                                                color: #582D73;" :style="{'height': !isMobile() ? '200px' : '60px'}">
                                        <!--
                                         {{ eleccion.suma_esp_sinesp}}  {{ eleccion.lista_nominal_contabilizadas }}
-                                       -->        
-                                       {{ eleccion.suma_esp_sinesp && eleccion.lista_nominal_contabilizadas ? ((eleccion.suma_esp_sinesp.replace(/,/g, "") * 100) / eleccion.lista_nominal_contabilizadas).toFixed(4) : '0' }} %
+                                       --> 
+                                       
+                                       <!--
+                                         {{ eleccion.suma_esp_sinesp && eleccion.lista_nominal_contabilizadas ? ((eleccion.suma_esp_sinesp.replace(/,/g, "") * 100) / eleccion.lista_nominal_contabilizadas).toFixed(4) : '0' }} %
                                       
+                                       -->
+                                        <!--
+                                                        {{ eleccion.suma_esp_sinesp}}  {{ eleccion.lista_nominal_contabilizadas }}
+                                                    -->  
+                                                    <label v-if="eleccion.suma_esp_sinesp && eleccion.lista_nominal_contabilizadas">
+                                                    
+                                                        {{
+                                                        parseFloat(  ((eleccion.suma_esp_sinesp.replace(/,/g, "") * 100) / eleccion.lista_nominal_contabilizadas)) > 100.000? '****' :
+                                                            ((eleccion.suma_esp_sinesp.replace(/,/g, "") * 100) / eleccion.lista_nominal_contabilizadas).toFixed(4)
+                                                         }} %
+                                                    </label>      
+                                                    <label v-else>
+                                                        0.0000%
+                                                    </label>
                                                <!--{{ eleccion.participacion }}--> 
                                             </p>
                                         </div>
@@ -116,9 +130,10 @@
                                 </a-row>                           
                             </div>  
                         </center>
+                        <!-- TODO: AQUI -->
                         <!-- <div>
                             <label :style="{'font-size': '10px', 'text-align': 'left', 'letter-spacing': '0px', color: eleccion.tema ? '#4B3943' : 'white',  width: '100%'}">
-                                Por su naturaleza, las casillas especiales no cuentan con lista nominal, por tanto, para el cálculo de la participación ciudadana, la cantidad de votos asentada en las Actas de casilla especial, se deberá considerar hasta el último corte de información que se publique, al cierre del SICODID (numeral 29, fr. IX del Anexo 13 del Reglamento de Elecciones).
+                                Por su naturaleza, las casillas especiales no cuentan con lista nominal, por tanto, para el cálculo de la participación ciudadana, la cantidad de votos asentada en las Actas de casilla especial, se deberá considerar hasta el último corte de información que se publique, al cierre del PREP (numeral 29, fr. IX del Anexo 13 del Reglamento de Elecciones).
                             </label>  
                         </div> -->
                         

@@ -116,7 +116,7 @@
             <a-card :bordered="false" :style="{'background-color': eleccion.tema ? '#582d73' : '#1d1d1d', color:'white'}" title="Mi sección" headStyle="color: white">
                 <a-row>
                     <a-col  :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <p>Para concocer los resultados, ingresa el número de tu sección</p>
+                        <p>Para concocer los resultados, captura el número de tu Sección Electoral</p>
                         <p>*Campo obligatorio</p>
                     </a-col>
                     <a-col  :xs="24" :sm="24" :md="24" :lg="24" :xl="24">

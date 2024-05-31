@@ -35,40 +35,48 @@ index
     {{ maxValor  }}
     {{ winnerIndex  }}
     -->
-    <!-- {{ dataTmp }} -->
-    <!-- {{ dataExtTmp }} -->
+    <!-- {{ chartOptions }} -->
     <highcharts class="hc" :options="chartOptions"  v-if="!isMobile()"></highcharts>
     <template v-else v-for="(data, index) in dataTmp" :key="data.id">
-        <a-card hoverable style="margin-top: 4%; margin-bottom: 4%;" :style="{'background-color': eleccion.tema ?  '#f5f5f5' : '#9c9c9c', border: winnerIndex == index ? '7px solid rgb(88, 45, 115)' : '0px'}">
+        <a-card hoverable style="margin-top: 4%; margin-bottom: 4%;" :style="{'background-color': eleccion.tema ?  '#f5f5f5' : '#2c2c2c', border: winnerIndex == index ? '7px solid rgb(88, 45, 115)' : '0px'}">
             <template #actions >
-                <a-row style="color:black; margin-top: -3%; margin-bottom: -3%;" :style="{'background-color': eleccion.tema ?  '#eae3e7' : '#292929'}">
-                    <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" style="align-items: left; text-align: left; margin-left: 15%; ">
+                <a-row style="margin-top: -12px; margin-bottom: -12px;" :style="{'background-color': eleccion.tema ?  '#eae3e7' : '#2a2a2a', 'color': eleccion.tema ?  'black' : 'white'}">
+                    <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" style="align-items: left; text-align: left;">
                         <b>Votos</b>
                     </a-col>
-                    <a-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
+                    <a-col :xs="10" :sm="10" :md="10" :lg="10" :xl="10" style="align-items: left; text-align: left;">
                         En Territorio Estatal
                     </a-col>
-                    <a-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
-                        <template v-for="ext in dataExtTmp" :key="ext.id">
+                    <a-col :xs="14" :sm="14" :md="14" :lg="14" :xl="14" style="align-items: left; text-align: left;">
+                        <template v-for="ext in dataExtTmp" :key="ext.id" v-if="Object.keys(totalVotosExt).length != 0">
                             <b v-if="ext.id == data.id"> {{ cifrasMiles(data.valor - ext.valor) }}</b>
                         </template>
+                        <template v-else>
+                            <b>{{ cifrasMiles(data.valor) }}</b>
+                        </template>
                     </a-col>
-                    <a-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
+                    <a-col :xs="10" :sm="10" :md="10" :lg="10" :xl="10" style="align-items: left; text-align: left;">
                         En el extranjero
                     </a-col>
-                    <a-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
-                        <template v-for="ext in dataExtTmp" :key="ext.id">
+                    <a-col :xs="14" :sm="14" :md="14" :lg="14" :xl="14" style="align-items: left; text-align: left;">
+                        <template v-for="ext in dataExtTmp" :key="ext.id" v-if="Object.keys(totalVotosExt).length != 0">
                             <b v-if="ext.id == data.id"> {{ cifrasMiles(ext.valor) }}</b>
+                        </template>
+                        <template v-else>
+                            0
                         </template>
                     </a-col>
                 </a-row>
             </template>
-            <a-card-meta :title="data.descripcion">
+            <a-card-meta style="text-wrap: wrap;">
                 <template #avatar v-if="data.id != 'no_reg' && data.id != 'nulos'">
                     <!-- <a-avatar :size="48" :src="getImagePathJG('personas' , data.id + '.png')" /> -->
                     <a-image style="width: 65px; border-radius: 30px; box-shadow: 8px 8px 24px 8px rgba(208, 216, 243, 0.6);" :src="getImagePathJG(data.id)" alt="" 
                             fallback="data:image/png;base64,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"
                         />
+                </template>
+                <template #title>
+                    <p style="text-wrap: wrap;"><b>{{ data.descripcion }}</b></p>
                 </template>
             </a-card-meta>
             <img style="margin-left:10%; width: 20%" :src="getImagePath('partidos', data.imagen)" v-if="data.id != 'no_reg' && data.id != 'nulos'">
@@ -144,7 +152,7 @@ const initializeData = () => {
             name: elemento.id,
             y: elemento.valor,
             color: colores[elemento.id],
-            nombre: elemento.descripcion,
+            nombre: elemento.id === 14 ? 'Coalición PVEM-PT-MORENA' : elemento.descripcion, // Ajuste para Clara Marina Brugada tenga Coalición y no Candidatura Común como leyenda sólo en gráfica. (Visual) 
         });
         totalPorcentajesChart.value[elemento.id] = elemento.porcentaje;
         totalVotosParChat.value[elemento.id] = elemento.valor;

@@ -9,14 +9,13 @@
 
 --> 
 <template>
-    <div>
-
+    <div >
         <a-row v-for="category in regReal" 
-        :key="category.id" justify="space-around" align="middle" :style="{marginTop:'20px'}"
-        :gutter="{ xs: 8, sm: 16, md: 24, lg: 32 }"
+        :key="category.id" justify="space-around" align="middle" :style="{marginTop:'20px', width : isMobile()? '300%' :'' }"
+        :gutter="{ xs: 8, sm: 16, md: 24, lg: 32 }" 
         >
 
-                <a-col :span="20" class="gutter-row">
+                <a-col :span="20" class="gutter-row" >
                       <div v-bind:style="{borderRadius: '5px', border: category.id==maxReal? '3px solid #B283B9':''}" style="display: flex; flex-wrap: wrap; justify-content: left; padding: 5px; ">
                             <div style="
                                 left: 389px;
@@ -38,7 +37,7 @@
                       </div>  
          
                   </a-col>
-                  <a-col :span="4" class="gutter-row">
+                  <a-col :span="4" class="gutter-row" >
                         <label style="font-size: 16px; font-weight: bolder;"> {{category.ganadas}}</label>
                   </a-col>
    
@@ -52,12 +51,13 @@
   <script setup>
   import {useEleccionStore} from "../stores/eleccion_actual"
   import { ref, onBeforeMount, nextTick } from "vue";
+  import { isMobile } from "../helpers";
 
   const regDip = ref([
         {
           "id": 1, 
           "name": "PAN", 
-          "color": "gray", 
+          "color": "#2caffe", 
           "valor": 0, 
           "porcentaje": 0, 
           "icono": 1, "ganadas": 0 
@@ -65,7 +65,7 @@
           {
           "id": 2, 
           "name": "PRI", 
-          "color": "gray", 
+          "color": "#009f65", 
           "valor": 0, 
           "porcentaje": 0, 
           "icono": 2, "ganadas": 0 
@@ -73,7 +73,7 @@
           {
           "id": 3, 
           "name": "PRD", 
-          "color": "gray", 
+          "color": "#ffcd04", 
           "valor": 0, 
           "porcentaje": 0, 
           "icono": 3, "ganadas": 0 
@@ -81,7 +81,7 @@
           {
           "id": 4, 
           "name": "PVEM", 
-          "color": "gray", 
+          "color": "#4eb45b", 
           "valor": 0, 
           "porcentaje": 0, 
           "icono": 4, "ganadas": 0 
@@ -89,7 +89,7 @@
           {
           "id": 5, 
           "name": "PT", 
-          "color": "gray", 
+          "color": "#ef1c1e", 
           "valor": 0, 
           "porcentaje": 0, 
           "icono": 5, "ganadas": 0 
@@ -97,7 +97,7 @@
           {
           "id": 6, 
           "name": "MC", 
-          "color": "gray", 
+          "color": "#f58100", 
           "valor": 0, 
           "porcentaje": 0, 
           "icono": 6, "ganadas": 0 
@@ -105,7 +105,7 @@
           {
           "id": 7, 
           "name": "MORENA", 
-          "color": "gray", 
+          "color": "#7b2629", 
           "valor": 0, 
           "porcentaje": 0, 
           "icono": 7, "ganadas": 0 
@@ -113,7 +113,7 @@
           {
           "id": 8, 
           "name": "EBM", 
-          "color": "gray", 
+          "color": "pink", 
           "valor": 0, 
           "porcentaje": 0, 
           "icono": 9, "ganadas": 0 
@@ -121,7 +121,7 @@
           {
           "id": 10, 
           "name": "PAN-PRI-PRD", 
-          "color": "gray", 
+          "color": "#4479e1", 
           "valor": 0, 
           "porcentaje": 0, 
           "icono": 10, "ganadas": 0 
@@ -139,7 +139,7 @@
         {
           "id": 4, 
           "name": "PVEM", 
-          "color": "gray",  
+          "color": "#4eb45b",  
           "valor": 0, 
           "porcentaje": 0, 
           "icono": 4, "ganadas": 0 
@@ -147,7 +147,7 @@
           {
           "id": 5, 
           "name": "PT", 
-          "color": "gray",  
+          "color": "#ef1c1e",  
           "valor": 0, 
           "porcentaje": 0, 
           "icono": 5, "ganadas": 0 
@@ -155,7 +155,7 @@
           {
           "id": 6, 
           "name": "MC", 
-          "color": "gray",  
+          "color": "#f58100",  
           "valor": 0, 
           "porcentaje": 0, 
           "icono": 6, "ganadas": 0 
@@ -163,7 +163,7 @@
           {
           "id": 7, 
           "name": "MORENA", 
-          "color": "gray", 
+          "color": "#7b2629", 
           "valor": 0, 
           "porcentaje": 0, 
           "icono": 7, "ganadas": 0 
@@ -171,7 +171,7 @@
           {
           "id": 9, 
           "name": "JRAA", 
-          "color": "gray",  
+          "color": "#15a152",  
           "valor": 0, 
           "porcentaje": 0, 
           "icono": 9, "ganadas": 0 

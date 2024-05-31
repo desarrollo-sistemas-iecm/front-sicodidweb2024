@@ -48,7 +48,7 @@
       <div class="circle_tiny_red"></div><label style="color:red">No Contabilizada</label>
     </div>
 
-    <a-table class="ant-table-striped" :scroll="{x:800}" 
+    <a-table class="ant-table-striped" :scroll="{x:900}" 
         :columns="columns" :data-source="data" @resizeColumn="handleResizeColumn"
         :row-class-name="(_record, index) => (index % 2 === 1 ? 'table-striped' : null)" bordered>
       <template #headerCell="{ column }" >

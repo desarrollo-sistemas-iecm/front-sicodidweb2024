@@ -34,7 +34,7 @@
     <!-- de las Actas PREP Contabilizadas -->
            
 
-      <a-table :scroll="{x:800}" :columns="columns" :data-source="participacion" @resizeColumn="handleResizeColumn">
+      <a-table :scroll="{x:900}" :columns="columns" :data-source="participacion" @resizeColumn="handleResizeColumn">
         <template #headerCell="{ column }" >
           <template v-if="column.key == 'votacion_total'">
             <span>

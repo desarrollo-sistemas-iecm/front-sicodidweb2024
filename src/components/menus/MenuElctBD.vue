@@ -13,12 +13,17 @@
                         
                 -->
                 <div style="width: 100%;">
-                    <label style="font-size: 22px; padding-left: 10px; padding-top: 10px;">
+                    <label style="font-size: 22px; padding-left: 10px; padding-top: 10px; text-align: center;  line-height : 20px;">
                         Base de datos
                     </label>
+                    <br>
+                    <br>
+                    <p><u><a href="/prep2024/files/archivoZIP.pdf" download="guia_descarga.pdf" style="margin-left: 5px; margin-right: auto; font-size:15px;">
+                        Guia de descarga de archivo
+                    </a></u></p>
 
                     <a-button @click="descargar" style="width:90%; margin-left: 10px; margin-top: 10px;margin-right: auto; font-size:15px; hyphens: 'auto', text-align: center;  line-height : 20px; color: white;  background-color:#C791A8">Descargar</a-button>
-   
+                    
                     <br><br>
                 </div> 
                 <div style="width: 100%;">
@@ -30,6 +35,7 @@
                         Base de datos y utilidad
                     </a>
                 </div>   
+
                 <div style="width: 100%; margin-top: 10px;">
                     <a style="font-size: 17px; padding-left: 10px; padding-top: 10px;" @click="jump('carpeta')">
                         Carpeta de archivos

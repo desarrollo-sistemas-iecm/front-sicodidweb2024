@@ -18,7 +18,6 @@
     La tabla muestra el desglose de votos que cada Candidatura presente en el Distrito , indicando los votos recibidos de manera individual y, en su caso, los votos recibidos vía Coalición.
     <br><br>
     <u>
-      <!-- TODO: aqui -->
       <a style="color: black;" href="/prep2024/files/Info-Paraentendersumavotos.pdf" download="info-para-entender-suma-votos.pdf">
         Conoce cómo se suman los votos para Candidaturas de Coalición de acuerdo con la legislación vigente.
       </a>
@@ -165,7 +164,6 @@ let integrantesSplit = ref([]);
 onMounted(async () => {
   try {  
     const urlServer = eleccion.urlPrep;
-    alert(urlServer+'funciones_distribucion.php?type='+eleccion.eleccion+'&item='+eleccion.cmb1+'&item_2='+eleccion.cmb2+'&item_3='+eleccion.cmb3);
     const response2 = await fetch(urlServer+'funciones_distribucion.php?type='+eleccion.eleccion+'&item='+eleccion.cmb1+'&item_2='+eleccion.cmb2+'&item_3='+eleccion.cmb3).then(response => response.json())
     .then(datos => {
         console.log(datos);

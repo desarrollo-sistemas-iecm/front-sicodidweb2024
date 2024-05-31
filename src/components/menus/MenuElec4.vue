@@ -23,7 +23,7 @@
           <!--<video-camera-outlined />-->
           
           <span style="hyphens: 'auto'; text-align: justify;">
-            <RouterLink :to="{name:'chart', params:{id: '4'}} ">Votos por Partido Político y Candidatura Independiente</RouterLink>
+            <RouterLink :to="{name:'chart', params:{id: '4'}} ">Votos por Partido Político y Candidatura sin Partido</RouterLink>
           </span>
         </a-menu-item>
 
