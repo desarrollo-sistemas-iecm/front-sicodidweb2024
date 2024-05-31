@@ -78,7 +78,6 @@
   const loadCategories = () => {
   
     //fetch('../../src/assets/data/categories.json')
-    //fetch('https://aplicaciones.iecm.mx/prep2024/api_categories.php?type=2')
     fetch(`${urlServer}api_categories.php?type=${eleccion.eleccion}`)
       .then(response => response.json())
       .then(data => {
@@ -96,7 +95,6 @@
 
     if(selectedCategory.value=='' || !selectedCategory.value) return;
     if(eleccion.readData===false) return;
-    //fetch(`https://aplicaciones.iecm.mx/prep2024/api_subcategories_${selectedCategory.value}.php`)
     //alert(`${urlServer}api_subcategories.php?type=${eleccion.eleccion}&seleccion=${selectedCategory.value}`)  
     fetch(`${urlServer}api_subcategories.php?type=${eleccion.eleccion}&seleccion=${selectedCategory.value}`)  
       .then(response => response.json())
@@ -144,10 +142,8 @@
     //alert("CERO!!!!!"+selectedSubcategory.value);
        
 
-   // console.log(`http://localhost/prep2024/api_subcategories.php?type=${eleccion.eleccion}&seleccion=${selectedCategory.value}&seccion=${selectedSubcategory.value}`);
    //alert(`${urlServer}api_items.php?type=${eleccion.eleccion}&seleccion=${selectedCategory.value}&seccion=${selectedSubcategory.value}`);
     fetch(`${urlServer}api_items.php?type=${eleccion.eleccion}&seleccion=${selectedCategory.value}&seccion=${selectedSubcategory.value}`)  
-    //fetch(`https://aplicaciones.iecm.mx/prep2024/api_items_${selectedSubcategory.value}.php`)
       .then(response => response.json())
       .then(data => {
         items.value = data.items;

@@ -173,7 +173,6 @@ onBeforeMount(async () => {
     //const response = await fetch('../../src/assets/data/actas_contabilizadas.json'); // Cambia la ruta al archivo JSON o API
     const urlServer = eleccion.urlPrep;
     const response = await fetch(urlServer+'actas_contabilizadas.php');
-    //http://localhost/prep2024/
     let jsonData = await response.json();
     categories.value = jsonData.categories;
 
@@ -188,7 +187,6 @@ onBeforeMount(async () => {
     const type = eleccion.eleccion;
     const  url = urlServer+"actas_grid_data.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
     const responseURL = await fetch(url);
-    //http://localhost/prep2024/
     jsonData = await responseURL.json();
     data.value = jsonData.resumen;
 

@@ -108,32 +108,11 @@ import VotoExtra from "../components/voto_extra.vue";
 
 
     // Función para obtener la ruta completa de una imagen
-    /*
-    onMounted(async () => {
-      try {
-        //const response = await fetch('../../src/assets/data/actas_contabilizadas.json'); // Cambia la ruta al archivo JSON o API
-        const response = await fetch('https://aplicaciones.iecm.mx/prep2024/actas_contabilizadas.php');
-        //http://localhost/prep2024/
-        const jsonData = await response.json();
-        categories.value = jsonData.categories;
-
-        // PARA LIMPIAR COMBOS CUANDO CAMBIA EN MENU PRINCIPAL 11/SEP/2023
-        eleccion.combosActualesValidos("","","",paramID.value);
-
-        //////// AQUI ME QUEDE!
-        // eleccion.cambia_votacion_ext(false);
-        //  alert(eleccion.es_voto_extra)
-      } catch (error) {
-        console.error('Error al cargar los datos:', error);
-      }
-    });
-    */
+    
     // Función para obtener la ruta completa de una imagen
     onBeforeMount(async () => {
       try {
         // ESTA LECTURA YA NO ES NECESARIA
-         //const response = await fetch('https://aplicaciones.iecm.mx/prep2024/actas_contabilizadas.php');
-        //http://localhost/prep2024/
         //const jsonData = await response.json();
         //////////////////////////////////////////
         /////categories.value = jsonData.categories;

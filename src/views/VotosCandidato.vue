@@ -166,8 +166,6 @@
     try {
       const urlServer = eleccion.urlPrep;
       const response = await fetch(urlServer + 'actas_contabilizadas.php');
-      //const response = await fetch('http://localhost/prep2024/actas_contabilizadas.php');
-      //http://localhost/prep2024/
       let jsonData = await response.json();
       categories.value = jsonData.categories;
 
@@ -178,16 +176,13 @@
       const item_2 = eleccion.cmb2;
       const item_3 = eleccion.cmb3;
       const type = eleccion.eleccion;
-      //const  url ="https://aplicaciones.iecm.mx/prep2024/actas_grid_data.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
       
           
-      // const  url ="https://aplicaciones.iecm.mx/prep2024/actas_grid_data.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
       const  url = urlServer + "actas_grid_data.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
     
   ///   alert(url)
       
       const responseURL = await fetch(url);
-      //http://localhost/prep2024/
       jsonData = await responseURL.json();
       data.value = jsonData.resumen;
 

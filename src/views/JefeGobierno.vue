@@ -44,7 +44,6 @@ eleccion.eleccionActual(paramID.value);
         //const response = await fetch('../../src/assets/data/actas_contabilizadas.json'); // Cambia la ruta al archivo JSON o API
         const urlServer = eleccion.urlPrep;
         const response = await fetch(urlServer + 'actas_contabilizadas.php');
-        //http://localhost/prep2024/
         const jsonData = await response.json();
         categories.value = jsonData.categories;
 

@@ -143,9 +143,6 @@
         // Función para obtener la ruta completa de una imagen
     onMounted(async () => {
       try {
-         ////////const response = await fetch('https://aplicaciones.iecm.mx/prep2024/actas_contabilizadas.php');
-         //const response = await fetch('http://localhost/prep2024/actas_contabilizadas.php');
-        //http://localhost/prep2024/
         //const jsonData = await response.json();
         //categories.value = jsonData.categories;
 

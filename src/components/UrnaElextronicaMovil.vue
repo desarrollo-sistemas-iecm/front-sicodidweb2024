@@ -210,9 +210,7 @@ Arreglo <br><br>
     onBeforeMount(async () => {
         try {
             
-            // servidor  26/Feb/2024 : http://nombreserver/prep2024/
             const urlServer = eleccion.urlPrep;
-           // const  url ="https://aplicaciones.iecm.mx/prep2024/actas_grid_data.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
             const  url = urlServer + "nombre_campos.php";
   //alert(url);
             const response = await fetch(url);

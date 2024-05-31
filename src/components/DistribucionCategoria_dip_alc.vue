@@ -153,7 +153,6 @@ let distribucionAlcaldia = [ { idAlcaldia: 2, completa: false }, { idAlcaldia: 3
 
 onMounted(async () => {
   try {  
-    //const response2 = await fetch('http://localhost/prep2024/funciones_distribucion.php?type='+eleccion.eleccion+'&item='+eleccion.cmb1+'&item_2='+eleccion.cmb2+'&item_3='+eleccion.cmb3).then(response => response.json())
     const urlServer = eleccion.urlPrep;
     // alert(urlServer+'funciones_distribucion.php?type='+eleccion.eleccion+'&item='+eleccion.cmb1+'&item_2='+eleccion.cmb2+'&item_3='+eleccion.cmb3);
     const response2 = await fetch(urlServer+'funciones_distribucion.php?type='+eleccion.eleccion+'&item='+eleccion.cmb1+'&item_2='+eleccion.cmb2+'&item_3='+eleccion.cmb3).then(response => response.json())
@@ -181,28 +180,6 @@ onMounted(async () => {
     console.error('Error al cargar los datos:', error);
   }
 });
-
-
-/*
-import { ref, onMounted } from 'vue';
-
-const categories = ref([]);
-
-// Función para obtener la ruta completa de una imagen
-
-onMounted(async () => {
-  try {
-    //const response = await fetch('../../src/assets/data/actas_contabilizadas.json'); // Cambia la ruta al archivo JSON o API
-    const response = await fetch('https://aplicaciones.iecm.mx/prep2024/actas_contabilizadas.php');
-    //http://localhost/prep2024/
-    const jsonData = await response.json();
-    categories.value = jsonData.categories;
-  } catch (error) {
-    console.error('Error al cargar los datos:', error);
-  }
-});
-
-*/
 
 function distribucionVotos(){
   

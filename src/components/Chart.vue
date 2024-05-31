@@ -99,7 +99,6 @@ onBeforeMount(async () => {
               const  url = urlServer + "funciones_grafica.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
         // alert(url)
               const response = await fetch(url);
-              //http://localhost/prep2024/
               const jsonData = await response.json();
               /// --- DATOS DE SUMATORIAS
               const datoJsonTem = await jsonData;

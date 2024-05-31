@@ -242,7 +242,6 @@
       const type = eleccion.eleccion;
       const  url = urlServer+"actas_grid_data.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
       const responseURL = await fetch(url);
-      //http://localhost/prep2024/
       let jsonData2 = await responseURL.json();
       data.value = jsonData2.resumen;
 
@@ -372,7 +371,6 @@
       )
       .catch(error => console.error('Error:', error));
       
-      //http://localhost/prep2024/
       const jsonData = await response.json();
       categories.value = jsonData.categories;
 

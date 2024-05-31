@@ -170,7 +170,6 @@
                 
         // alert(urlCate)
         const responseCate = await fetch(urlCate);
-        //http://localhost/prep2024/
         dataCate.value = await responseCate.json();
         eleccion.estadisticaCategoria = dataCate.value;
         

@@ -85,13 +85,7 @@
               <a>Invite {{ record.id_delegacion }}</a>
               -->
               
-              <div class="circle_tiny_green"></div>
-              
-             <!--
-              <a-divider type="vertical" />
-              <img :src="'/prep2024/partidos/1.jpg'">
-             --> 
-              
+              <div class="circle_tiny_green"></div>              
             </div>
           </template>
         </template>
@@ -216,34 +210,13 @@
               const item_2 = eleccion.cmb2;
               const item_3 = eleccion.cmb3;
               const type = eleccion.eleccion;
-              //const  url ="https://aplicaciones.iecm.mx/prep2024/actas_grid_data.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
-              //const  url ="https://aplicaciones.iecm.mx/prep2024/actas_grid_data_seccion.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
-              //const  url ="http://localhost/prep2024_APIS/actas_grid_data_seccion.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
               
               
-              // servidor  26/Feb/2024 : http://nombreserver/prep2024/
               const urlServer = eleccion.urlPrep;
               
               const  url = urlServer + "actas_grid_data_seccion.php?type="+type+"&item="+item+"&item_2=&item_3=";
-              //const  url ="https://aplicaciones.iecm.mx/prep2024/actas_grid_data_seccion.php?type="+type+"&item="+item+"&item_2=&item_3=";
       
-        //alert(url);
-              ///console.log(url)
-              // Obtenido en JG:
-              // http://localhost/prep2024_APIS/actas_grid_data_seccion.php?type=1&item=2&item_2=&item_3=
-              // ------
-              // Obtenido en Dip
-              // http://localhost/prep2024_APIS/actas_grid_data_seccion.php?type=2&item=1&item_2=&item_3=
-              // ------
-              // Obtenido en Alc
-              // http://localhost/prep2024_APIS/actas_grid_data_seccion.php?type=4&item=2&item_2=&item_3=
-              // La URL se arma asi:
-              // url = https://aplicaciones.iecm.mx/prep2024/actas_grid_data.php?type=1&item=2&item_2=&item_3=
-
-              //const response = await fetch('../../src/assets/data/actas_contabilizadas.json'); // Cambia la ruta al archivo JSON o API
-              //const response = await fetch('https://aplicaciones.iecm.mx/prep2024/actas_grid_data.php');
               const response = await fetch(url);
-              //http://localhost/prep2024/
               const jsonData = await response.json();
 
               /// --- DATOS DE LAS SECCIONES

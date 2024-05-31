@@ -162,12 +162,10 @@ export const leeEleccion = async (ultima)=> {
 
       eleccion.loadData = true;
 
-      // servidor  26/Feb/2024 : http://nombreserver/prep2024/
       const urlServer = eleccion.urlPrep;
       
       const response = await fetch(urlServer+"api_avance_entidad.php?type="+(eleccion.eleccion>0? eleccion.eleccion: "1")); // Cambia la ruta al archivo JSON o API
  
-      //http://localhost/prep2024/
       //alert(response.headers.toString())
       const jsonData = await response.json();
 

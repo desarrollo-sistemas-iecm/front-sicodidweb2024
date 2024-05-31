@@ -113,11 +113,6 @@
               <div class="circle_tiny_red"></div>
             </span>
             
-           <!--
-            <a-divider type="vertical" />
-            <img :src="'/prep2024/partidos/1.jpg'">
-           --> 
-            
           </div>
         </template>
             
@@ -127,12 +122,7 @@
               {{ record.observaciones }}
             </a-tag>
           </span>
-        </template>
-           <!--
-            <a-divider type="vertical" />
-            <img :src="'/prep2024/partidos/1.jpg'">
-           --> 
-            
+        </template>            
        
         </template>
  
@@ -205,17 +195,13 @@
             const item_3 = eleccion.cmb3;
             const type = eleccion.eleccion;
 
-            // servidor  26/Feb/2024 : http://nombreserver/prep2024/
             const urlServer = eleccion.urlPrep;
             
-           // const  url ="https://aplicaciones.iecm.mx/prep2024/actas_grid_data.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
             const  url = urlServer + "actas_grid_data.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
     //alert(url)
             ///console.log(url)
             //const response = await fetch('../../src/assets/data/actas_contabilizadas.json'); // Cambia la ruta al archivo JSON o API
-            //const response = await fetch('https://aplicaciones.iecm.mx/prep2024/actas_grid_data.php');
             const response = await fetch(url);
-            //http://localhost/prep2024/
             const jsonData = await response.json();
             data.value = jsonData.data;
             columns.value = jsonData.columns;

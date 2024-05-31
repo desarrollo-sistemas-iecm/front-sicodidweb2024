@@ -150,22 +150,6 @@
     const categories = ref([]);
     
     // Función para obtener la ruta completa de una imagen
-    /*
-
-    onMounted(async () => {
-      try {
-        //const response = await fetch('../../src/assets/data/actas_contabilizadas.json'); // Cambia la ruta al archivo JSON o API
-        const response = await fetch('https://aplicaciones.iecm.mx/prep2024/actas_contabilizadas.php');
-        //http://localhost/prep2024/
-        const jsonData = await response.json();
-        categories.value = jsonData.categories;
-
-      } catch (error) {
-        console.error('Error al cargar los datos:', error);
-      }
-    });
-
-    */
     //--------------------------------------------
     const votosAlcaldia = ref([
           ['002', '728', 'red', 'https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Alabama.svg'],
@@ -202,7 +186,6 @@
         const urlServer = eleccion.urlPrep;
         //const response = await fetch('../../src/assets/data/actas_contabilizadas.json'); // Cambia la ruta al archivo JSON o API
         const response = await fetch(urlServer + 'actas_contabilizadas.php');
-        //http://localhost/prep2024/
         let jsonData = await response.json();
         categories.value = jsonData.categories;
 
@@ -225,7 +208,6 @@
         const  url = urlServer + "actas_resumen_data.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
         //alert(url);
         const responseURL = await fetch(url);
-        //http://localhost/prep2024/
         jsonData = await responseURL.json();
 
         ///////////////// 15/Abril2024

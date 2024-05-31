@@ -50,26 +50,6 @@
   </template>
   
   <script setup>
-/*
-  import { ref, onMounted } from 'vue';
-  
-  const categories = ref([]);
-  
-  // Función para obtener la ruta completa de una imagen
-
-  onMounted(async () => {
-    try {
-      //const response = await fetch('../../src/assets/data/actas_contabilizadas.json'); // Cambia la ruta al archivo JSON o API
-      const response = await fetch('https://aplicaciones.iecm.mx/prep2024/actas_contabilizadas.php');
-      //http://localhost/prep2024/
-      const jsonData = await response.json();
-      categories.value = jsonData.categories;
-    } catch (error) {
-      console.error('Error al cargar los datos:', error);
-    }
-  });
-
-*/
   import {useEleccionStore} from "../stores/eleccion_actual"
   import { ref, onBeforeMount, nextTick } from "vue";
 

@@ -53,7 +53,6 @@
     //alert(url)
 
               const response = await fetch(url);
-              //http://localhost/prep2024/
               const jsonData = await response.json();
               /// --- DATOS DE SUMATORIAS
               const datoJson = await jsonData;

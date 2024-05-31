@@ -221,7 +221,6 @@
     const message = ref('');
 
     const getImagePathCredencial = (imageName) => {
-        // return "https://aplicaciones.iecm.mx/prep2024/credenciales/"+imageName+".png";
         return (eleccion.urlPrep + "credenciales/" + imageName + ".png");
     };
 
@@ -264,12 +263,9 @@
       try {
         
         //const response = await fetch('../../src/assets/data/actas_contabilizadas.json'); // Cambia la ruta al archivo JSON o API
-        // const response = await fetch('https://aplicaciones.iecm.mx/prep2024/api_seccion.php?seccion='+message.value);
         const response = await fetch(`${eleccion.urlPrep}api_seccion.php?seccion=${message.value}`);
          // eleccion.eleccion=1 y 2 debe ser distrito / 4 debe ser alcaldia
-        //const response = await fetch('http://localhost/prep2024/api_seccion.php?seccion='+message.value);
         
-        //http://localhost/prep2024/
         const jsonData = await response.json();
         //categories.value = jsonData.categories;
         eleccion.desdeSeccion = true;

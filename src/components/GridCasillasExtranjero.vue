@@ -103,7 +103,6 @@
           onBeforeMount(async () => {
               try {
                 //eleccion.loadData = true;
-              // servidor  26/Feb/2024 : http://nombreserver/prep2024/
               const urlServer = eleccion.urlPrep;
               
               const item = eleccion.cmb1;
@@ -117,9 +116,7 @@
     //alert(url)
               ///console.log(url)
               //const response = await fetch('../../src/assets/data/actas_contabilizadas.json'); // Cambia la ruta al archivo JSON o API
-              //const response = await fetch('https://aplicaciones.iecm.mx/prep2024/actas_grid_data.php');
               const response = await fetch(url);
-              //http://localhost/prep2024/
               const jsonData = await response.json();
               data.value = jsonData.data;
               columns.value = jsonData.columns;
