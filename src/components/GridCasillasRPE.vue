@@ -57,7 +57,7 @@
 
       <!-- TODO: aqui -->
 
-            <img :src="'/prep2024/partidos/'+value_fields[column.key-1].id_participante+'.jpg'">
+            <img :src="'/sicodid2024/partidos/'+value_fields[column.key-1].id_participante+'.jpg'">
 <!--
   
  <img :src="'/partidos/'+value_fields[column.key-1].id_participante+'.jpg'">

@@ -175,7 +175,7 @@ Arreglo <br><br>
                         <a-col :span="12">
       <!-- TODO: aqui -->
                             
-                            <img :src="'/prep2024/partidos/'+item.valores.imagen">
+                            <img :src="'/sicodid2024/partidos/'+item.valores.imagen">
                         </a-col>
                         <!--
                         <a-col :span="6">

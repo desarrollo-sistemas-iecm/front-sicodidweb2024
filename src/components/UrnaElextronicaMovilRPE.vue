@@ -53,7 +53,7 @@ Arreglo <br><br>
                         <a-col :span="12">
       <!-- TODO: aqui -->
 
-                            <img :src="'/prep2024/partidos/'+item.valores.imagen">
+                            <img :src="'/sicodid2024/partidos/'+item.valores.imagen">
                         </a-col>
                         <!--
                         <a-col :span="6">
@@ -77,7 +77,7 @@ Arreglo <br><br>
            
                 <a-row justify="space-around">
                     <a-col :span="12">
-                        <img :src="'/prep2024/partidos/no_reg.jpg'">
+                        <img :src="'/sicodid2024/partidos/no_reg.jpg'">
                     </a-col>
                     
                     <a-col :span="12">
@@ -91,7 +91,7 @@ Arreglo <br><br>
             
                 <a-row justify="space-around">
                     <a-col :span="12">
-                        <img :src="'/prep2024/partidos/nulos.jpg'">
+                        <img :src="'/sicodid2024/partidos/nulos.jpg'">
                     </a-col>
                     
                     <a-col :span="12">

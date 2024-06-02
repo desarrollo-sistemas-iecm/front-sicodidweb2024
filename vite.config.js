@@ -12,9 +12,9 @@ export default defineConfig({
   
   // configura las rutas relativas al hacer npm run build
 
-  base: '/v2-sicodid-web2024',
-  publicPath: '/v2-sicodid-web2024',
-  outputDir: '/v2-sicodid-web2024',
+  base: '/sicodid2024',
+  publicPath: '/sicodid2024',
+  outputDir: '/sicodid2024',
 
   // Fin config 
 

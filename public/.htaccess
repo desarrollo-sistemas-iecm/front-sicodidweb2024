@@ -1,8 +1,8 @@
 Options -MultiViews
 
 RewriteEngine On
-RewriteBase /v2-sicodid-web2024
-RewriteRule ^v2-sicodid-web2024/index\.html$ - [L]
+RewriteBase /sicodid2024
+RewriteRule ^sicodid2024/index\.html$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /v2-sicodid-web2024/index.html [L]
+RewriteRule . /sicodid2024/index.html [L]

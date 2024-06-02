@@ -16,14 +16,14 @@
     <br><br>
     <u>
       <!-- TODO: aqui -->
-      <a style="color: black;" href="/prep2024/files/Info-Paraentenderdistribucionvotos.pdf" download="info-para-entender-distribucion-votos.pdf">
+      <a style="color: black;" href="/sicodid2024/files/Info-Paraentenderdistribucionvotos.pdf" download="info-para-entender-distribucion-votos.pdf">
         Conoce cómo se disribuyen los votos para Candidaturas de Coalición de acuerdo con la legislación vigente.
       </a>
     </u>
     <br>
     <u>
       <!-- TODO: aqui -->
-      <a style="color: black;" href="/prep2024/files/Info-ConvenioCC.pdf" download="info-convenio-cc.pdf">
+      <a style="color: black;" href="/sicodid2024/files/Info-ConvenioCC.pdf" download="info-convenio-cc.pdf">
         Conoce cómo se distribuyen los votos para la Candidatura Común de acuerdo con el convenio
       </a>
     </u>

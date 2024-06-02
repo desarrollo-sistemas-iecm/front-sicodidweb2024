@@ -50,8 +50,8 @@
       ******************************************************************
     
     -->
-  <!-- <a-watermark :content="['- PREP 2024 -', '[[*** DATOS DE PRUEBA SIN VALOR ***]]', 'ÚLTIMA ACT. ' + eleccion.corte.corte_fecha + ' ' + eleccion.corte.corte_hora + ' hrs']"
-    :font="{color: eleccion.tema ? 'rgba(105,105,105,.2)':'rgba(255,255,255,.10)'}"> -->
+  <a-watermark :content="['SICODID *** DATOS DE PRUEBA SIN VALOR ***']"
+    :font="{color: eleccion.tema ? 'rgba(105,105,105,.2)':'rgba(255,255,255,.10)'}">
 
     <a-spin tip="Cargando datos ..." size="large" color="#632A5B" :spinning="eleccion.loadData">
 
@@ -152,7 +152,7 @@
 
     </a-spin>
 
-  <!-- </a-watermark> -->
+  </a-watermark>
   <!--
           HAY ERROR??? 
       {{ muestraError }}

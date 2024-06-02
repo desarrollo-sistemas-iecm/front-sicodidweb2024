@@ -16,7 +16,7 @@
     <br><br>
     <u>
       <!-- TODO: aqui -->
-      <a style="color: black;" href="/prep2024/files/Info-Paraentenderdistribucionvotos.pdf" download="info-para-entender-distribucion-votos.pdf">
+      <a style="color: black;" href="/sicodid2024/files/Info-Paraentenderdistribucionvotos.pdf" download="info-para-entender-distribucion-votos.pdf">
         Conoce cómo se suman los votos para Candidaturas de Coalición de acuerdo con la legislación vigente.
       </a>
     </u>
@@ -203,7 +203,6 @@
       const type = eleccion.eleccion;
       const  url = urlServer+"actas_grid_data.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
       const responseURL = await fetch(url);
-      //http://localhost/prep2024/
       let jsonData2 = await responseURL.json();
       data.value = jsonData2.resumen;
 

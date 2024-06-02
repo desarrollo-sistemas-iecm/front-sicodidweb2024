@@ -49,8 +49,10 @@ watch([email, password], () => {
 const login = async () => {
   try {
     errorMessage.value = ''; // Clear previous errors
-
-    const response = await fetch('http://localhost:3025/api/login', {
+    // http://localhost:3025/api/login
+    // const urlSirec = 'http://localhost:3025/api/';
+    const urlSirec = 'https://sirec.iecm.mx:3025/api/';
+    const response = await fetch(urlSirec+'login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

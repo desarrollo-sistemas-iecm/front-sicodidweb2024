@@ -18,7 +18,7 @@
     La tabla muestra el desglose de votos que cada Candidatura presente en el Distrito , indicando los votos recibidos de manera individual y, en su caso, los votos recibidos vía Coalición.
     <br><br>
     <u>
-      <a style="color: black;" href="/prep2024/files/Info-Paraentendersumavotos.pdf" download="info-para-entender-suma-votos.pdf">
+      <a style="color: black;" href="/sicodid2024/files/Info-Paraentendersumavotos.pdf" download="info-para-entender-suma-votos.pdf">
         Conoce cómo se suman los votos para Candidaturas de Coalición de acuerdo con la legislación vigente.
       </a>
     </u>

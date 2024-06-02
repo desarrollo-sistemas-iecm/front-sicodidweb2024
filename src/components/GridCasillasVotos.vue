@@ -53,7 +53,7 @@
 
       <!-- TODO: aqui -->
 
-            <img :src="'/prep2024/partidos_dtto/'+column.key+'.jpg'">
+            <img :src="'/sicodid2024/partidos_dtto/'+column.key+'.jpg'">
 
           </span>
         </template>

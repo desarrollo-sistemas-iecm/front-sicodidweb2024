@@ -19,7 +19,7 @@
     <br><br>
     <u>
       <!-- TODO: aqui -->
-      <a style="color: black;" href="/prep2024/files/Info-Paraentendersumavotos.pdf" download="info-para-entender-suma-votos.pdf">
+      <a style="color: black;" href="/sicodid2024/files/Info-Paraentendersumavotos.pdf" download="info-para-entender-suma-votos.pdf">
         Conoce cómo se suman los votos para Candidaturas de Coalición de acuerdo con la legislación vigente.
       </a>
     </u>

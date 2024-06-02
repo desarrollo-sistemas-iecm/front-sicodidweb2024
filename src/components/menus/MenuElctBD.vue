@@ -18,7 +18,7 @@
                     </label>
                     <br>
                     <br>
-                    <p><u><a href="/prep2024/files/archivoZIP.pdf" download="guia_descarga.pdf" style="margin-left: 5px; margin-right: auto; font-size:15px;">
+                    <p><u><a href="/sicodid2024/files/archivoZIP.pdf" download="guia_descarga.pdf" style="margin-left: 5px; margin-right: auto; font-size:15px;">
                         Guia de descarga de archivo
                     </a></u></p>
 

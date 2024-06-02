@@ -32,16 +32,18 @@ const dispositivo = useDispositivoStore();
 const router = useRouter();
 const route = useRoute();
 
+// const urlSirec = 'http://localhost:3025/api/';
+const urlSirec = 'https://sirec.iecm.mx:3025/api/';
 const checkSystem = async () => {
   try {
-    const response = await fetch('http://localhost:3025/api/system');
+    const response = await fetch(urlSirec+'system');
     const data = await response.json();
     console.log('System check:', data);
     protegerRutas.value = data.proteger_rutas;
     if (protegerRutas.value) {
       const token = localStorage.getItem('token');
       if (token) {
-        const renewResponse = await fetch('http://localhost:3025/api/login/renew', {
+        const renewResponse = await fetch(urlSirec+'login/renew', {
           method: 'GET',
           headers: {
             'x-token-sicodid': token

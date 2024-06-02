@@ -38,7 +38,7 @@
 
                     <a-row>
                         <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                            <div :style="{'background-image': 'url(/prep2024/estadisticas/urbano_nourbano.png)', 'background-repeat': 'no-repeat round','width': '100%', 'height': '100px','background-size': '100%'}">
+                            <div :style="{'background-image': 'url(/sicodid2024/estadisticas/urbano_nourbano.png)', 'background-repeat': 'no-repeat round','width': '100%', 'height': '100px','background-size': '100%'}">
                                 <a-row>
                                     <a-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12" style="color: black; padding-top: 12%; text-align: center;">
                                         <p style="font-size: 27px;"><b>{{ cifrasMiles(urbanaNorbana.urbana) }}</b></p>

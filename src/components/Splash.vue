@@ -16,7 +16,7 @@
                 },
         }"
     >
-    <a-watermark :content="['PROTOTIPO', 'PARA SICODID 2024', 'DATOS DE PRUEBA']">
+    <a-watermark :content="['SICODID *** DATOS DE PRUEBA SIN VALOR ***']">
         <div class="back container">
             <div class="centrarDiv container">
                 <div style='display: flex; flex-wrap: wrap; justify-content: start;' :style="{width:'100%', padding:'10px'}">

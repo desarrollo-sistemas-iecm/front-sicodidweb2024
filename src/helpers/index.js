@@ -30,27 +30,27 @@ export const formatNumberWithPrefix = number => {
 // Sin uso --------------
 export const getImagePath = (imageName) => {
    // return `../personas/${imageName}.png`;
-    return `/prep2024/personas/${imageName}.png`;
+    return `/sicodid2024/personas/${imageName}.png`;
   };
 
 export const getImagePathPartido = (imageName) => {
   //return `../partidos/${imageName}.jpg`;
-  return `/prep2024/partidos/${imageName}.jpg`;
+  return `/sicodid2024/partidos/${imageName}.jpg`;
 };
 
 export const getImagePathPartidoDtto = (imageName) => {
   //return `../partidos/${imageName}.jpg`;
-  return `/prep2024/partidos_dtto/${imageName}.jpg`;
+  return `/sicodid2024/partidos_dtto/${imageName}.jpg`;
 };
 
 export const getImagePathPartidoCoalicion = (imageName) => {
   //return `../partidos/degradados_distribucion/${imageName}.png`;
-  return `/prep2024/partidos/degradados_distribucion/${imageName}.png`;
+  return `/sicodid2024/partidos/degradados_distribucion/${imageName}.png`;
 };
 
 export const getImagePathJG = (imageName) => {
   //return `../partidos/${imageName}.jpg`;
-  return `/prep2024/personas_jg/${imageName}.png`;
+  return `/sicodid2024/personas_jg/${imageName}.png`;
 };
 
 export const namePartido = (idPartido)=>{
@@ -99,12 +99,12 @@ export const getUrlPrep=()=>{
 
 
   // PARA DIR SICODID2024
-  // const newURL = window.location.protocol.toString() + "//" + window.location.host.toString() + "/v2-sicodid-web2024/services/";
+  // const newURL = window.location.protocol.toString() + "//" + window.location.host.toString() + "/services/";
  
  
-  // const newURL = window.location.protocol.toString() + "//" + window.location.host.toString() + "/";
+  const newURL = window.location.protocol.toString() + "//" + window.location.host.toString() + "/";
   
-   const newURL = "http://localhost/2024/sicodid/publicador/api/";
+  //  const newURL = "http://localhost/2024/sicodid/publicador/api/";
   
 
 // const newURL = "http://145.0.40.76/2024/v2-sicodid2024/services/";
@@ -259,7 +259,7 @@ export const leeEleccion = async (ultima)=> {
        eleccion.corte = jsonData.corte ? jsonData.corte: [];
       //13/abril/2024
 
-      if(urlServer.includes('prep2024.')){
+      if(urlServer.includes('sicodid2024.')){
         eleccion.hostactas = jsonData.hosts[0].hostactas;
       }
       else{
