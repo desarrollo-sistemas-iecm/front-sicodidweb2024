@@ -165,6 +165,7 @@
   onBeforeMount(async () => {
     try {
       const urlServer = eleccion.urlPrep;
+      // alert(urlServer + 'actas_contabilizadas.php');
       const response = await fetch(urlServer + 'actas_contabilizadas.php');
       let jsonData = await response.json();
       categories.value = jsonData.categories;
@@ -197,6 +198,7 @@
       await nextTick();
       
     } catch (error) {
+      console.log(error);
       console.error('Error al cargar los datos:', error);
     }
   });
