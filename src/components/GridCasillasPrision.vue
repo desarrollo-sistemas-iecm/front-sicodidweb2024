@@ -52,14 +52,7 @@
       </a-row>
 
       <br>
-      <a-row v-if="eleccion.cmb1 != ''">
-        <a-col :span="24">
-            Acta procedente de: <br>
-            <img class="img_28" src="@/assets/votoext/acta_gris.png"><img class="img_28" src="@/assets/votoext/reloj_gris.png"> Acta en proceso
-            <label style="font-size: 2em;"> | </label>
-            <img class="img_28" src="@/assets/votoext/acta.png"> Acta de Cómputo Entidad Federativa
-          </a-col>
-      </a-row>
+
       <a-table class="ant-table-striped" :scroll="{x:900}" 
           :columns="columns" :data-source="data" @resizeColumn="handleResizeColumn"
           :row-class-name="(_record, index) => (index % 2 === 1 ? 'table-striped' : null)" bordered v-if="eleccion.cmb1 != ''">
@@ -97,7 +90,7 @@
               {{ record.nombre_img }}
             -->
             
-            <IconImageView v-if="record.nombre_img || record.validado=='T'" :dto="record.id_distrito" :nombreImg="record.nombre_img" :registro ="record" :columnas="columns" ></IconImageView>
+            <!-- <IconImageView v-if="record.nombre_img || record.validado=='T'" :dto="record.id_distrito" :nombreImg="record.nombre_img" :registro ="record" :columnas="columns" ></IconImageView> -->
             <!--
               <IconImageView v-if="record.nombre_img" :dto="record.id_distrito" :nombreImg="record.nombre_img"  ></IconImageView>
 
@@ -149,7 +142,7 @@
           import { useEleccionStore} from "../stores/eleccion_actual"
           import ResumenVotacion from "./ResumenVotacion.vue";
   
-          import IconImageView from './IconImageView.vue';
+          // import IconImageView from './IconImageView.vue';
           
           const prop = defineProps({
             titulo: {

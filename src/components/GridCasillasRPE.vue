@@ -31,7 +31,7 @@
 
     <ResumenVotacion :datosResumen="datos" :key="datos?datos.votos_acumulados:0"></ResumenVotacion>
     
-    <br>
+    <!-- <br>
     <label :style="{color: eleccion.tema ? '#333333' : 'white', 'font-size': '18px', 'font-weight': 'bold'}">
       Detalle de votos por Casilla
     </label> <br>
@@ -46,7 +46,7 @@
       <img class="img_28" src="@/assets/votoext/acta_gris.png" style="padding-left: 10px;"> <img class="img_28" src="@/assets/votoext/reloj_gris.png" >   <label :style="{ color: eleccion.tema ? 'black' : 'white' }"> Acta en proceso</label> 
       <div class="circle_tiny_green"></div><label style="color:green">Contabilizada</label>
       <div class="circle_tiny_red"></div><label style="color:red">No Contabilizada</label>
-    </div>
+    </div> -->
 
     <a-table class="ant-table-striped" :scroll="{x:900}" 
         :columns="columns" :data-source="data" @resizeColumn="handleResizeColumn"

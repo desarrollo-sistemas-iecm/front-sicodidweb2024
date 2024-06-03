@@ -58,6 +58,7 @@
     try {
       //const response = await fetch('../../src/assets/data/actas_contabilizadas.json'); // Cambia la ruta al archivo JSON o API
       const urlServer = eleccion.urlPrep;
+      // alert(urlServer + 'actas_contabilizadas.php');
       const response = await fetch(urlServer + 'actas_contabilizadas.php');
       const jsonData = await response.json();
       categories.value = jsonData.categories;

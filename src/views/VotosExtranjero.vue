@@ -66,22 +66,7 @@
       Ver acta digitalizada de Cómputo de entidad Federativa
   </label>
   <br><br>
-  <a-row>
-    <a-col :span="3">
-      <!--
-        <a-button type="primary" style="color:black; font-weight: bold; width: 90%; height: 100%;"><img style="padding-right: 10px;" class="img_28" src="@/assets/votoext/acta.png"> Acta</a-button>
-   0-0-M01dmr.jpg
-      -->
-      <ImagenView dto="0" :nombreImg="nombreActa" style="color:black; font-weight: bold; width: 90%; height: 100%;"></ImagenView>
-    
-    </a-col>
-    <a-col :span="19">
-      Acta procedente de: <br>
-      <img class="img_28" src="@/assets/votoext/acta_gris.png"><img class="img_28" src="@/assets/votoext/reloj_gris.png"> Acta en proceso
-      <label style="font-size: 2em;"> | </label>
-      <img class="img_28" src="@/assets/votoext/acta.png"> Acta de Cómputo Entidad Federativa
-    </a-col>
-  </a-row>
+
   
   
   <Vue3CarouselAnticipado tipo="M"> </Vue3CarouselAnticipado>
