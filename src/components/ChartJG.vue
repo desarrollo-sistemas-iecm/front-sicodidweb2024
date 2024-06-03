@@ -35,7 +35,7 @@ index
     {{ maxValor  }}
     {{ winnerIndex  }}
     -->
-    <!-- {{ chartOptions }} -->
+    <!-- {{ dataExtTmp }} -->
     <highcharts class="hc" :options="chartOptions"  v-if="!isMobile()"></highcharts>
     <template v-else v-for="(data, index) in dataTmp" :key="data.id">
         <a-card hoverable style="margin-top: 4%; margin-bottom: 4%;" :style="{'background-color': eleccion.tema ?  '#f5f5f5' : '#2c2c2c', border: winnerIndex == index ? '7px solid rgb(88, 45, 115)' : '0px'}">
@@ -187,6 +187,8 @@ onBeforeMount(async () => {
     }
 });
 
+
+
 const chartOptions = ref({
     chart: {
         type: 'column',
@@ -256,14 +258,14 @@ const chartOptions = ref({
                         totSinExtran
                     });
 
-                    // Verificamos si dataExtTmp.value es un array antes de hacer push
-                    if (Array.isArray(dataExtTmp.value)) {
-                        dataExtTmp.value.push({
-                            id: value,
-                            sinExtranjero: totSinExtran,
-                            extranjero: vExtran
-                        });
-                    }
+                    // // Verificamos si dataExtTmp.value es un array antes de hacer push
+                    // if (Array.isArray(dataExtTmp.value)) {
+                    //     dataExtTmp.value.push({
+                    //         id: value,
+                    //         sinExtranjero: totSinExtran,
+                    //         extranjero: vExtran
+                    //     });
+                    // }
 
                     return `
                         <div>

@@ -45,8 +45,8 @@
           </label> 
           </div>
            <br>
-           <!-- TODO: AQUI -->
-          <label style="text-decoration: underline; font-weight: bold; font-size: 0.8em;">Participación ciudadana con base en la Lista Nominal de la mesa con Acta Computada</label><br><br>
+          <!-- <label style="text-decoration: underline; font-weight: bold; font-size: 0.8em;">Participación ciudadana con base en la Lista Nominal de la mesa con Acta PREP Contabilizada</label><br><br> -->
+          <p style="text-decoration: underline; font-weight: bold; font-size: 0.8em; text-align: justify;" :style="{ 'padding-left': !isMobile() ? '30px' : '0px' ,'padding-right': !isMobile() ? '30%' : '0px'}">Participación ciudadana con base en la Lista Nominal de votantes registrados para votar desde el extranjero más los 1,500 votantes potenciales que pueden votar en cada uno de los 23 consulados sin haberse registrado previamente. (50,277 votantes registrados + 34,500 posibles votantes en consulados = 84,777)</p><br><br>
           <div  v-for="(item,index) in participacion" :key="index">
             <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
                   <div style="justify-content: start;">
@@ -83,7 +83,7 @@
           import { SmileOutlined, DownOutlined } from '@ant-design/icons-vue';
           import { useEleccionStore} from "../stores/eleccion_actual"
           import ResumenVotacion from "../components/ResumenVotacion.vue";
-          import { cifrasMiles } from "../helpers";
+          import { cifrasMiles, isMobile } from "../helpers";
 
   
           const prop = defineProps({
