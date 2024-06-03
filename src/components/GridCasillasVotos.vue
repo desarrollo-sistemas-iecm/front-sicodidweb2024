@@ -36,7 +36,7 @@
     <!--
       PARA MOSTRAR TITULO CON CUADRO DE COLOR
     --> 
-    <DivColor :color="'#582D73'" text="Votos en Actas Contabilizadas"/>
+    <DivColor :color="'#582D73'" text="Votos en Actas Computadas"/>
 
     <br><br>
     <label :style="{color: eleccion.tema ? '#333333' : 'white', 'font-size': '12px', 'font-weight': 'normal'}">

@@ -72,14 +72,15 @@
           </span>
         </template>
 
-        <template v-if="column.key == 'contabilizar'">
+        <!-- <template v-if="column.key == 'contabilizar'">
           <span>
             Contabilizar
           </span>
-        </template>
+        </template> -->
 
         <template v-if="column.key == 'id_distrito'">
           <span>
+            Distrito
           </span>
         </template>
       </template>
@@ -88,22 +89,11 @@
   
       <template #bodyCell="{ column, record }">
        
-        <template v-if="column.key === 'id_distrito'">
-          <!--
-
-            AQUI HAY QUE HACER PRUEBAS!!!!!!! OJO!!
-
-          -->
-         
-          <IconImageViewRPE :key="record" v-if="record.nombre_img || record.validado=='T'" :dto="record.id_distrito" :nombreImg="record.nombre_img" :registro ="record" :columnas="columns" ></IconImageViewRPE>
-
-          <a v-if="!record.nombre_img && record.validado!= 'T'" >
-            <!--
-              {{ record.name }} 
-            -->
-            
+        <template v-if="column.key === 'id_distrito'">         
+          <!-- <IconImageViewRPE :key="record" v-if="record.nombre_img || record.validado=='T'" :dto="record.id_distrito" :nombreImg="record.nombre_img" :registro ="record" :columnas="columns" ></IconImageViewRPE>
+          <a v-if="!record.nombre_img && record.validado!= 'T'" >            
             <img  class="img_28" src="@/assets/votoext/acta_gris.png"><img class="img_28" src="@/assets/votoext/reloj_gris.png">
-          </a>
+          </a> -->
         </template>
         
         <template v-else-if="column.key === 'tags'">
@@ -118,12 +108,8 @@
           </span>
         </template>
         
-        <template v-else-if="column.key=='contabilizar'">
+        <!-- <template v-else-if="column.key=='contabilizar'">
           <div style = "text-align: center; vertical-align: middle">
-            <!-- <a>Invite {{ record.id_delegacion }}</a>
-            <a>Invite {{ record.id_delegacion }}</a>
-            <div class="circle_tiny_green"></div>
-            -->
 
             <span v-if="record.contabilizar==='T'" >
               <div class="circle_tiny_green"></div>
@@ -133,15 +119,15 @@
             </span>
                         
           </div>
-        </template>
+        </template> -->
             
-        <template v-else-if="column.key === 'observaciones'">
+        <!-- <template v-else-if="column.key === 'observaciones'">
           <span>
             <a-tag>
               {{ record.observaciones }}
             </a-tag>
           </span>
-        </template>
+        </template> -->
 
         <template v-else-if="column.key === 'tipo_casilla'">
           <span>

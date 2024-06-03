@@ -56,7 +56,7 @@
     <!--
         PARA MOSTRAR TITULO CON CUADRO DE COLOR
     --> 
-    <DivColor :color="'#582D73'" text="Votos en Actas Contabilizadas"/>
+    <DivColor :color="'#582D73'" text="Votos en Actas Computadas"/>
     <!--
     <h3> <br>
       Votos en Actas Contabilizadas

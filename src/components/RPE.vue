@@ -15,7 +15,7 @@
                  
                 -->
                 <a-button  @click="showData('Ver resultados')" type="primary" shape="squere"  :style="{height:'30px', width:'200px', color:'black', fontWeight:'bold'}">
-                    Ver Actas
+                    Ver Resultados
                 </a-button>
             </div>
         </center>

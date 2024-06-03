@@ -16,7 +16,7 @@
                 },
         }"
     >
-    <a-watermark :content="['SICODID *** DATOS DE PRUEBA SIN VALOR ***']">
+    <!-- <a-watermark :content="['SICODID *** DATOS DE PRUEBA SIN VALOR ***']"> -->
         <div class="back container">
             <div class="centrarDiv container">
                 <div style='display: flex; flex-wrap: wrap; justify-content: start;' :style="{width:'100%', padding:'10px'}">
@@ -40,7 +40,7 @@
                 </div> 
             </div>
         </div>
-    </a-watermark>
+    <!-- </a-watermark> -->
     </a-config-provider>
 </template>
 

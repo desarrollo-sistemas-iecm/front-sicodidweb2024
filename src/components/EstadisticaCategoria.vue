@@ -33,7 +33,7 @@
         
                 <div style="margin-bottom: 20px;">
                     <label>
-                        <b>Actas Contabilizadas por ubicación de casilla:</b><br>
+                        <b>Actas Computadas por ubicación de casilla:</b><br>
                     </label>
 
                     <a-row>

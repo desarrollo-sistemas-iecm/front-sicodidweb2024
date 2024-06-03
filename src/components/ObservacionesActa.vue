@@ -20,7 +20,7 @@
                     </div>
                   </a-col>
                   <a-col :span="22">
-                    <h3 style="color:#4099A0; font-weight: bolder;">Contabilizadas</h3>
+                    <h3 style="color:#4099A0; font-weight: bolder;">Computadas</h3>
                   </a-col>
                 </a-row>
                 <p :style="{'margin-top': '22px', color: eleccion.tema ? 'black' : 'white'}">Algunas Actas pueden presentar inconsistencias, pero tienen información que permite contabilizarlas:</p>
@@ -48,7 +48,7 @@
                 </div>
               </a-col>
               <a-col :span="22">
-                <h3 style="color:#D1117E; font-weight: bolder;">No Contabilizadas</h3>
+                <h3 style="color:#D1117E; font-weight: bolder;">No Computadas</h3>
               </a-col>
             </a-row>
             <br>

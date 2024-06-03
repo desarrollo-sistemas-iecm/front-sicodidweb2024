@@ -44,7 +44,7 @@
    -->
     
   </a-row>
-  <DivColor :fontsize="'18px'" :color="'#582D73'" text="Votos en Actas Contabilizadas"/>
+  <DivColor :fontsize="'18px'" :color="'#582D73'" text="Votos en Actas Computadas"/>
 
   
   <!--       TARJETAS (CARDS)

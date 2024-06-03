@@ -31,7 +31,7 @@
             <!--
                 PARA MOSTRAR TITULO CON CUADRO DE COLOR
             --> 
-            <DivColor :fontsize="'18px'" :color="'#582D73'" text="Votos en Actas Contabilizadas"/>
+            <DivColor :fontsize="'18px'" :color="'#582D73'" text="Votos en Actas Computadas"/>
 
           </h3>
       </div>

@@ -99,9 +99,9 @@ export const getUrlPrep=()=>{
 
 
   // PARA DIR SICODID2024 
-  // const newURL = window.location.protocol.toString() + "//" + window.location.host.toString() + "/";
+  const newURL = window.location.protocol.toString() + "//" + window.location.host.toString() + "/";
   
-   const newURL = "http://localhost/2024/sicodid/publicador/api/";
+  //  const newURL = "http://localhost/2024/sicodid/publicador/api/";
   
 
 // const newURL = "http://145.0.40.76/2024/v2-sicodid2024/services/";
@@ -170,7 +170,9 @@ export const leeEleccion = async (ultima)=> {
 
       const urlServer = eleccion.urlPrep;
       
-      const response = await fetch(urlServer+"api_avance_entidad.php?type="+(eleccion.eleccion>0? eleccion.eleccion: "1")); // Cambia la ruta al archivo JSON o API
+      // const response = await fetch(urlServer+"api_avance_entidad.php?type="+(eleccion.eleccion>0? eleccion.eleccion: "1")); // Cambia la ruta al archivo JSON o API
+      const response = await fetch(urlServer+"api_avance_entidad.php?type=1"); // Cambia la ruta al archivo JSON o API
+
  
       //alert(response.headers.toString())
       const jsonData = await response.json();

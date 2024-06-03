@@ -13,7 +13,7 @@
                     </label>
                     <br>
                     <label style="font-size: 10px;text-align: justify; width: '100%';">
-                        Se calcula considerando: Total de votos de las Actas Contabilizadas, multiplicado por 100, dividido entre la Lista Nominal de las casillas con Actas Contabilizadas.
+                        Se calcula considerando: Total de votos de las Actas Computadas, multiplicado por 100, dividido entre la Lista Nominal de las casillas con Actas Computadas.
                     </label>
                     <div :style="{background: eleccion.tema ? '#e8e8e8' : '#2c2c2c', 'margin-top': '10px'}">
                         <center>
@@ -44,9 +44,9 @@
                                                                             Sin considerar la votación en Casillas Especiales MR
                                                                         </label>
                                                                         <!-- NUEVO: 28/MAYO/2024-->
-                                                                        <label v-else style="font-size: 10px; font-weight: bold;">
+                                                                        <!-- <label v-else style="font-size: 10px; font-weight: bold;">
                                                                             Considerando la votación en Casillas Especiales MR
-                                                                        </label>
+                                                                        </label> -->
 
 
 
@@ -90,7 +90,7 @@
                                                            </label>
                                                         <br>
                                                         <label style="font-size:10px; font-weight: normal;">
-                                                            (Lista Nominal de las casillas con Actas Contabilizadas)
+                                                            (Lista Nominal de las casillas con Actas Computadas)
                                                         </label>
                                                          
                                                     </div>

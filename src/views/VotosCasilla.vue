@@ -27,7 +27,7 @@
             El total de votos calculado y porcentaje que se muestran, se refieren a los votos asentados en las Actas hasta el momento.
             Por presentación, los decimales de los porcentajes muestran sólo cuatro dígitos. No obstante, al considerar todos los decimales, suman 100%.
             
-            <br><br><h2>Votos en Actas contabilizadas</h2>
+            <br><br><h2>Votos en Actas Computadas</h2>
             </div>
 
             
