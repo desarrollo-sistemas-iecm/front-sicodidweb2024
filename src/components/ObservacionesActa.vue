@@ -53,7 +53,7 @@
             </a-row>
             <br>
             <b>Excede Lista Nominal</b>
-            <p>La suma de todos los votos en el Acta PREP, excede el número de ciudadanas y ciudadanos en la Lista Nominal de Electores de la casilla, incluido el número de votos emitidos por los representantes de los Partidos Políticos y, en su caso Candidaturas Independientes.</p>
+            <p>La suma de todos los votos en el Acta PREP, excede el número de ciudadanas y ciudadanos en la Lista Nominal de Electores de la casilla, incluido el número de votos emitidos por los representantes de los Partidos Políticos y, en su caso Candidaturas sin Partido.</p>
             
             <b>Sin Acta</b>
             <p>

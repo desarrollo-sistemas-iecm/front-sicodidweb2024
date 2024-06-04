@@ -9,7 +9,7 @@
 <template>
   <h2>
     <br>
-    Distribución de votos por Partido Político y Candidaturas Independientes a nivel {{ eleccion.eleccion == 2 ? 'Distrito' : 'Alcaldía' }}
+    Distribución de votos por Partido Político y Candidaturas sin Partido a nivel {{ eleccion.eleccion == 2 ? 'Distrito' : 'Alcaldía' }}
   </h2>
   <h4>
     La tabla muestra el desglose de votos que cada Partido Político, Coalición, Candidatura Común o Candidatura sin Partido presente en {{ eleccion.eleccion == 2 ? 'el Distrito': 'la Alcaldía'}} , indicando los votos recibidos de manera individual y, en su caso, los votos recibidos vía Coalición.

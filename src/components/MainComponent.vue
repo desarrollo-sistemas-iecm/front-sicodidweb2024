@@ -97,7 +97,7 @@
         <a-button style="color: white" type="link" :size="large" @click="$router.push({ name: 'bd' });">
                               
       -->
-                            <a-button v-if="false" style="color: white" type="link" :size="large" @click="databaseGO()">
+                            <a-button style="color: white" type="link" :size="large" @click="databaseGO()">
         
                                 <template #icon>
                                       <database-outlined/>

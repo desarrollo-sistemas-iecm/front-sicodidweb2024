@@ -9,7 +9,7 @@
 <template>
   <h2>
     <br>
-    Distribución de votos por Partido Político y Candidaturas Independientes a nivel Distrito
+    Distribución de votos por Partido Político y Candidaturas sin Partido a nivel Distrito
   </h2>
   <h4>
     La tabla muestra el desglose de votos que cada Candidatura presente en el Distrito , indicando los votos recibidos de manera individual y, en su caso, los votos recibidos vía Coalición.
