@@ -114,13 +114,13 @@
           </div>
         </template>
             
-        <template v-else-if="column.key === 'observaciones'">
+        <!-- <template v-else-if="column.key === 'observaciones'">
           <span>
             <a-tag>
               {{ record.observaciones }}
             </a-tag>
           </span>
-        </template>
+        </template> -->
        
         </template>
  
@@ -196,7 +196,7 @@
             const urlServer = eleccion.urlPrep;
             
             const  url = urlServer + "actas_grid_data.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3;
-    //alert(url)
+    // alert(url)
             ///console.log(url)
             //const response = await fetch('../../src/assets/data/actas_contabilizadas.json'); // Cambia la ruta al archivo JSON o API
             const response = await fetch(url);

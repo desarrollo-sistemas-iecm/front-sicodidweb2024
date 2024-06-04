@@ -73,35 +73,16 @@
             Mesa de Escrutinio
           </template>
           
-          <template v-if="column.key == 'id_distrito'">
-            <p style="padding: 10px ;">Acta digitalizada</p>
-         </template>
 
-         <template v-if="column.key == 'contabilizar'">
-          Contabilizada
+
+         <template v-if="column.key == 'id_distrito'">
+          Distrito
         </template>
       </template>
     
         <template #bodyCell="{ column, record }">
-         
-          <template v-if="column.key === 'id_distrito'">
-            
-            <!--
-              {{ record.nombre_img }}
-            -->
-            
-            <!-- <IconImageView v-if="record.nombre_img || record.validado=='T'" :dto="record.id_distrito" :nombreImg="record.nombre_img" :registro ="record" :columnas="columns" ></IconImageView> -->
-            <!--
-              <IconImageView v-if="record.nombre_img" :dto="record.id_distrito" :nombreImg="record.nombre_img"  ></IconImageView>
-
-            -->
-            
-            <a v-if="!record.nombre_img">
-              <img  class="img_28" src="@/assets/votoext/acta_gris.png"><img class="img_28" src="@/assets/votoext/reloj_gris.png">
-            </a>
-          </template>
-          
-          <template v-else-if="column.key === 'tipo_casilla'">
+                   
+          <template v-if="column.key === 'tipo_casilla'">
             <span>
               <div v-if="record.tipo_casilla=='B1'">
                 Voto {{prop.titulo}} {{record.tipo_casilla.slice(1)}} ({{record.id_distrito}})
@@ -112,13 +93,13 @@
             </span>
           </template>
 
-          <template v-else-if="column.key=='contabilizar'">
+          <!-- <template v-else-if="column.key=='contabilizar'">
             <div style = "text-align: center; vertical-align: middle">
               {{ record.contabilizar }}
               <div v-if="record.contabilizar=='T'" class="circle_tiny_green"> </div>
               <div v-if="record.contabilizar!='T'" class="circle_tiny_red"> </div>
             </div>
-          </template>
+          </template> -->
  
         </template>
       </a-table>

@@ -111,7 +111,7 @@
               //const  url = urlServer + "actas_grid_data.php?type=1&item=2&item_2=958&item_3=B1";
               const  url = urlServer + "actas_grid_data_voto_prision_ant.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3+"&tipo_acta=M";
              
-    alert(url)
+    // alert(url)
               ///console.log(url)
               //const response = await fetch('../../src/assets/data/actas_contabilizadas.json'); // Cambia la ruta al archivo JSON o API
               const response = await fetch(url);
