@@ -47,6 +47,7 @@
                             </div>
                             <div v-if="eleccion.eleccion==1" align="right">
                                 <p>{{eleccion.avance_jg.actas_capturadas!=null?cifrasMiles(eleccion.avance_jg.actas_capturadas):'0' }} de <b>{{eleccion.avance_jg.actas_capturadas_de!=null?cifrasMiles(eleccion.avance_jg.actas_capturadas_de):'0'}}</b></p>
+                               
                                 <p>({{eleccion.avance_jg.actas_cap_porcen!=null?eleccion.avance_jg.actas_cap_porcen:'0'}}%)</p>
                                 <div align="left">
                                     <a-progress :size="[300, 10]"  :strokeColor="'#B283B9'" :show-info="false" :percent="eleccion.avance_jg.actas_cap_porcen!=null?eleccion.avance_jg.actas_cap_porcen:'0'" />   
@@ -54,13 +55,15 @@
                             </div>
                             <div v-if="eleccion.eleccion==2" align="right">
                                 <p>{{eleccion.avance_dmr.actas_capturadas!=null?cifrasMiles(eleccion.avance_dmr.actas_capturadas):0}} de <b>{{eleccion.avance_dmr.actas_capturadas_de!=null? cifrasMiles(eleccion.avance_dmr.actas_capturadas_de): '0'}}</b></p>
-                                <p>({{eleccion.avance_dmr.actas_cap_porcen!=null?eleccion.avance_dmr.actas_cap_porcen:'0'}}%)</p>
+                                
+                                <p>({{ (eleccion.avance_dmr.actas_capturadas * 100 / eleccion.avance_dmr.actas_capturadas_de).toFixed(4)}})%</p>
                                 <div align="left">
                                     <a-progress :size="[300, 10]"  :strokeColor="'#B283B9'" :show-info="false"  :percent="eleccion.avance_dmr.actas_cap_porcen"/>   
                                 </div>
                             </div>
                             <div v-if="eleccion.eleccion==3" align="right">
                                 <p>{{eleccion.avance_rp.actas_capturadas!=null?cifrasMiles(eleccion.avance_rp.actas_capturadas):'0'}} de <b>{{eleccion.avance_rp.actas_capturadas_de!=null?cifrasMiles(eleccion.avance_rp.actas_capturadas_de):'0'}}</b></p>
+                                
                                 <p>({{eleccion.avance_rp.actas_cap_porcen!=null?eleccion.avance_rp.actas_cap_porcen:'0'}}%)</p>
                                 <div align="left">
                                     <a-progress :size="[300, 10]"  :strokeColor="'#B283B9'" :show-info="false"  :percent="eleccion.avance_rp.actas_cap_porcen!=null?eleccion.avance_rp.actas_cap_porcen:'0'" />   
@@ -69,7 +72,7 @@
                             </div>
                             <div v-if="eleccion.eleccion==4" align="right">
                                 <p>{{eleccion.avance_alc.actas_capturadas!=null?cifrasMiles(eleccion.avance_alc.actas_capturadas):'0'}} de <b>{{eleccion.avance_alc.actas_capturadas_de!=null?cifrasMiles(eleccion.avance_alc.actas_capturadas_de):'0'}}</b></p>
-                                <p>({{eleccion.avance_alc.actas_cap_porcen!=null?eleccion.avance_alc.actas_cap_porcen:'0'}}%)</p>
+                                <p>({{(eleccion.avance_alc.actas_capturadas * 100 /eleccion.avance_alc.actas_capturadas_de).toFixed(4)}}%)</p>
                                 <div align="left">
                                     <a-progress :size="[300, 10]"  :strokeColor="'#B283B9'" :show-info="false" :percent="eleccion.avance_alc.actas_cap_porcen!=null?eleccion.avance_alc.actas_cap_porcen:'0'" />   
                                 </div>
