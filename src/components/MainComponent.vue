@@ -325,9 +325,7 @@
       };
   
       const databaseGO=()=>{
-          eleccion.es_bd = true;
-  
-          router.push({ name: 'bd' });
+          window.open(eleccion.urlPrep + "zipDB/generador_zip.php", "_blank");
       }
       function cambiarSlider(valor) {
         console.log(valor);

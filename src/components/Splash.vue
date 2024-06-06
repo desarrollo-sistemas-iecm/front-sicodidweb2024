@@ -24,8 +24,9 @@
                     <p><img width="290" src="@/assets/sicodid.jpg" alt=""></p> 
                 </div>
                 <div :style="{width:'100%', fontSize:'2.6em', fontWeight:'boldest'}">
-                    Elecciones Estatales de <br>
-                    <p style="color: #582d73;">La Ciudad de México <label style="color: black">2024</label></p>
+                    Proceso Electoral Local Ordinario 2023-2024. <br>
+                    <p style="color: #582d73;">Ciudad de México</p>
+                    
                 </div>
                 <div :style="{width:'40%', padding:'10px'}">
                 

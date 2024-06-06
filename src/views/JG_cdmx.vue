@@ -27,7 +27,7 @@
           </h3>
           
             <div :style="{'text-align': justify, 'margin-bottom': '25px', color: eleccion.tema? 'black': 'white'}">
-              El total de votos mostrado a nivel Entidad representa la suma de la votación emitida en territorio Estatal y en el Extranjero.
+              El total de votos mostrado a nivel Entidad representa la suma de la votación emitida en territorio de la Ciudad de México y en el Extranjero.
               Por presentación, los decimales de los porcentajes muestran sólo cuatro dígitos. No obstante, al considerar a todos los decimales, suman 100%.            </div>
           <DivColor :fontsize="'18px'" :color="'#582D73'" text="Votos en Actas Computadas"/><br>
           <!--CHART CON LOGOS DE PERSONAS-->

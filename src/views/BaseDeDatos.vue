@@ -51,7 +51,7 @@
                     
                     <p>Contiene los resultados de la votacion por acta a nivel federal. <br>
                         Muestra el número de votos recibidos por cada uno de los</p>
-                        <p>Partidos Politicos, combinaciones de coalición, Candidaturas Independientes, candidaturas no regitradas y votos nulos.</p> 
+                        <p>Partidos Politicos, combinaciones de coalición, Candidaturas sin Partido, candidaturas no regitradas y votos nulos.</p> 
                     
                     <p><b> Catálogos de candidaturas: </b> </p>
                         <p>. GUB_CANDIDATURAS_2024.csv</p>
@@ -59,7 +59,7 @@
                         <p>. AYUN_CANDIDATURAS_2024.csv</p> 
                         <p>. REG_CANDIDATURAS_2024.csv</p>
                         <p>Estos documentos contiene el listado de candidaturas por Partido Político 
-                            y Candidaturas Independientes que participan en la elección federal en cada uno de los cargos 
+                            y Candidaturas sin Partido que participan en la elección federal en cada uno de los cargos 
                         </p>
                         <p><b>Descripción de las variables:</b></p>
                         <p>. LEEME.txt</p>
@@ -628,7 +628,7 @@
                                     
                                     <p>Contiene los resultados de la votacion por acta a nivel federal. <br>
                                         Muestra el número de votos recibidos por cada uno de los</p>
-                                        <p>Partidos Politicos, combinaciones de coalición, Candidaturas Independientes, candidaturas no regitradas y votos nulos.</p> 
+                                        <p>Partidos Politicos, combinaciones de coalición, Candidaturas sin Partido, candidaturas no regitradas y votos nulos.</p> 
                                     
                                     <p><b> Catálogos de candidaturas: </b> </p>
                                         <p>. GUB_CANDIDATURAS_2024.csv</p>
@@ -636,7 +636,7 @@
                                         <p>. AYUN_CANDIDATURAS_2024.csv</p> 
                                         <p>. REG_CANDIDATURAS_2024.csv</p>
                                         <p>Estos documentos contiene el listado de candidaturas por Partido Político 
-                                            y Candidaturas Independientes que participan en la elección federal en cada uno de los cargos 
+                                            y Candidaturas sin Partido que participan en la elección federal en cada uno de los cargos 
                                         </p>
                                         <p><b>Descripción de las variables:</b></p>
                                         <p>. LEEME.txt</p>
