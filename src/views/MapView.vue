@@ -45,9 +45,9 @@ ELECCION!!!!
   <a-row :gutter="{ xs: 8, sm: 16, md: 24, lg: 32 }">
     <a-col :style="{width:'95%'}">
       <div :style="{'text-align': justify, 'margin-bottom': '25px', 'color': eleccion.tema ? 'black' : 'white'}">
-        El total de votos calculado y porcentaje que se muestran, se refieren a los votos asentados en las Actas hasta el momento.
+        El total de votos calculado y porcentaje que se muestra, se refieren a los votos asentados en las Actas.
         Por presentación, los decimales de los porcentajes muestran sólo cuatro dígitos. No obstante, al considerar todos los decimales, suman 100%.
-        En la tabla se muestra el número de {{ eleccion.eleccion==4? 'Alcaldías': 'Distritos'}} que cada Partido Político, Coalición, Candidatura Común o Candidatura sin Partido ha obtenido hasta el momento.
+        En la tabla se muestra el número de {{ eleccion.eleccion==4? 'Alcaldías': 'Distritos'}} que cada Partido Político, Coalición, Candidatura Común o Candidatura sin Partido ha obtenido.
       </div>
    </a-col>
     <a-col :style="{width:'10%'}" v-show="false">
@@ -88,7 +88,7 @@ ELECCION!!!!
               
               <div :style="{'margin-top': '10px', color : eleccion.tema ? '#000000': '#ffffff'}">
                 El mapa resalta {{ eleccion.eleccion==4? 'en las Alcaldías': 'en los Distritos'}} el Partido Político, Coalición, Candidatura Común o <br>
-                Candidatura sin Partido que lleva ventaja hasta el momento. <br>
+                Candidatura sin Partido que lleva ventaja. <br>
                 Para conocer el detalle {{ eleccion.eleccion==4? 'de la Alcaldía': 'del Distrito'}}, pasa el cursor o da clic sobre éste. 
               </div>
               

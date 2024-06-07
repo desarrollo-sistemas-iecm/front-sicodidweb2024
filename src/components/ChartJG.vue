@@ -45,7 +45,7 @@ index
                         <b>Votos</b>
                     </a-col>
                     <a-col :xs="10" :sm="10" :md="10" :lg="10" :xl="10" style="align-items: left; text-align: left;">
-                        En Territorio Estatal
+                        En Territorio de la Ciudad de México
                     </a-col>
                     <a-col :xs="14" :sm="14" :md="14" :lg="14" :xl="14" style="align-items: left; text-align: left;">
                         <template v-for="ext in dataExtTmp" :key="ext.id" v-if="Object.keys(totalVotosExt).length != 0">
@@ -285,7 +285,7 @@ const chartOptions = ref({
             y: 35,
         },
         title: {
-            text: `<b>Votos<br><label style="font-size:8px">Total<br>Porcentaje</label></b><br><spam  style="font-size:10px"><br><br>En Territorio Estatal<br>En el extranjero</spam>`,
+            text: `<b>Votos<br><label style="font-size:8px">Total<br>Porcentaje</label></b><br><spam  style="font-size:10px"><br><br>En Territorio de la Ciudad de México<br>En el extranjero</spam>`,
             align: 'low',
             x: -55,
             y: -115

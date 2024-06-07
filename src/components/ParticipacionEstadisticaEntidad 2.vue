@@ -15,6 +15,10 @@
                     <label style="font-size: 10px;text-align: justify; width: '100%';">
                         Se calcula considerando: Total de votos de las Actas Computadas, multiplicado por 100, dividido entre la Lista Nominal de las casillas con Actas Computadas.
                     </label>
+                    <br>
+                    <label v-if="eleccion.eleccion != 4" style="font-size: 10px;text-align: justify; width: '100%';">
+                        La lista nominal incluye a votantes registrados para votar desde el extranjero más los potenciales votantes que pudieron votar en cada en cada uno de los 23 consultados, sin haberse registrado previamente.
+                    </label>
                     <div :style="{background: eleccion.tema ? '#e8e8e8' : '#2c2c2c', 'margin-top': '10px'}">
                         <center>
                             <div style=" padding-top: 20px; margin-top: 10px">

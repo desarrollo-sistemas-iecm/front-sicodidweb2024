@@ -1,21 +1,22 @@
 <template>
   <a-row>
 
-      <h2>
-        <label v-if="eleccion.eleccion==1">Jefatura de Gobierno</label>
-        <label v-if="eleccion.eleccion==2">Diputado Migrante</label>
-        <label v-if="eleccion.eleccion==4">Alcaldías</label>
-         -
-       <label style="font-weight: bolder; color:#582D73"> Voto en el Extranjero </label> 
+    <h2>
+      <label v-if="eleccion.eleccion==1">Jefatura de Gobierno</label>
+      <label v-if="eleccion.eleccion==2">Diputado Migrante</label>
+      <label v-if="eleccion.eleccion==4">Alcaldías</label>
+      -
+      <label style="font-weight: bolder; color:#582D73"> Voto en el Extranjero </label>
 
-      </h2>
-      
+    </h2>
+
   </a-row>
   <a-row :gutter="{ xs: 8, sm: 16, md: 24, lg: 32 }">
-          <div style='text-align: justify; margin-left: 18px; font-size: 12px;'>
-              El total de votos calculado que se muestra, se refiere a los votos emitidos desde el Extranjero y asentados en el Acta de Cómputo de Entidad Federativa.
-            <br>
-            </div>
+    <div style='text-align: justify; margin-left: 18px; font-size: 12px;'>
+      El total de votos calculado que se muestra, se refiere a los votos emitidos desde el Extranjero y asentados en el
+      Acta de Cómputo de Entidad Federativa.
+      <br>
+    </div>
   </a-row>
 
   <div>
@@ -25,19 +26,19 @@
       </h1>  
     -->
 
-      <h2>
-        
-<!--
+    <h2>
+
+      <!--
         eleccion : {{ eleccion.eleccion==4? 'Alcaldía': 'Distrito'}}
 
           ESTOY EN: {{ eleccion.eleccion }}
 -->
 
 
-      </h2>
+    </h2>
   </div>
-  
-  <div  style="display: flex; flex-wrap: wrap; justify-content: left; padding: 5px; ">
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: left; padding: 5px; ">
     <div style="
       left: 389px;
       width: 8px;
@@ -45,15 +46,13 @@
       text-align: left;
       justify-content: center;
       opacity: 1; 
-      background-color: #582D73; margin-right: 10px; "
-      
-      >
+      background-color: #582D73; margin-right: 10px; ">
     </div>
-    <label  style="font-size: 1.4em;"> 
+    <label style="font-size: 1.4em;">
       Votos en Acta Contabilizada
-    </label><br> 
+    </label><br>
   </div>
-  
+
   <!--
     <a-carousel autoplay>
       <div><h3>1</h3></div>
@@ -63,12 +62,12 @@
   </a-carousel>
   -->
   <label style="font-size: .9em; font-weight: bold;"><br>
-      Ver acta digitalizada de Cómputo de entidad Federativa
+    Ver acta digitalizada de Cómputo de entidad Federativa
   </label>
   <br><br>
 
-  
-  
+
+
   <Vue3CarouselAnticipado tipo="M"> </Vue3CarouselAnticipado>
 
   <!--
@@ -76,7 +75,6 @@
     GridCasillas.vue
   -->
   <GridCasillasExtranjero titulo="SECCION DOS"></GridCasillasExtranjero>
-
 
 
 </template>
@@ -87,7 +85,7 @@
   // import ResumenVotacion from "../components/ResumenVotacion.vue";
   import EstadisticaCategoria from "../components/EstadisticaCategoria.vue";
   import DistribucionCategoria from "../components/DistribucionCategoria.vue";
-  import { priceProperty } from "../helpers";
+  import { priceProperty, isMobile } from "../helpers";
   import { useRoute, useRouter  } from 'vue-router';
   import { useEleccionStore} from "../stores/eleccion_actual"
 

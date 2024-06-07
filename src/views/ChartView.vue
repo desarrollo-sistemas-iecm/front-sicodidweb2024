@@ -28,9 +28,9 @@
   <a-row :gutter="{ xs: 8, sm: 16, md: 24, lg: 32 }">
     <a-col >
       <div :style="{'text-align': 'justify', 'margin-bottom': '15px', color: eleccion.tema ? 'black' : 'white'}">
-        El total de votos calculado y porcentaje que se muestran, se refieren a los votos asentados en las Actas hasta el momento.
+        El total de votos calculado y porcentaje que se muestra, se refieren a los votos asentados en las Actas.
         Por presentación, los decimales de los porcentajes muestran sólo cuatro dígitos. No obstante, al considerar todos los decimales, suman 100%.
-        En la gráfica se muestra el número de votos que cada Partido Político, Coalición, Candidatura Común o Candidatura sin Partido ha obtenido hasta el momento.
+        En la gráfica se muestra el número de votos que cada Partido Político, Coalición, Candidatura Común o Candidatura sin Partido ha obtenido.
       <!-- TODO: aqui la de arriba -->
       </div>
    </a-col>

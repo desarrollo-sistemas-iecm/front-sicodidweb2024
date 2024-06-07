@@ -32,8 +32,8 @@ const dispositivo = useDispositivoStore();
 const router = useRouter();
 const route = useRoute();
 
-const urlSirec = 'http://localhost:3025/api/';
-// const urlSirec = 'https://sirec.iecm.mx:3025/api/';
+// const urlSirec = 'http://localhost:3025/api/';
+const urlSirec = 'https://sirec.iecm.mx:3025/api/';
 const checkSystem = async () => {
   try {
     const response = await fetch(urlSirec+'system');

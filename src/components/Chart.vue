@@ -15,7 +15,7 @@
                         <b>Votos</b>
                     </a-col>
                     <a-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
-                        En Territorio Estatal
+                        En Territorio de la Ciudad de México
                     </a-col>
                     <a-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
                         <template v-for="ext in dataJSONExtranjero" :key="ext.id">
@@ -323,7 +323,7 @@ const chartOptions = ref({
 
         },
         title: {
-            text:  eleccion.eleccion!=4? '<b>Votos<br><label style="font-size:8px">Total<br>Porcentaje</label></b><br><br><spam style="font-size:10px">En Territorio Estatal<br>En el extranjero</spam>'
+            text:  eleccion.eleccion!=4? '<b>Votos<br><label style="font-size:8px">Total<br>Porcentaje</label></b><br><br><spam style="font-size:10px">En Territorio de la CDMX<br>En el extranjero</spam>'
                 : '<b>Votos<br><label style="font-size:8px">Total<br>Porcentaje</label></b>',
             align: 'low',
             // nuevo

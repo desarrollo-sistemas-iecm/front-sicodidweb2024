@@ -26,7 +26,7 @@
           :style="{'background-color': eleccion.tema ? '#F9F9F9' : '#2c2c2c', width: '100%', 'margin-bottom': '15px', 'margin-top': '15px'}">
               <a-row :gutter="{ xs: 8, sm: 16, md: 24, lg: 32 }">
                   <a-col style="text-align: center;">
-                    Votos acumulados <a-tooltip :title="tooltips1" :color="'#582D73'" ><ExclamationCircleOutlined /></a-tooltip><br> 
+                    Votación emitida para las fuerzas políticas <a-tooltip :title="tooltips1" :color="'#582D73'" ><ExclamationCircleOutlined /></a-tooltip><br> 
                     <b>{{props.datosResumen? cifrasMiles(props.datosResumen.votos_acumulados):'0' }}<br></b>
                     {{props.datosResumen? props.datosResumen.votos_acumulados_por:'0%' }}<br>
                   </a-col>
@@ -42,7 +42,7 @@
                       <label style="font-size: 30px;">+</label>
                   </a-col>
                   <a-col style="text-align: center;">
-                    <label style="font-size: 12px;">Votos nulos  <a-tooltip :title="toolTips3" :color="'#582D73'" v-if="eleccion.cmb1 == '' && router.currentRoute.value.name != 'votoextranjero' && router.currentRoute.value.name != 'votoanticipado' && router.currentRoute.value.name != 'votoprision'"><ExclamationCircleOutlined /></a-tooltip></label><br>
+                    <label style="/* font-size: 12px; */">Votos nulos  <a-tooltip :title="toolTips3" :color="'#582D73'" v-if="eleccion.cmb1 == '' && router.currentRoute.value.name != 'votoextranjero' && router.currentRoute.value.name != 'votoanticipado' && router.currentRoute.value.name != 'votoprision'"><ExclamationCircleOutlined /></a-tooltip></label><br>
                     <b>{{props.datosResumen? cifrasMiles(props.datosResumen.nulos):'0' }}<br></b>
                     {{props.datosResumen? props.datosResumen.nulos_por:'0%' }}<br>
                   </a-col>
@@ -71,7 +71,7 @@
       <a-card hoverable style="margin-top: 2%; margin-bottom: 2%;" :style="{'background-color': eleccion.tema ?  'white' : '#2c2c2c'}">
         <a-row :gutter="{ xs: 24, sm: 24, md: 24, lg: 24 }">
           <v-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" style="text-align: center; align-items: center; align-content: center; width: 100%; margin: 0%; padding: 0%;">
-            <p><b>Votos acumulados <a-tooltip :title="tooltips1" :color="'#582D73'" ><ExclamationCircleOutlined /></a-tooltip></b></p> 
+            <p><b>Votación emitida para las fuerzas políticas <a-tooltip :title="tooltips1" :color="'#582D73'" ><ExclamationCircleOutlined /></a-tooltip></b></p> 
           </v-col>
           <v-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12" style="text-align: center; align-items: center; align-content: center; width: 50%; margin: 0%; padding: 0%;">
             <b>{{props.datosResumen? cifrasMiles(props.datosResumen.votos_acumulados):'0' }}</b>
@@ -161,7 +161,7 @@
     return eleccion.cmb1 && eleccion.cmb2 && !eleccion.cmb3;
   })
 
-  const tooltips1 = 'Es la suma de los votos en territorio estatal (Casillas, Anticipados y Prisión Preventiva), así como los emitidos en el Extranjero; desglosados por partidos Político, Coalición y Candidatura Independiente. Sin incluir candidaturas no registradas, ni votos nulos.';
+  const tooltips1 = 'Es la suma de los votos en la entidad (Casillas, Anticipados y Prisión Preventiva), así como los emitidos en el Extranjero; desglosados por partidos Político, Coalición y Candidatura Independiente. Sin incluir candidaturas no registradas, ni votos nulos.';
   const tooltips2 = 'Se refiere a la suma total de votos que realiza el sistema informático con base en los datos que muestran en cada Acta; podrás consultar la cifra del total de votos mostrado en cada Acta en la base de datos (numeral 26, fr. XIV del Anexo 13 del Reglamento de Elecciones).';
   const toolTips3 = 'El total y el porcentaje de votos para candidaturas no registradas y nulos, considera la votación en Casillas, en el Extranjero, Anticipado y Prisión Preventiva.';
   console.log("CATALOGO EN RESUMEN", props.datosResumen);

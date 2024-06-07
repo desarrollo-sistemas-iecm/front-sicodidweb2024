@@ -2,6 +2,7 @@ import { ref, computed, onBeforeMount } from 'vue'
 import { defineStore } from 'pinia'
 
 import alcaldiasMap from "../assets/alcaldias.geo.json";
+// import distritosMap from "../assets/distritos_convertido.geo.json";
 import distritosMap from "../assets/distritos.geo.json";
 
 export const useMapStore = defineStore('mapas', () => {

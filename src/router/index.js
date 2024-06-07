@@ -131,8 +131,8 @@ const router = createRouter({
 });
 
 const checkAuth = async () => {
-  // const urlSirec = 'https://sirec.iecm.mx:3025/api/';
-  const urlSirec = 'http://localhost:3025/api/';
+  // const urlSirec = 'http://localhost:3025/api/';
+  const urlSirec = 'https://sirec.iecm.mx:3025/api/';
   const response = await fetch(urlSirec+'system');
   const data = await response.json();
   return data.proteger_rutas;
