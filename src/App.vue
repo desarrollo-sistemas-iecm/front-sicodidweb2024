@@ -36,6 +36,14 @@ const route = useRoute();
 const urlSirec = 'https://sirec.iecm.mx:3025/api/';
 const checkSystem = async () => {
   try {
+    await handleLoginSuccess();
+  } catch (error) {
+    console.error('Error al verificar el sistema:', error);
+  }
+};
+
+/* const checkSystem = async () => {
+  try {
     const response = await fetch(urlSirec+'system');
     const data = await response.json();
     console.log('System check:', data);
@@ -69,11 +77,11 @@ const checkSystem = async () => {
   } catch (error) {
     console.error('Error al verificar el sistema:', error);
   }
-};
+}; */
 
-watch(route, (newRoute) => {
+/* watch(route, (newRoute) => {
   isLoginRoute.value = newRoute.name === 'login';
-});
+}); */
 
 onBeforeMount(() => {
   checkSystem();

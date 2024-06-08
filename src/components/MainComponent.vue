@@ -325,7 +325,11 @@
       };
   
       const databaseGO=()=>{
-          window.open(eleccion.urlPrep + "zipDB/generador_zip.php", "_blank");
+          // window.open(eleccion.urlPrep + "zipDB/generador_zip.php", "_blank");
+        window.open("/sicodid2024/files/bd-sicodid.zip", "_blank");
+
+        // Download
+
       }
       function cambiarSlider(valor) {
         console.log(valor);

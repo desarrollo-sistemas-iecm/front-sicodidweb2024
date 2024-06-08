@@ -138,7 +138,7 @@ const checkAuth = async () => {
   return data.proteger_rutas;
 };
 
-router.beforeEach(async (to, from, next) => {
+/* router.beforeEach(async (to, from, next) => {
   const protegerRutas = await checkAuth();
   const isAuthenticated = !!localStorage.getItem('token');
 
@@ -147,6 +147,6 @@ router.beforeEach(async (to, from, next) => {
   } else {
     next();
   }
-});
+}); */
 
 export default router;

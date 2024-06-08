@@ -23,7 +23,7 @@
   
   <GridCasillasPrision titulo="Anticipado" tipo="A" ></GridCasillasPrision>
 
-  <GridCasillasParticipaPrision titulo="Anticipado" tipo="A" v-if="eleccion.cmb1 != ''"></GridCasillasParticipaPrision>
+  <!-- <GridCasillasParticipaPrision titulo="Anticipado" tipo="A" v-if="eleccion.cmb1 != ''"></GridCasillasParticipaPrision> -->
 
   <!-- <ObservacionesActa v-if="eleccion.cmb1 != ''"></ObservacionesActa> -->
 </template>

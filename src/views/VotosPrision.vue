@@ -24,7 +24,7 @@
   -->
   <GridCasillasPrision titulo="en Prisión Preventiva" tipo="P" ></GridCasillasPrision>
 
-  <GridCasillasParticipaPrision titulo="en Prisión Preventiva" tipo="P" v-if="eleccion.cmb1 != ''"></GridCasillasParticipaPrision>
+  <!-- <GridCasillasParticipaPrision titulo="en Prisión Preventiva" tipo="P" v-if="eleccion.cmb1 != ''"></GridCasillasParticipaPrision> -->
 
   <!-- <ObservacionesActa v-if="eleccion.cmb1 != ''"></ObservacionesActa> -->
 </template>

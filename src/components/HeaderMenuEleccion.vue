@@ -91,6 +91,17 @@
                     <a-divider style="border-color: white" />
                 </template >
             </a-menu>
+            <p style="font-size: 25px; color: white">Base de Datos:</p>
+            <a-row style="align-items: center; text-align: center;">
+                <a-col style="margin-top:10px" class="gutter-row"  :xs="12" :sm="12" :md="12" :lg="12" :xl="12" >
+                    <p>Descargar</p>
+                    <a-button shape="round" :size="size" :style="{width: '75%', height: '50px','background-color': eleccion.tema ? 'white' : 'black'}" @click="download();">
+                        <template #icon>
+                            <DatabaseOutlined :style="{color: eleccion.tema ? 'black' : 'white'}" />
+                        </template>
+                    </a-button>
+                </a-col>
+            </a-row>
             <p style="font-size: 25px; color: white">Tema:</p>
             <a-row style="align-items: center; text-align: center;">
                 <a-col style="margin-top:10px" class="gutter-row"  :xs="12" :sm="12" :md="12" :lg="12" :xl="12" >
@@ -200,7 +211,7 @@
 
     import {ref, reactive, h} from 'vue'
     import {RouterView, RouterLink} from 'vue-router';
-    import {RightCircleTwoTone, HomeTwoTone, MenuOutlined, AppstoreOutlined, AlertOutlined, BulbOutlined, BulbFilled, ArrowLeftOutlined, LeftCircleOutlined, RightCircleOutlined } from  '@ant-design/icons-vue';
+    import {RightCircleTwoTone, HomeTwoTone, MenuOutlined, AppstoreOutlined, AlertOutlined, BulbOutlined, BulbFilled, ArrowLeftOutlined, LeftCircleOutlined, RightCircleOutlined, DatabaseOutlined } from  '@ant-design/icons-vue';
     
     // PARA DIPUTADOS CIFRAS COMPLETAS
     import MenuElec2 from './menus/MenuElec2.vue';
@@ -372,6 +383,7 @@
                 route: {name:'map', params:{id: '4'}}
             },
             ],
+            isFunction: false
         },
         {
             key: 'sub2',
@@ -379,32 +391,18 @@
             label: 'Mi sección',
             title: 'Mi sección',
             route: '',
-            children:''
+            children:'',
+            isFunction: false
         },
-        {
-            key: 'sub3',
-            icon: () => h(AppstoreOutlined),
-            label: 'Preguntas frecuentes',
-            title: 'Preguntas frecuentes',
-            route: { name: 'preguntas' },
-            children:''
-        },
-        {
+        /* {
             key: 'sub4',
             icon: () => h(AppstoreOutlined),
             label: 'Base de datos',
             title: 'Base de datos',
             route: { name: 'bd' },
-            children:''
-        },
-        {
-            key: 'sub5',
-            icon: () => h(AppstoreOutlined),
-            label: 'Centro de Ayuda',
-            title: 'Centro de Ayuda',
-            route: { name: 'help' },
-            children: ''
-        },
+            children:'',
+            isFunction: true
+        }, */
         {
             key: 'sub6',
             icon: () => h(AppstoreOutlined),
@@ -412,6 +410,7 @@
             title: 'Portal IECM',
             route: '',
             children:'',
+            isFunction: false,
             link: 'https://www.iecm.mx/'
         },
     ]);
@@ -512,6 +511,12 @@
               },
       };
     //   console.log(themes);
+    }
+
+    function download(){
+        // Download
+        window.open("/sicodid2024/files/bd-sicodid.zip", "_blank");
+
     }
     //router.push({ name: 'home' });
 </script>
