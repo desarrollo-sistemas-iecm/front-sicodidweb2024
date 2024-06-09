@@ -18,7 +18,7 @@
             <RouterLink :to="{name:'cadidatos', params:{id: 'Candidato!!!'},  query:{ key: Date.now() }} ">Votos por Candidatura</RouterLink>
         </span>
       </a-menu-item>
-      <a-menu-item :style="{height:'64px', whiteSpace: 'pre-wrap', height: 'auto'}" key="2">
+      <a-menu-item v-if="false" :style="{height:'64px', whiteSpace: 'pre-wrap', height: 'auto'}" key="2">
         <!--<video-camera-outlined />-->
         
         <span style="hyphens: 'auto'; text-align: justify;">

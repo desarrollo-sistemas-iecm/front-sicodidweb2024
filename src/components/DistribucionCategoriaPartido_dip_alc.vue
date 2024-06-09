@@ -14,14 +14,14 @@
   <h4>
     La tabla muestra el desglose de votos que cada Partido Político, Coalición, Candidatura Común o Candidatura sin Partido presente en {{ eleccion.eleccion == 2 ? 'el Distrito': 'la Alcaldía'}} , indicando los votos recibidos de manera individual y, en su caso, los votos recibidos vía Coalición.
     <br><br>
-    <u>
+    <u v-if="false">
       <!-- TODO: aqui -->
       <a style="color: black;" href="/sicodid2024/files/Info-Paraentenderdistribucionvotos.pdf" download="info-para-entender-distribucion-votos.pdf">
         Conoce cómo se disribuyen los votos para Candidaturas de Coalición de acuerdo con la legislación vigente.
       </a>
     </u>
     <br>
-    <u>
+    <u v-if="false">
       <!-- TODO: aqui -->
       <a style="color: black;" href="/sicodid2024/files/Info-ConvenioCC.pdf" download="info-convenio-cc.pdf">
         Conoce cómo se distribuyen los votos para la Candidatura Común de acuerdo con el convenio

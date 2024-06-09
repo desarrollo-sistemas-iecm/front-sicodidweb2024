@@ -17,7 +17,7 @@
   <h4>
     La tabla muestra el desglose de votos que cada Partido Político, Coalición, Candidatura Común o Candidatura sin Partido presente en {{ eleccion.eleccion == 2 ? 'el Distrito': 'la Alcaldía'}} , indicando los votos recibidos de manera individual y, en su caso, los votos recibidos vía Coalición.
     <br><br>
-    <u>
+    <u v-if="false">
       <a style="color: black;" href="/sicodid2024/files/Info-Paraentendersumavotos.pdf" download="info-para-entender-suma-votos.pdf">
         Conoce cómo se suman los votos para Candidaturas de Coalición de acuerdo con la legislación vigente.
       </a>

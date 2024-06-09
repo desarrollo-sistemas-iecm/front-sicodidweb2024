@@ -4,7 +4,7 @@
       <a-row :gutter="{ xs: 8, sm: 16, md: 24, lg: 32 }">
               <div style='text-align: justify; margin: 15px;'>
                 <!-- TODO: AQUI -->
-              El total de votos calculado y porcentaje que se muestra, se refieren a los votos asentados en las Actas.
+                El total de votos calculado y porcentaje que se muestra, se refieren a los votos asentados en las Actas de casillas básicas, contiguas y extraordinarias, más las actas de representación proporcional de las casillas especiales.
               Por presentación, los decimales de los porcentajes muestran sólo cuatro dígitos. No obstante, al considerar todos los decimales, suman 100%.
               </div>
   
