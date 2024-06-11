@@ -50,7 +50,7 @@
               
               const  url = urlServer + "funciones_carrusel.php?type="+type+"&item="+item+"&item_2="+item_2+"&item_3="+item_3+"&es_A_M_P="+props.tipo;
               
-    //alert(url)  
+    // alert(url)  
 
               const response = await fetch(url);
               const jsonData = await response.json();

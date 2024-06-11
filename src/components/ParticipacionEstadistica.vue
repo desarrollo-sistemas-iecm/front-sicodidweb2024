@@ -8,7 +8,7 @@
                     </label>
                     <br>
                     <label style="font-size: 10px;text-align: justify; width: '100%';">
-                        Se calcula considerando: Total de votos de las Actas Contabilizadas, multiplicado por 100, dividido entre la Lista Nominal de las casillas con Actas Contabilizadas.
+                        Se calcula considerando: Total de votos de las Actas Computadas, multiplicado por 100, dividido entre la Lista Nominal de las casillas con Actas Computadas.
                     </label>
                     <br>
                     <label v-if="eleccion.eleccion != 4" style="font-size: 10px;text-align: justify; width: '100%';">

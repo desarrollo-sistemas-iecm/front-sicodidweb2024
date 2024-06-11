@@ -49,7 +49,7 @@
       background-color: #582D73; margin-right: 10px; ">
     </div>
     <label style="font-size: 1.4em;">
-      Votos en Acta Contabilizada
+      Votos en Acta Computadas
     </label><br>
   </div>
 
@@ -61,9 +61,9 @@
       <div><h3>4</h3></div>
   </a-carousel>
   -->
-  <label style="font-size: .9em; font-weight: bold;"><br>
+  <!-- <label style="font-size: .9em; font-weight: bold;"><br>
     Ver acta digitalizada de Cómputo de entidad Federativa
-  </label>
+  </label> -->
   <br><br>
 
 

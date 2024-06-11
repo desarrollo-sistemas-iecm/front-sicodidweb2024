@@ -75,7 +75,7 @@
   </a-table>
 
 
-  <div>
+  <!-- <div>
     <div style="display: flex; flex-wrap: wrap; justify-content: left; padding: 5px; ">
       <div style="
               left: 389px;
@@ -91,19 +91,16 @@
       </label>
     </div>
     <br>
-    <!-- <label style="text-decoration: underline; font-weight: bold; font-size: 0.8em;">Participación ciudadana con base en la Lista Nominal de la mesa con Acta PREP Contabilizada</label><br><br> -->
     <p style="text-decoration: underline; font-weight: bold; font-size: 0.8em; text-align: justify;"
       :style="{ 'padding-left': !isMobile() ? '30px' : '0px', 'padding-right': !isMobile() ? '30%' : '0px' }">
-      La lista nominal incluye a votantes registrados para votar desde el extranjero más los potenciales votantes que pudieron votar en cada en cada uno de los 23 consultados, sin haberse registrado previamente     
+      La lista nominal incluye a votantes registrados para votar desde el extranjero más los potenciales votantes que
+      pudieron votar en cada en cada uno de los 23 consultados, sin haberse registrado previamente
     </p>
     <br>
     <br>
     <div v-for="(item, index) in participacion" :key="index">
       <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
         <div style="justify-content: start;">
-          <!--
-                      <label>{{ item.num_casilla}} {{item.caracter_cas}}</label>
-                    -->
           <label style="font-weight: bolder; ">Participación ciudadana</label>
           <h2>{{ item.participacion }} %</h2>
         </div>
@@ -116,12 +113,12 @@
 
 
       <a-progress :stroke-color="{
-    '0%': '#B283B9',
-    '100%': '#B283B9',
-  }" :strokeWidth="30" :percent="item.participacion" size="xl" :show-info="false" />
+          '0%': '#B283B9',
+          '100%': '#B283B9',
+        }" :strokeWidth="30" :percent="item.participacion" size="xl" :show-info="false" />
 
     </div>
-  </div>
+  </div> -->
 
 </template>
 <script setup>

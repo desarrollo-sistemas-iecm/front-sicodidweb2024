@@ -6,7 +6,7 @@ const routes = [
   {
     path: '/:pathMatch(.*)*',
     name: '404',
-    component: NotFoundView
+    component: ()=>import('../views/NotFoundView.vue'),
   },
   {
     path: '/',
@@ -118,11 +118,11 @@ const routes = [
     name: 'todo_secc',
     component: () => import('../views/VotosSeccionTODO.vue')
   },
-  {
+/*   {
     path: '/login',
     name: 'login',
     component: LoginView,
-  }
+  } */
 ];
 
 const router = createRouter({
@@ -130,13 +130,13 @@ const router = createRouter({
   routes,
 });
 
-const checkAuth = async () => {
+/* const checkAuth = async () => {
   // const urlSirec = 'http://localhost:3025/api/';
   const urlSirec = 'https://sirec.iecm.mx:3025/api/';
   const response = await fetch(urlSirec+'system');
   const data = await response.json();
   return data.proteger_rutas;
-};
+}; */
 
 /* router.beforeEach(async (to, from, next) => {
   const protegerRutas = await checkAuth();
