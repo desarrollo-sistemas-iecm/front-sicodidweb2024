@@ -285,7 +285,7 @@ const chartOptions = ref({
             y: 35,
         },
         title: {
-            text: `<b>Votos<br><label style="font-size:8px">Total<br>Porcentaje</label></b><br><spam  style="font-size:10px"><br><br>En Territorio de la Ciudad de México<br>En el extranjero</spam>`,
+            text: `<b>Votos<br><label style="font-size:8px">Total<br>Porcentaje</label></b><br><spam  style="font-size:10px"><br><br>En Territorio de la<br>Ciudad de México<br>En el extranjero</spam>`,
             align: 'low',
             x: -55,
             y: -115

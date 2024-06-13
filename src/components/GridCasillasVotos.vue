@@ -111,9 +111,14 @@
     </a-table>
     <br>
 
-    <label :style="{'font-size': '12px', 'font-weight': 'bolder', 'margin-bottom': '10px', color: eleccion.tema ? 'black': 'white'}">
+    <!-- {{  eleccion  }} -->
+    <label v-if="eleccion.eleccion != 4" :style="{'font-size': '12px', 'font-weight': 'bolder', 'margin-bottom': '10px', color: eleccion.tema ? 'black': 'white'}">
       No se considera la cantidad de votos asentada en las Actas de Casilla Especial de Representación Proporcional. Por presentación, los decimales de los porcentajes muestran sólo cuatro dígitos. No obstante, al considerar todos los decimales, suman 100%.  
     </label>
+    <!-- 
+    <label v-else :style="{'font-size': '12px', 'font-weight': 'bolder', 'margin-bottom': '10px', color: eleccion.tema ? 'black': 'white'}">
+      Por presentación, los decimales de los porcentajes muestran sólo cuatro dígitos. No obstante, al considerar todos los decimales, suman 100%.  
+    </label> -->
 <!--
   <h3> <br>
       Estadísticas de casilla

@@ -323,7 +323,7 @@ const chartOptions = ref({
 
         },
         title: {
-            text:  eleccion.eleccion!=4? '<b>Votos<br><label style="font-size:8px">Total<br>Porcentaje</label></b><br><br><spam style="font-size:10px">En Territorio de la CDMX<br>En el extranjero</spam>'
+            text:  eleccion.eleccion!=4? '<b>Votos<br><label style="font-size:8px">Total<br>Porcentaje</label></b><br><br><spam style="font-size:10px">En Territorio de la<br>Ciudad de México<br>En el extranjero</spam>'
                 : '<b>Votos<br><label style="font-size:8px">Total<br>Porcentaje</label></b>',
             align: 'low',
             // nuevo

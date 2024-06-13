@@ -99,9 +99,9 @@ export const getUrlPrep=()=>{
 
 
   // PARA DIR SICODID2024 
-  const newURL = window.location.protocol.toString() + "//" + window.location.host.toString() + "/";
+  // const newURL = window.location.protocol.toString() + "//" + window.location.host.toString() + "/";
   
-  //  const newURL = "http://localhost/2024/sicodid/publicador/api/";
+   const newURL = "http://localhost/2024/sicodid/publicador/api/";
   
 
 // const newURL = "http://145.0.40.76/2024/v2-sicodid2024/services/";
